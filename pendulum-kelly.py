@@ -1,6 +1,6 @@
 import gym
 env = gym.make('Pendulum-v1')
-for i_episode in range(10):
+for i_episode in range(20):
     observation = env.reset()
     for t in range(50):
         env.render()
