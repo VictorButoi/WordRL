@@ -22,11 +22,13 @@ filename = pkg_resources.resource_filename(
     'data/5_words.txt'
 )
 
+
 def encodeToStr(encoding):
     string = ""
     for enc in encoding:
         string += chr(ord('a') + enc)
     return string
+
 
 def strToEncode(lines):
     encoding = []
@@ -70,7 +72,7 @@ class WordleEnv(gym.Env):
             guesses words, the rows will fill up with values in the range
             [0, 2] indicating whether the characters are missing in the
             hidden word, in the incorrect position, or in the correct position
-			based on the most recent guess.
+                        based on the most recent guess.
           - alphabet: the alphabet is a length 26 Box corresponding to the guess status
             for each letter in the alaphabet. As the start, all values are -1, as no letter
             has been used in a guess. As the player guesses words, the letters in the
@@ -93,7 +95,8 @@ class WordleEnv(gym.Env):
 
         # Action must be a valid word
         if not tuple(action) in WORDS:
-            raise InvalidWordException(encodeToStr(action) + " is not a valid word.")
+            raise InvalidWordException(encodeToStr(
+                action) + " is not a valid word.")
 
         # update game board and alphabet tracking
         board_row_idx = GAME_LENGTH - self.guesses_left
