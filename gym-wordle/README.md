@@ -14,13 +14,12 @@ The list of all possible guesses is stored in `gym_wordle/data/5_words.txt`
 
 #### Observation Space
 A length 417 MultiDiscrete space representing a 1D int array where:
-        index[0] = number of guesses remaining
-        [1..27] = binary, whether each of the 26 letters has been guessed
-        [[status, status, status, status, status] for _ in WORDLE_CHARS] = binary
-            where status has codes
-            [1, 0, 0] -- char is definitely not in this spot
-            [0, 1, 0] -- char may be in this spot
-            [0, 0, 1] -- char is in this spot
+        * index[0] = number of guesses remaining
+        * [1..27] = binary, whether each of the 26 letters has been guessed
+        * [[status, status, status, status, status] for _ in WORDLE_CHARS] = binary, where status has codes
+            * [1, 0, 0] -- char is definitely not in this spot
+            * [0, 1, 0] -- char may be in this spot
+            * [0, 0, 1] -- char is in this spot
 
 #### Action Space
 In order to step through the environment, supply `env.step()` with an integer corresponding to the index of the desired guess in the word list
