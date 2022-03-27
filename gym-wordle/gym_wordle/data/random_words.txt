@@ -1,0 +1,10 @@
+hello
+cloak
+slate
+crane
+other
+joust
+cloth
+sharp
+petal
+sleep
