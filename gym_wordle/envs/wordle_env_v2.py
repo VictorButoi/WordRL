@@ -55,8 +55,7 @@ class WordleEnv_v2(gym.Env):
         super(WordleEnv_v2, self).__init__()
         self.words = WORDS
         self.action_space = gym.spaces.Discrete(len(self.words))
-        self.observation_space = gym.spaces.MultiDiscrete(
-            [GAME_LENGTH] + [2] * len(WORDLE_CHARS) + [2] * 3 * WORD_LENGTH * len(WORDLE_CHARS))
+        self.observation_space = gym.spaces.MultiDiscrete([GAME_LENGTH] + [2] * len(WORDLE_CHARS) + [2] * 3 * WORD_LENGTH * len(WORDLE_CHARS))
 
         self.done = True
         self.state: np.ndarray = None
@@ -109,10 +108,7 @@ class WordleEnv_v2(gym.Env):
     def reset(self):
         self.done = False
         self.goal_word = random.choice(self.words)
-        self.state = np.array(
-            [GAME_LENGTH] + [0] * len(WORDLE_CHARS) +
-            [0, 1, 0] * WORD_LENGTH * len(WORDLE_CHARS),
-            dtype=np.int32)
+        self.state = np.array([GAME_LENGTH] + [0] * len(WORDLE_CHARS) + [0, 1, 0] * WORD_LENGTH * len(WORDLE_CHARS), dtype=np.int32)
 
         return self.state.copy()
 
