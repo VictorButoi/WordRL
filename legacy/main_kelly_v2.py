@@ -1,7 +1,34 @@
+"""
+Usage: 
+  main_kelly_v2.py random [options]
+  main_kelly_v2.py dqn [options]
+
+options:
+  -r --render                 render visualizer 
+
+"""
+
 import gym
 import gym_wordle
 from gym_wordle.exceptions import InvalidWordException
 from gym_wordle.agents.agent_random_v2 import Agent
+from docopt import docopt
+
+
+def command_line_parser():
+    args = docopt(__doc__)
+
+    if args['random']:
+        #run random 
+
+    elif args['dqn']:
+        #run dqn 
+    else: 
+        raise RuntimeError("Invalid CLI Argument")
+
+
+
+#Add in training for other agents 
 
 # RL parameters
 resume_from_checkpoint = None

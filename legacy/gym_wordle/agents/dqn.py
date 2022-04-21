@@ -12,7 +12,7 @@ class WorDQN():
             deep_q_network: str = 'SumChars',
             batch_size: int = 1024,
             lr: float = 1e-4,
-            env: str = "WordleEnv-v0",
+            env: str = 'Wordle-v2-10-visualized',
             gamma: float = 0.9,
             sync_rate: int = 10,
             replay_size: int = 1000,
@@ -41,6 +41,7 @@ class WorDQN():
         """
         super().__init__()
         # currently broken, need to actually pass stuff
+        #changed from gym.make(self.hparams.env)
         self.env = gym.make(self.hparams.env)
         obs_size = self.env.observation_space.shape[0]
         n_actions = self.env.action_space.n
