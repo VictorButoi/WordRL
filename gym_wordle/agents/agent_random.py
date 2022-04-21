@@ -1,4 +1,4 @@
-from gym_wordle.envs.wordle_env import WORDS
+from gym_wordle.envs.wordle_env_v2 import WORDS
 import numpy as np
 import gym
 import random

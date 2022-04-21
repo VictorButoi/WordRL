@@ -6,7 +6,7 @@ from gym_wordle.agents.agent_random_v2 import Agent
 # RL parameters
 resume_from_checkpoint = None
 initialize_winning_replays = None
-env = "WordleEnv100-v0"
+#env = "WordleEnv100-v0"
 deep_q_network = 'SumChars'
 
 # Training parameters
@@ -23,7 +23,7 @@ min_eps = 0.01
 episode_length = 512
 batch_size = 512
 
-env = gym.make('Wordle-v2-10')
+env = gym.make('Wordle-v2-10-visualized')
 
 random_agent = Agent()
 
@@ -41,4 +41,4 @@ while not done:
         except InvalidWordException:
             pass
 
-    env.render()
+    env.render(act)

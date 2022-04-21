@@ -11,3 +11,9 @@ register(
     entry_point='gym_wordle.envs:WordleEnv_v2',
     max_episode_steps=200,
 )
+
+register(
+    id='Wordle-v2-10-visualized',
+    entry_point='gym_wordle.envs:WordleEnv_v2_visualized',
+    max_episode_steps=200,
+)
