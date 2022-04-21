@@ -12,7 +12,7 @@ class WorDQN():
             deep_q_network: str = 'SumChars',
             batch_size: int = 1024,
             lr: float = 1e-4,
-            env: str = "WordleEnv-v0",
+            env: str = "WordleEnv-v2-10-visualized",
             gamma: float = 0.9,
             sync_rate: int = 10,
             replay_size: int = 1000,

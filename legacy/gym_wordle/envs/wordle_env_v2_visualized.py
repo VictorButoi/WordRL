@@ -14,6 +14,14 @@ WORDLE_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 WORD_LENGTH = 5
 GAME_LENGTH = 6
 
+white = (255, 255, 255)
+black = (0, 0, 0)
+grey = (69, 69, 69)
+
+# FROM OFFICIAL WORDLE GAME
+green = (120, 177, 90)
+yellow = (253, 203, 88)
+
 
 def get_words(filename, limit: Optional[int] = None):
     """
@@ -30,7 +38,7 @@ def get_words(filename, limit: Optional[int] = None):
             return words[:limit]
 
 
-WORDS = get_words(WORDS_PATH, 100)
+WORDS = get_words(WORDS_PATH)
 
 
 class WordleEnv_v2_visualized(gym.Env):
@@ -59,11 +67,16 @@ class WordleEnv_v2_visualized(gym.Env):
         self.observation_space = gym.spaces.MultiDiscrete(
             [GAME_LENGTH] + [2] * len(WORDLE_CHARS) + [2] * 3 * WORD_LENGTH * len(WORDLE_CHARS))
 
+        # for the visualizer
+        self.guesses = []
+        self.colors = []
+
         self.done = True
         self.state: np.ndarray = None
 
     def step(self, action):
         assert self.action_space.contains(action)
+        self.guesses.append(WORDS[action])
 
         action = WORDS[action]
         if self.done:
@@ -80,6 +93,7 @@ class WordleEnv_v2_visualized(gym.Env):
             offset = 1 + len(WORDLE_CHARS) + cint * WORD_LENGTH * 3
             state[1 + cint] = 1  # letter has now been guessed
             if self.goal_word[i] == c:
+                self.colors.append(green)
                 # c is at position i, all other chars are not at position i
                 state[offset + 3 * i:offset + 3 * i + 3] = [0, 0, 1]
                 for ocint in range(len(WORDLE_CHARS)):
@@ -89,9 +103,11 @@ class WordleEnv_v2_visualized(gym.Env):
                         state[oc_offset + 3 * i: oc_offset +
                               3 * i + 3] = [1, 0, 0]
             elif c in self.goal_word:
+                self.colors.append(yellow)
                 # c is not at position i, but could be at other positions
                 state[offset + 3 * i:offset + 3 * i + 3] = [1, 0, 0]
             else:
+                self.colors.append(grey)
                 # c is not in the goal word
                 state[offset:offset+3*WORD_LENGTH] = [1, 0, 0] * WORD_LENGTH
 
@@ -113,18 +129,12 @@ class WordleEnv_v2_visualized(gym.Env):
         self.state = np.array([GAME_LENGTH] + [0] * len(WORDLE_CHARS) +
                               [0, 1, 0] * WORD_LENGTH * len(WORDLE_CHARS), dtype=np.int32)
 
+        print("Goal word is : " + self.goal_word)
         return self.state.copy()
 
-    def render(self, action, mode="human"):
+    def render(self, mode="human"):
+        print(self.guesses)
         pygame.init()
-
-        white = (255, 255, 255)
-        black = (0, 0, 0)
-        grey = (69, 69, 69)
-
-        # FROM OFFICIAL WORDLE GAME
-        green = (120, 177, 90)
-        yellow = (253, 203, 88)
 
         # GAME SETTINGS
         NUM_ROWS = 6
@@ -149,15 +159,13 @@ class WordleEnv_v2_visualized(gym.Env):
         font_x = 40
         font_y = 48
         game_over = False
-        secret_word = 'power'
 
         # GRAPHICS SETUP
         board = [[" " for _ in range(NUM_COLUMNS)] for _ in range(NUM_ROWS)]
 
         # TODO: remove idx
 
-        def place_letter(x, y, x_idx, box_size, action):
-            word = WORDS[action]
+        def place_letter(x, y, x_idx, box_size, word):
             piece_text = huge_font.render(word[x_idx], True, white)
             x_offset = (box_size - font_x)/2
             y_offset = (box_size - font_y)/2
@@ -172,16 +180,19 @@ class WordleEnv_v2_visualized(gym.Env):
                        do_fill=0):
             height = len(board)
             width = len(board[0])
-            colors = [green, yellow, grey, green, yellow, grey]
 
             for row in range(height):
                 for col in range(width):
                     # convention for drawing is [x, y, width, height], boarder, rounding
                     x = col*box_size + sox + col*x_space
                     y = row*box_size + soy + row*y_space
-                    pygame.draw.rect(screen, colors[row], [
-                        x, y, box_size, box_size], do_fill)
-                    place_letter(x, y, col, box_size, action)
+                    if row < len(self.guesses):
+                        pygame.draw.rect(screen, self.colors[row*5+col], [
+                            x, y, box_size, box_size], do_fill)
+                        place_letter(x, y, col, box_size, self.guesses[row])
+                    else:
+                        pygame.draw.rect(screen, grey, [
+                            x, y, box_size, box_size], do_fill)
 
         x_offset = (SCREEN_WIDTH - (NUM_COLUMNS*BOX_SIZE +
                     (NUM_COLUMNS - 1)*BOX_SPACING))/2
