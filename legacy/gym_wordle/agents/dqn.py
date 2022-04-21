@@ -12,7 +12,11 @@ class WorDQN():
             deep_q_network: str = 'SumChars',
             batch_size: int = 1024,
             lr: float = 1e-4,
+<<<<<<< HEAD:legacy/gym_wordle/agents/dqn.py
             env: str = 'Wordle-v2-10-visualized',
+=======
+            env: str = "WordleEnv-v2-10-visualized",
+>>>>>>> 89e408e0430b74863517b8c5c9c0220149d19dda:dqn.py
             gamma: float = 0.9,
             sync_rate: int = 10,
             replay_size: int = 1000,

@@ -68,4 +68,4 @@ while not done:
         except InvalidWordException:
             pass
 
-    env.render(act)
+    env.render()
