@@ -1,9 +1,22 @@
 #TODO: import env
+import * from dqn_utils
 
 num_eps = config["experiment"]["num_episodes"]
 #TODO: get the device of the current batch
 device = get_device(batch)
 total_games_played = 0
+
+
+#Record wins and losses, clear these at some point
+
+wins = 0
+losses = 0
+winning_steps = 0
+
+#Record reward
+rewards = 0
+
+losses
 
 #TODO: do some kind of looping to play multiple games
 for i in range(num_episodes):
@@ -21,21 +34,19 @@ for i in range(num_episodes):
             #take a step in your environment
             new_state, reward, done, _ = env.step(action)
             
-            #TODO: define an experience object, might be useful
+
             exp = Experience(state.copy(), action, reward, new_state.copy(), env.goal_word)
         
         #TODO: define WordRL object
         winning_steps = env.max_turns - wordle.state.remaining_steps(state)
 
-        #TODO: define datasets objects, has at least winners and losers, define whatever
-        # the fuck wins / losses are
         if reward > 0:
             dataset.winners.append(sequence)
-            _wins += 1
-            _winning_step += winning_steps
+            wins += 1
+            winning_steps += winning_steps
         else:
             dataset.losers.append(sequence)
-            _losses += 1
+            losses += 1
         
         #TODO: define what reward is 
         
