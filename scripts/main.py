@@ -15,7 +15,7 @@ import sys
 
 
 if __name__ == "__main__":
-    wordl_root = "home/vib9/src/WordRL/legacy"
+    wordl_root = wdl.filepaths.FILE_PATHS["KELLY_PATH"]
     config_root = os.path.join(wordl_root, "wordrl/configs/DEFAULT.yaml")
     with open(config_root, 'r') as stream:
         args = yaml.safe_load(stream)
