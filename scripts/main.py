@@ -1,5 +1,5 @@
 # Claims imports
-import wordrl as wdl 
+import wordrl as wdl
 
 # torch imports
 import torch
@@ -20,7 +20,8 @@ if __name__ == "__main__":
     with open(config_root, 'r') as stream:
         args = yaml.safe_load(stream)
     if len(sys.argv) > 1:
-        new_config = os.path.join(wordl_root,f"wordrl/configs/{sys.argv[1]}.yaml"
+        new_config = os.path.join(
+            wordl_root, f"wordrl/configs/{sys.argv[1]}.yaml")
         with open(new_config, 'r') as stream:
             new_args = yaml.safe_load(stream)
         args = wdl.setup.merge_dicts(args, new_args)
