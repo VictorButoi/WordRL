@@ -1,9 +1,10 @@
+from . import filepaths
 from . import envs
 from . import make_config
 from . import agent
 from . import losses
 from . import training
-from . import paths
+
 from gym.envs.registration import register
 
 register(
