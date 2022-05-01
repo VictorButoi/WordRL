@@ -12,3 +12,6 @@ training:
     eps_state: 0
     eps_last_frame: 0
     gamma: 0
+agent:
+    type: "SumChars"
+    hidden_size: 5 

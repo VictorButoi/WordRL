@@ -22,15 +22,15 @@ def get_freer_gpu():
 def run_experiment(config):
     env = gym.make('Wordle-v2-10-visualized')
     state = env.reset()
+    obs_size = env.observation_space.shape[0]
+    n_actions = env.action_space.n
 
     num_eps = config["experiment"]["num_episodes"]
     device = get_freer_gpu()
 
-    net = wdl.agent.get_agent(config["agent"])
-    target_net = wdl.agent.get_agent(config["agent"])
-
-    agent = wdl.agents.Agent()
-    wordle = wdl.envs.wordle_env_v2_visualized.WordleEnv_v2_visualized()
+    net = wdl.agent.get_net(obs_size, config["agent"])
+    target_net = wdl.agent.get_net(obs_size, config["agent"])
+    agent = wdl.agents.Agent(net, env.action_space)
 
     dataset = RLDataset(winners=SequenceReplay(config["dataset"]["replay_size"]//2, config["dataset"]["init_winning_replays"]),
                         losers=Sequence_Replay(config["dataset"]["replay_size"]//2, sample_size=config["dataset"]["sample_size"]))
@@ -158,10 +158,14 @@ def run_experiment(config):
         total_games_played += 1
 
         # TODO: Make this loss function and some losses.py file get training loss
+
+        rewards += reward
+        total_games_played += 1
+
         loss = wdl.losses.dqn_mse_loss(batch)
 
         # If it is time to sync the old value with a new one
-        if global_setep % config["experiment"]["sync_rate"] == 0:
+        if global_step % config["experiment"]["sync_rate"] == 0:
             # TODO: define a target_network and a net
             target_net.load_state_dict(net.state_dict())
 
