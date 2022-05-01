@@ -1,6 +1,5 @@
 # wordrl imports
 import wordrl as wdl
-from experience import RLDataset, SequenceReplay
 
 # torch imports
 import torch
@@ -32,8 +31,9 @@ def run_experiment(config):
     target_net = wdl.agent.get_net(obs_size, config["agent"])
     agent = wdl.agents.Agent(net, env.action_space)
 
-    dataset = RLDataset(winners=SequenceReplay(config["dataset"]["replay_size"]//2, config["dataset"]["init_winning_replays"]),
-                        losers=Sequence_Replay(config["dataset"]["replay_size"]//2, sample_size=config["dataset"]["sample_size"]))
+    dataset = wdl.experience.RLDataset(winners=SequenceReplay(config["dataset"]["replay_size"]//2,
+                                                    config["dataset"]["init_winning_replays"]),
+                             losers= wdl.experience.Sequence_Replay(config["dataset"]["replay_size"]//2, sample_size=config["dataset"]["sample_size"]))
 
     dataloader = torch.utils.data.Dataloader(
         dataset=dataset, batch_size=config["training"]["batch_size"])
@@ -84,7 +84,7 @@ def run_experiment(config):
                     # take a step in your environment
                     new_state, reward, done, _ = env.step(action)
                     # make an experience object out of it
-                    exp = Experience(state.copy(), action,
+                    exp = wdl.experience.Experience(state.copy(), action,
                                      reward, new_state.copy(), env.goal_word)
                     # set the new state
                     state = new_state
