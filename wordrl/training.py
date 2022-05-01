@@ -1,6 +1,5 @@
 # wordrl imports
 import wordrl as wdl
-from experience import RLDataset, SequenceReplay
 
 # torch imports
 import torch
