@@ -23,5 +23,5 @@ if __name__ == "__main__":
         new_config = os.path.join(wordl_root,f"wordrl/configs/{sys.argv[1]}.yaml"
         with open(new_config, 'r') as stream:
             new_args = yaml.safe_load(stream)
-        args = uvs.setup.merge_dicts(args, new_args)
+        args = wdl.setup.merge_dicts(args, new_args)
     wdl.training.run_experiment/(args)

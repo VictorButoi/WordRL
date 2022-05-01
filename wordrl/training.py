@@ -25,10 +25,9 @@ def run_experiment(config):
 
     num_eps = config["experiment"]["num_episodes"]
     device = get_freer_gpu()
-    # TODO: Figure out what these represent, because they aren't the 'agent'
-    # apparently
-    net = None
-    target_net = None
+    
+    net = wdl.agent.get_agent(config["agent"])
+    target_net = wdl.agent.get_agent(config["agent"])
 
     agent = wdl.agents.Agent()
 
