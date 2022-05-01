@@ -5,7 +5,7 @@ from typing import Tuple, List
 import numpy as np
 from torch.utils.data.dataset import IterableDataset
 
-#Modified from andrewkho github
+# Modified from andrewkho github
 
 
 Experience = namedtuple(
@@ -36,13 +36,13 @@ class ReplayBuffer:
         self.buffer.append(experience)
 
     def sample(self, batch_size: int) -> Tuple:
+        """
+          Sample [batch_size] from the experience buffer.
 
-      """
-        Sample [batch_size] from the experience buffer.
-      
-      """
+        """
         indices = np.random.choice(len(self.buffer), batch_size, replace=False)
-        states, actions, rewards, dones, next_states, _ = zip(*(self.buffer[idx] for idx in indices))
+        states, actions, rewards, dones, next_states, _ = zip(
+            *(self.buffer[idx] for idx in indices))
 
         return (
             np.array(states),
@@ -60,7 +60,7 @@ class SequenceReplay:
         capacity: size of the buffer
     """
 
-    def __init__(self, capacity: int, initialize_winning_replays: str=None) -> None:
+    def __init__(self, capacity: int, initialize_winning_replays: str = None) -> None:
         self.capacity = capacity
         self.buffer = deque(maxlen=capacity)
 
@@ -87,7 +87,8 @@ class SequenceReplay:
     def sample(self, batch_size: int) -> List[Experience]:
         xps = []
         if len(self.buffer) > 0:
-            indices = np.random.choice(len(self.buffer), min(batch_size, len(self.buffer)), replace=False)
+            indices = np.random.choice(len(self.buffer), min(
+                batch_size, len(self.buffer)), replace=False)
             for i in indices:
                 xps.extend(self.buffer[i])
                 if len(xps) >= batch_size:
@@ -114,8 +115,9 @@ class RLDataset(IterableDataset):
         assert self.sample_size % 2 == 0
 
     def __iter__(self) -> Tuple:
-        #sample 1/2 from winners and 1/2 from losers 
-        xps = self.winners.sample(self.sample_size//2) + self.losers.sample(self.sample_size//2)
+        # sample 1/2 from winners and 1/2 from losers
+        xps = self.winners.sample(self.sample_size//2) + \
+            self.losers.sample(self.sample_size//2)
 
         states, actions, rewards, dones, new_states, _ = zip(*xps)
         rewards = np.array(rewards, dtype=np.float32)

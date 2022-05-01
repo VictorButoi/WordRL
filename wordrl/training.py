@@ -20,24 +20,26 @@ def get_freer_gpu():
 
 
 def run_experiment(config):
-    env = gym.make()
+    env = gym.make('Wordle-v2-10-visualized')
     state = env.reset()
 
     num_eps = config["experiment"]["num_episodes"]
     device = get_freer_gpu()
-    
+
     net = wdl.agent.get_agent(config["agent"])
     target_net = wdl.agent.get_agent(config["agent"])
 
     agent = wdl.agents.Agent()
-
+    wordle = wdl.envs.wordle_env_v2_visualized.WordleEnv_v2_visualized()
 
     dataset = RLDataset(winners=SequenceReplay(config["dataset"]["replay_size"]//2, config["dataset"]["init_winning_replays"]),
-    losers = Sequence_Replay(config["dataset"]["replay_size"]//2, sample_size=config["dataset"]["sample_size"]))
+                        losers=Sequence_Replay(config["dataset"]["replay_size"]//2, sample_size=config["dataset"]["sample_size"]))
 
-    dataloader = torch.utils.data.Dataloader(dataset=dataset, batch_size=config["training"]["batch_size"])
-    optimizer = torch.optim.Adam(net.parameters(), lr=config["training"]["lr"], weight_decay=config["training"]["weight_decay"])
-    
+    dataloader = torch.utils.data.Dataloader(
+        dataset=dataset, batch_size=config["training"]["batch_size"])
+    optimizer = torch.optim.Adam(net.parameters(
+    ), lr=config["training"]["lr"], weight_decay=config["training"]["weight_decay"])
+
     # high level statistics
     total_reward = 0
     episode_reward = 0
@@ -48,13 +50,13 @@ def run_experiment(config):
     losses = 0
     winning_steps = 0
     rewards = 0
-    
+
     #
     # Kind of tricky scheme: Episode = Game
     #
     # Looping to play multiple games of Wordrl
     for i in range(num_episodes + config["training"]["warmup"]):
-        
+
         # provide small warmup period
         if i < config["training"]["warmup"]:
             epsilon = 1
@@ -62,51 +64,52 @@ def run_experiment(config):
             epsilon = max(config["training"]["eps_end"],
                           config["training"]["eps_state"] - global_step /
                           config["training"]["eps_last_frame"])
-        
-        # Training step 
+
+        # Training step
         for batch in dataloader:
             state, action, reward, done, new_state = batch
 
             # Play one game of WordRL!
             with torch.no_grad():
-                
+
                 done = False
                 cur_seq = list()
                 reward = 0
-                 
+
                 # Get one action at a time
                 while not done:
 
-                    #take your action
+                    # take your action
                     action = agent.get_action(state, epsilon, device)
-                    #take a step in your environment
+                    # take a step in your environment
                     new_state, reward, done, _ = env.step(action)
-                    #make an experience object out of it
-                    exp = Experience(state.copy(), action, reward, new_state.copy(), env.goal_word)
-                    #set the new state
+                    # make an experience object out of it
+                    exp = Experience(state.copy(), action,
+                                     reward, new_state.copy(), env.goal_word)
+                    # set the new state
                     state = new_state
-                
+
                 done = exp.done
                 reward = exp.reward
                 cur_seq.append(exp)
-                
-                #TODO: define WordRL object
-                winning_steps = env.max_turns - wordle.state.remaining_steps(state)
-                
-                #build up our experience dataset
+
+                winning_steps = env.max_turns - state[0]
+
+                # build up our experience dataset
                 if reward > 0:
                     dataset.winners.append(cur_seq)
                 else:
                     dataset.losers.append(cur_seq)
 
-                #start the game over
+                # start the game over
                 state = env.reset()
-            
+
             # one more game has been played, updated reward
             total_games_played += 1
             rewards += reward
-     
-            loss = wdl.losses.dqn_mse_loss(batch, config["training"]["gamma"], net, target_net)
+
+            loss = wdl.losses.dqn_mse_loss(
+                batch, config["training"]["gamma"], net, target_net)
 
             # keep track of wins and losses
             if reward > 0:
@@ -123,7 +126,7 @@ def run_experiment(config):
                 if len(dataset.winners) > 0:
                     winner = dataset.winners.buffer[-1]
                     game = f"goal: {env.words[winner[0].goal_id]}\n"
-                    #Go through the LAST winners experience
+                    # Go through the LAST winners experience
                     for i, xp in enumerate(winner):
                         game += f"{i}: {env.words[xp.action]}\n"
                 if len(dataset.losers) > 0:
@@ -135,10 +138,10 @@ def run_experiment(config):
                 wins = 0
                 losses = 0
                 rewards = 0
-                exp = Experience(state.copy(), action, reward, new_state.copy(), env.goal_word)
-            
-            #TODO: define WordRL object
-            winning_steps = env.max_turns - wordle.state.remaining_steps(state)
+                exp = Experience(state.copy(), action, reward,
+                                 new_state.copy(), env.goal_word)
+
+            winning_steps = env.max_turns - state[0]
 
             if reward > 0:
                 dataset.winners.append(sequence)
@@ -147,27 +150,26 @@ def run_experiment(config):
             else:
                 dataset.losers.append(sequence)
                 losses += 1
-            
-            #TODO: define what reward is 
-            
-        #TODO: define what reward is 
+
+            # TODO: define what reward is
+
+        # TODO: define what reward is
         rewards += reward
         total_games_played += 1
 
-        #TODO: Make this loss function and some losses.py file get training loss
+        # TODO: Make this loss function and some losses.py file get training loss
         loss = wdl.losses.dqn_mse_loss(batch)
-        
-        #If it is time to sync the old value with a new one
-        if global_setep % config["experiment"]["sync_rate"] == 0:
-            #TODO: define a target_network and a net
-            target_net.load_state_dict(net.state_dict())
 
+        # If it is time to sync the old value with a new one
+        if global_setep % config["experiment"]["sync_rate"] == 0:
+            # TODO: define a target_network and a net
+            target_net.load_state_dict(net.state_dict())
 
         if global_step % config["experiment"]["steps_per_update"] == 0:
             if len(dataset.winners) > 0:
                 winner = dataset.winners.buffer[-1]
                 game = f"goal: {env.words[winner[0].goal_id]}\n"
-                #Go through the LAST winners experience
+                # Go through the LAST winners experience
                 for i, xp in enumerate(winner):
                     game += f"{i}: {env.words[xp.action]}\n"
             if len(dataset.losers) > 0:

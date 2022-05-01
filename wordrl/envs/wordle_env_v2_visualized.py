@@ -6,8 +6,8 @@ from typing import Optional
 import pygame
 
 WORDS_PATH = pkg_resources.resource_filename(
-    'gym_wordle',
-    'data/random_words.txt'
+    'data',
+    '5_words.txt'
 )
 
 WORDLE_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
@@ -70,6 +70,7 @@ class WordleEnv_v2_visualized(gym.Env):
         # for the visualizer
         self.guesses = []
         self.colors = []
+        self.max_turns = GAME_LENGTH
 
         self.done = True
         self.state: np.ndarray = None
