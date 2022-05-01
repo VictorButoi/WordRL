@@ -24,4 +24,4 @@ if __name__ == "__main__":
         with open(new_config, 'r') as stream:
             new_args = yaml.safe_load(stream)
         args = wdl.setup.merge_dicts(args, new_args)
-    wdl.training.run_experiment/(args)
+    wdl.training.run_experiment(args)
