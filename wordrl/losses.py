@@ -11,8 +11,7 @@ def dqn_mse_loss(batch, gamma, net, target_net):
         next_state_values[dones] = 0.0
         next_state_values = next_state_values.detach()
 
-    expected_state_action_values = next_state_values
-    * game + rewards
+    expected_state_action_values = next_state_values * game + rewards
 
     return nn.MSE()(state_action_values, expected_state_action_values)
 
