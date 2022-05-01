@@ -1,3 +1,9 @@
+from . import envs
+from . import make_config
+from . import agent
+from . import losses
+from . import training
+from . import paths
 from gym.envs.registration import register
 
 register(
@@ -11,9 +17,3 @@ register(
     entry_point='wordrl.envs:WordleEnv_v2_visualized',
     max_episode_steps=200,
 )
-
-from . import training
-from . import losses
-from . import agent
-from . import make_config
-from . import envs

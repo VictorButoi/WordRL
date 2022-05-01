@@ -1,13 +1,10 @@
+import wordrl as wdl
 import pkg_resources
 import gym
 import numpy as np
 import random
+import os
 from typing import Optional
-
-WORDS_PATH = pkg_resources.resource_filename(
-    'data',
-    '5_words.txt'
-)
 
 WORDLE_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 WORD_LENGTH = 5
@@ -28,6 +25,8 @@ def get_words(filename, limit: Optional[int] = None):
         else:
             return words[:limit]
 
+
+WORDS_PATH = os.path.join(wdl.paths.DATA_PATH, "5_words.txt")
 
 WORDS = get_words(WORDS_PATH, 100)
 

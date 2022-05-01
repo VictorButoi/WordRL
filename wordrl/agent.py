@@ -5,9 +5,7 @@ import torch
 from torch import nn
 import gym
 
-from wordle import wordle
-from dqn.experience import SequenceReplay, Experience
-from wordle.state import WordleState
+from wordrl.experience import SequenceReplay, Experience
 
 
 class Agent:
@@ -22,7 +20,7 @@ class Agent:
         self.net = net
         self.action_space = action_space
 
-    def get_action(self, state: WordleState, epsilon: float, device: str) -> int:
+    def get_action(self, state, epsilon: float, device: str) -> int:
         """Using the given network, decide what action to carry out using an epsilon-greedy policy.
 
         Args:
@@ -58,7 +56,8 @@ class EmbeddingChars(nn.Module):
         self.f0 = nn.Sequential(
             nn.Linear(obs_size*emb_size, agent_config["hidden_size"]),
             nn.ReLU(),
-            nn.Linear(agent_config["hidden_size"], agent_config["hidden_size"]),
+            nn.Linear(agent_config["hidden_size"],
+                      agent_config["hidden_size"]),
             nn.ReLU(),
             nn.Linear(agent_config["hidden_size"], word_width),
         )
@@ -70,8 +69,10 @@ class EmbeddingChars(nn.Module):
 
     def forward(self, x):
         emb = self.embedding_layer(x.int())
-        y = self.f0(emb.view(x.shape[0], x.shape[1]*self.embedding_layer.embedding_dim))
-        z = torch.tensordot(y, self.words.to(self.get_device(x)), dims=[(1,), (0,)])
+        y = self.f0(emb.view(x.shape[0], x.shape[1]
+                    * self.embedding_layer.embedding_dim))
+        z = torch.tensordot(y, self.words.to(
+            self.get_device(x)), dims=[(1,), (0,)])
         return nn.Softmax(dim=1)(z)
 
 
@@ -82,13 +83,14 @@ class SumChars(nn.Module):
             obs_size: observation/state size of the environment
             hidden_size: size of hidden layers
         """
-        #, word_list: List[str], hidden_size: int = 256
+        # , word_list: List[str], hidden_size: int = 256
         super().__init__()
         word_width = 26*5
         self.f0 = nn.Sequential(
             nn.Linear(obs_size, agent_config["hidden_size"]),
             nn.ReLU(),
-            nn.Linear(agent_config["hidden_size"], agent_config["hidden_size"]),
+            nn.Linear(agent_config["hidden_size"],
+                      agent_config["hidden_size"]),
             nn.ReLU(),
             nn.Linear(agent_config["hidden_size"], word_width),
         )
@@ -101,6 +103,7 @@ class SumChars(nn.Module):
     def forward(self, x):
         y = self.f0(x.float())
         return torch.tensordot(y, self.words.to(self.get_device(x)), dims=((1,), (0,)))
+
 
 def get_net(obs_size, agent_config):
     if agent_config["type"] == "SumChars":
