@@ -10,8 +10,7 @@ import copy
 
 def run_submitit_job_array(config_dicts, timeout=20, mem=64, num_gpus=1):
     jobs = []
-    executor = submitit.AutoExecutor(
-        folder="/home/vib9/src/UniverSandbox/bash/submitit")
+    executor = submitit.AutoExecutor(folder=os.path.join(wdl.filepaths.FILE_PATHS["ROOT_PATH"],"bash/submitit"))
     executor.update_parameters(timeout_min=timeout, mem_gb=mem,
                                gpus_per_node=num_gpus, slurm_partition="sablab", slurm_wckey="")
     for config in config_dicts:
