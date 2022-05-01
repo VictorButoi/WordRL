@@ -45,11 +45,10 @@ class Agent:
 
 
 class EmbeddingChars(nn.Module):
-    def __init__(self, obs_size: int, n_actions: int, word_list: List[str], hidden_size: int = 256):
+    def __init__(self, obs_size, agent_config):
         """
         Args:
             obs_size: observation/state size of the environment
-            n_actions: number of discrete actions available in the environment
             hidden_size: size of hidden layers
         """
         super().__init__()
@@ -57,11 +56,11 @@ class EmbeddingChars(nn.Module):
         emb_size = 8
         self.embedding_layer = nn.Embedding(obs_size, emb_size)
         self.f0 = nn.Sequential(
-            nn.Linear(obs_size*emb_size, hidden_size),
+            nn.Linear(obs_size*emb_size, agent_config["hidden_size"]),
             nn.ReLU(),
-            nn.Linear(hidden_size, hidden_size),
+            nn.Linear(agent_config["hidden_size"], agent_config["hidden_size"]),
             nn.ReLU(),
-            nn.Linear(hidden_size, word_width),
+            nn.Linear(agent_config["hidden_size"], word_width),
         )
         word_array = np.zeros((word_width, len(word_list)))
         for i, word in enumerate(word_list):
@@ -75,27 +74,23 @@ class EmbeddingChars(nn.Module):
         z = torch.tensordot(y, self.words.to(self.get_device(x)), dims=[(1,), (0,)])
         return nn.Softmax(dim=1)(z)
 
-    def get_device(self, batch) -> str:
-        """Retrieve device currently being used by minibatch."""
-        return batch[0].device.index
-
 
 class SumChars(nn.Module):
-    def __init__(self, obs_size: int, n_actions: int, word_list: List[str], hidden_size: int = 256):
+    def __init__(self, obs_size, agent_config):
         """
         Args:
             obs_size: observation/state size of the environment
-            n_actions: number of discrete actions available in the environment
             hidden_size: size of hidden layers
         """
+        #, word_list: List[str], hidden_size: int = 256
         super().__init__()
         word_width = 26*5
         self.f0 = nn.Sequential(
-            nn.Linear(obs_size, hidden_size),
+            nn.Linear(obs_size, agent_config["hidden_size"]),
             nn.ReLU(),
-            nn.Linear(hidden_size, hidden_size),
+            nn.Linear(agent_config["hidden_size"], agent_config["hidden_size"]),
             nn.ReLU(),
-            nn.Linear(hidden_size, word_width),
+            nn.Linear(agent_config["hidden_size"], word_width),
         )
         word_array = np.zeros((word_width, len(word_list)))
         for i, word in enumerate(word_list):
@@ -107,6 +102,10 @@ class SumChars(nn.Module):
         y = self.f0(x.float())
         return torch.tensordot(y, self.words.to(self.get_device(x)), dims=((1,), (0,)))
 
-    def get_device(self, batch) -> str:
-        """Retrieve device currently being used by minibatch."""
-        return batch[0].device.index
+def get_net(obs_size, agent_config):
+    if agent_config["type"] == "SumChars":
+        return SumChars(obs_size, agent_config)
+    elif agent_config["type"] == "EmbeddingChars":
+        return EmbeddingChars(obs_size, agent_config)
+    else:
+        raise ValueError("Network not configured!")

@@ -22,14 +22,15 @@ def get_freer_gpu():
 def run_experiment(config):
     env = gym.make()
     state = env.reset()
+    obs_size = env.observation_space.shape[0]
+    n_actions = env.action_space.n
 
     num_eps = config["experiment"]["num_episodes"]
     device = get_freer_gpu()
     
-    net = wdl.agent.get_agent(config["agent"])
-    target_net = wdl.agent.get_agent(config["agent"])
-
-    agent = wdl.agents.Agent()
+    net = wdl.agent.get_net(obs_size, config["agent"])
+    target_net = wdl.agent.get_net(obs_size, config["agent"])
+    agent = wdl.agents.Agent(net, env.action_space)
 
 
     dataset = RLDataset(winners=SequenceReplay(config["dataset"]["replay_size"]//2, config["dataset"]["init_winning_replays"]),
@@ -148,18 +149,13 @@ def run_experiment(config):
                 dataset.losers.append(sequence)
                 losses += 1
             
-            #TODO: define what reward is 
-            
-        #TODO: define what reward is 
         rewards += reward
         total_games_played += 1
 
-        #TODO: Make this loss function and some losses.py file get training loss
         loss = wdl.losses.dqn_mse_loss(batch)
         
         #If it is time to sync the old value with a new one
         if global_setep % config["experiment"]["sync_rate"] == 0:
-            #TODO: define a target_network and a net
             target_net.load_state_dict(net.state_dict())
 
 
