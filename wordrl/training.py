@@ -6,6 +6,8 @@ import torch
 
 # misc imports
 import gym
+import os
+import numpy as np
 
 
 def get_freer_gpu():
@@ -25,17 +27,19 @@ def run_experiment(config):
     n_actions = env.action_space.n
 
     num_eps = config["experiment"]["num_episodes"]
-    device = get_freer_gpu()
+    if config["experiment"]["use_gpu"]:
+        device = get_freer_gpu()
+    else:
+        device = torch.device("cpu")
 
-    net = wdl.agent.get_net(obs_size, config["agent"])
-    target_net = wdl.agent.get_net(obs_size, config["agent"])
-    agent = wdl.agents.Agent(net, env.action_space)
+    net = wdl.agent.get_net(obs_size, n_actions, config["agent"])
+    target_net = wdl.agent.get_net(obs_size, n_actions, config["agent"])
+    agent = wdl.agent.Agent(net, env.action_space)
 
-    dataset = wdl.experience.RLDataset(winners=SequenceReplay(config["dataset"]["replay_size"]//2,
-                                                    config["dataset"]["init_winning_replays"]),
-                             losers= wdl.experience.Sequence_Replay(config["dataset"]["replay_size"]//2, sample_size=config["dataset"]["sample_size"]))
+    dataset = wdl.experience.RLDataset(winners=wdl.experience.SequenceReplay(
+        config["dataset"]["replay_size"]//2, config["dataset"]["init_winning_replays"]), losers=wdl.experience.SequenceReplay(config["dataset"]["replay_size"]//2))
 
-    dataloader = torch.utils.data.Dataloader(
+    dataloader = torch.utils.data.DataLoader(
         dataset=dataset, batch_size=config["training"]["batch_size"])
     optimizer = torch.optim.Adam(net.parameters(
     ), lr=config["training"]["lr"], weight_decay=config["training"]["weight_decay"])
@@ -55,14 +59,14 @@ def run_experiment(config):
     # Kind of tricky scheme: Episode = Game
     #
     # Looping to play multiple games of Wordrl
-    for i in range(num_episodes + config["training"]["warmup"]):
+    for i in range(num_eps + config["training"]["warmup"]):
 
         # provide small warmup period
         if i < config["training"]["warmup"]:
             epsilon = 1
         else:
             epsilon = max(config["training"]["eps_end"],
-                          config["training"]["eps_state"] - global_step /
+                          config["training"]["eps_state"] - total_games_played /
                           config["training"]["eps_last_frame"])
 
         # Training step
@@ -85,7 +89,7 @@ def run_experiment(config):
                     new_state, reward, done, _ = env.step(action)
                     # make an experience object out of it
                     exp = wdl.experience.Experience(state.copy(), action,
-                                     reward, new_state.copy(), env.goal_word)
+                                                    reward, new_state.copy(), env.goal_word)
                     # set the new state
                     state = new_state
 
@@ -119,10 +123,10 @@ def run_experiment(config):
                 losses += 1
 
             # If it is time to sync the old value with a new one
-            if global_setep % config["experiment"]["sync_rate"] == 0:
+            if total_games_played % config["experiment"]["sync_rate"] == 0:
                 target_net.load_state_dict(net.state_dict())
 
-            if global_step % config["experiment"]["steps_per_update"] == 0:
+            if total_games_played % config["experiment"]["steps_per_update"] == 0:
                 if len(dataset.winners) > 0:
                     winner = dataset.winners.buffer[-1]
                     game = f"goal: {env.words[winner[0].goal_id]}\n"
@@ -138,17 +142,15 @@ def run_experiment(config):
                 wins = 0
                 losses = 0
                 rewards = 0
-                exp = Experience(state.copy(), action, reward,
-                                 new_state.copy(), env.goal_word)
+                exp = wdl.experience.Experience(state.copy(), action, reward,
+                                                new_state.copy(), env.goal_word)
 
             winning_steps = env.max_turns - state[0]
 
             if reward > 0:
-                dataset.winners.append(sequence)
                 wins += 1
                 winning_steps += winning_steps
             else:
-                dataset.losers.append(sequence)
                 losses += 1
 
             # TODO: define what reward is
@@ -157,19 +159,14 @@ def run_experiment(config):
         rewards += reward
         total_games_played += 1
 
-        # TODO: Make this loss function and some losses.py file get training loss
-
-        rewards += reward
-        total_games_played += 1
-
         loss = wdl.losses.dqn_mse_loss(batch)
 
         # If it is time to sync the old value with a new one
-        if global_step % config["experiment"]["sync_rate"] == 0:
+        if total_games_played % config["experiment"]["sync_rate"] == 0:
             # TODO: define a target_network and a net
             target_net.load_state_dict(net.state_dict())
 
-        if global_step % config["experiment"]["steps_per_update"] == 0:
+        if total_games_played % config["experiment"]["steps_per_update"] == 0:
             if len(dataset.winners) > 0:
                 winner = dataset.winners.buffer[-1]
                 game = f"goal: {env.words[winner[0].goal_id]}\n"

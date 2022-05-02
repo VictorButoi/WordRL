@@ -6,6 +6,7 @@ from torch import nn
 import gym
 
 from wordrl.experience import SequenceReplay, Experience
+from wordrl.envs.wordle_env_v2_visualized import WORDS
 
 
 class Agent:
@@ -86,6 +87,7 @@ class SumChars(nn.Module):
         # , word_list: List[str], hidden_size: int = 256
         super().__init__()
         word_width = 26*5
+        word_list = WORDS
         self.f0 = nn.Sequential(
             nn.Linear(obs_size, agent_config["hidden_size"]),
             nn.ReLU(),
@@ -105,7 +107,7 @@ class SumChars(nn.Module):
         return torch.tensordot(y, self.words.to(self.get_device(x)), dims=((1,), (0,)))
 
 
-def get_net(obs_size, agent_config):
+def get_net(obs_size, n_actions, agent_config):
     if agent_config["type"] == "SumChars":
         return SumChars(obs_size, agent_config)
     elif agent_config["type"] == "EmbeddingChars":
