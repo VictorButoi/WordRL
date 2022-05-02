@@ -12,7 +12,7 @@ training:
     eps_state: 0
     eps_last_frame: 1
     gamma: 0
-    warmup: 0
+    warmup: 1000
 agent:
     type: "SumChars"
     hidden_size: 5 

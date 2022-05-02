@@ -109,8 +109,8 @@ class RLDataset(IterableDataset):
         assert self.sample_size % 2 == 0
 
     def __iter__(self) -> Tuple:
-        xps = self.winners.sample(self.sample_size//2) + \
-            self.losers.sample(self.sample_size//2)
+        xps = self.winners.sample(self.sample_size//2) + self.losers.sample(self.sample_size//2)
+        print(xps)
 
         states, actions, rewards, dones, new_states, _ = zip(*xps)
         rewards = np.array(rewards, dtype=np.float32)
