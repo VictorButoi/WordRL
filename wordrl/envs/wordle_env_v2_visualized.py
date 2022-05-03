@@ -35,7 +35,9 @@ def get_words(filename, limit: Optional[int] = None):
             return words[:limit]
 
 
-WORDS_PATH = os.path.join(wdl.filepaths.FILE_PATHS["ROOT_PATH"], "data/5_words.txt")
+# change to "data/5_words.txt for full word bank"
+WORDS_PATH = os.path.join(
+    wdl.filepaths.FILE_PATHS["ROOT_PATH"], "data/random_words.txt")
 WORDS = get_words(WORDS_PATH)
 
 
