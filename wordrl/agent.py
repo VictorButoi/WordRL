@@ -104,7 +104,7 @@ class SumChars(nn.Module):
 
     def forward(self, x):
         y = self.f0(x.float())
-        return torch.tensordot(y, self.words.to(self.get_device(x)), dims=((1,), (0,)))
+        return torch.tensordot(y, self.words, dims=((1,), (0,)))
 
 
 def get_net(obs_size, n_actions, agent_config):

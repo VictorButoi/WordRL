@@ -128,7 +128,7 @@ class WordleEnv_v2_visualized(gym.Env):
         self.state = np.array([GAME_LENGTH] + [0] * len(WORDLE_CHARS) +
                               [0, 1, 0] * WORD_LENGTH * len(WORDLE_CHARS), dtype=np.int32)
 
-        print("Goal word is : " + self.goal_word)
+        #print("Goal word is : " + self.goal_word)
         return self.state.copy()
 
     def render(self, mode="human"):

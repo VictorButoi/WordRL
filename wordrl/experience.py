@@ -54,11 +54,11 @@ class SequenceReplay:
         capacity: size of the buffer
     """
 
-    def __init__(self, capacity: int, initialize_winning_replays: str = None) -> None:
-        self.capacity = capacity
-        self.buffer = deque(maxlen=capacity)
+    def __init__(self, dataset_config) -> None:
+        self.capacity = dataset_config["replay_size"]//2
+        self.buffer = deque(maxlen=dataset_config["replay_size"]//2)
 
-        if initialize_winning_replays:
+        if dataset_config["init_winning_replays"]:
             with open(initialize_winning_replays, 'rb') as f:
                 init = pickle.load(f)
             self.buffer.extend(init)
@@ -110,7 +110,6 @@ class RLDataset(IterableDataset):
 
     def __iter__(self) -> Tuple:
         xps = self.winners.sample(self.sample_size//2) + self.losers.sample(self.sample_size//2)
-        print(xps)
 
         states, actions, rewards, dones, new_states, _ = zip(*xps)
         rewards = np.array(rewards, dtype=np.float32)

@@ -2,22 +2,24 @@
 dataset:
     replay_size: 0
     init_winning_replays: ""
-    replay_size: 1
+    replay_size: 1000
     sample_size: 10000
+    eps_length: 512
 training:
     batch_size: 1
-    lr: 0.0001
+    lr: 0.001
     weight_decay: 0
-    eps_end: 0
+    eps_start: 1.0
+    eps_end: 0.01
     eps_state: 0
-    eps_last_frame: 1
-    gamma: 0
+    eps_last_frame: 10000
+    gamma: 0.9
     warmup: 1000
 agent:
     type: "SumChars"
-    hidden_size: 5 
+    hidden_size: 256 
 experiment:
-    num_episodes: 1
-    sync_rate: 0
-    steps_per_update: 0
+    num_episodes: 5000
+    sync_rate: 100
+    steps_per_update: 100
     use_gpu: False
