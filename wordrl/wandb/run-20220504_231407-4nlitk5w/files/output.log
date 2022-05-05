@@ -1,0 +1,71 @@
+
+Epoch 0: : 0it [00:00, ?it/s]
+/home/vib9/anaconda3/envs/wordrl/lib/python3.7/site-packages/torch/distributed/_sharded_tensor/__init__.py:10: DeprecationWarning: torch.distributed._sharded_tensor will be deprecated, use torch.distributed._shard.sharded_tensor instead
+  DeprecationWarning
+Global seed set to 123
+/home/vib9/anaconda3/envs/wordrl/lib/python3.7/site-packages/pytorch_lightning/loops/utilities.py:94: PossibleUserWarning: `max_epochs` was not set. Setting it to 1000 epochs. To train without an epoch limit, set `max_epochs=-1`.
+  category=PossibleUserWarning,
+GPU available: True, used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+/home/vib9/anaconda3/envs/wordrl/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py:1815: PossibleUserWarning: GPU available but not used. Set `accelerator` and `devices` using `Trainer(accelerator='gpu', devices=1)`.
+  category=PossibleUserWarning,
+Missing logger folder: /share/sablab/nfs02/users/vib9/WordRL/wordrl/lightning_logs
+  | Name | Type     | Params
+----------------------------------
+0 | net  | SumChars | 223 K
+----------------------------------
+223 K     Trainable params
+0         Non-trainable params
+223 K     Total params
+0.893     Total estimated model params size (MB)
+/home/vib9/anaconda3/envs/wordrl/lib/python3.7/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:245: PossibleUserWarning: The dataloader, train_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 32 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  category=PossibleUserWarning,
+/share/sablab/nfs02/users/vib9/WordRL/wordrl/a2c/agent.py:21: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at  /opt/conda/conda-bld/pytorch_1646755861072/work/torch/csrc/utils/tensor_new.cpp:210.)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Epoch 0: : 1683it [01:27, 19.28it/s, loss=0.443, v_num=0]
+/home/vib9/anaconda3/envs/wordrl/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py:724: UserWarning: Detected KeyboardInterrupt, attempting graceful shutdown...

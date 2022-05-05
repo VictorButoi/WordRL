@@ -1,0 +1,152 @@
+2022-05-04 23:11:17,910 INFO    MainThread:1462204 [internal.py:wandb_internal():93] W&B internal server running at pid: 1462204, started at: 2022-05-04 23:11:17.909775
+2022-05-04 23:11:17,911 INFO    WriterThread:1462204 [datastore.py:open_for_write():75] open: /share/sablab/nfs02/users/vib9/WordRL/wordrl/wandb/run-20220504_231117-8vjkqaum/run-8vjkqaum.wandb
+2022-05-04 23:11:17,914 DEBUG   SenderThread:1462204 [sender.py:send():232] send: header
+2022-05-04 23:11:17,914 DEBUG   SenderThread:1462204 [sender.py:send():232] send: run
+2022-05-04 23:11:18,041 DEBUG   HandlerThread:1462204 [handler.py:handle_request():141] handle_request: check_version
+2022-05-04 23:11:18,051 INFO    SenderThread:1462204 [dir_watcher.py:__init__():166] watching files in: /share/sablab/nfs02/users/vib9/WordRL/wordrl/wandb/run-20220504_231117-8vjkqaum/files
+2022-05-04 23:11:18,051 INFO    SenderThread:1462204 [sender.py:_start_run_threads():814] run started: 8vjkqaum with start time 1651720277
+2022-05-04 23:11:18,051 DEBUG   SenderThread:1462204 [sender.py:send():232] send: summary
+2022-05-04 23:11:18,052 INFO    SenderThread:1462204 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-05-04 23:11:18,052 DEBUG   SenderThread:1462204 [sender.py:send_request():246] send_request: check_version
+2022-05-04 23:11:18,119 DEBUG   HandlerThread:1462204 [handler.py:handle_request():141] handle_request: run_start
+2022-05-04 23:11:18,122 DEBUG   HandlerThread:1462204 [meta.py:__init__():35] meta init
+2022-05-04 23:11:18,123 DEBUG   HandlerThread:1462204 [meta.py:__init__():49] meta init done
+2022-05-04 23:11:18,123 DEBUG   HandlerThread:1462204 [meta.py:probe():209] probe
+2022-05-04 23:11:18,130 DEBUG   HandlerThread:1462204 [meta.py:_setup_git():199] setup git
+2022-05-04 23:11:18,167 DEBUG   HandlerThread:1462204 [meta.py:_setup_git():206] setup git done
+2022-05-04 23:11:18,167 DEBUG   HandlerThread:1462204 [meta.py:_save_pip():53] save pip
+2022-05-04 23:11:18,168 DEBUG   HandlerThread:1462204 [meta.py:_save_pip():67] save pip done
+2022-05-04 23:11:18,168 DEBUG   HandlerThread:1462204 [meta.py:_save_conda():74] save conda
+2022-05-04 23:11:19,056 INFO    Thread-7  :1462204 [dir_watcher.py:_on_file_created():213] file/dir created: /share/sablab/nfs02/users/vib9/WordRL/wordrl/wandb/run-20220504_231117-8vjkqaum/files/requirements.txt
+2022-05-04 23:11:19,057 INFO    Thread-7  :1462204 [dir_watcher.py:_on_file_created():213] file/dir created: /share/sablab/nfs02/users/vib9/WordRL/wordrl/wandb/run-20220504_231117-8vjkqaum/files/wandb-summary.json
+2022-05-04 23:11:19,057 INFO    Thread-7  :1462204 [dir_watcher.py:_on_file_created():213] file/dir created: /share/sablab/nfs02/users/vib9/WordRL/wordrl/wandb/run-20220504_231117-8vjkqaum/files/conda-environment.yaml
+2022-05-04 23:11:24,062 INFO    Thread-7  :1462204 [dir_watcher.py:_on_file_created():213] file/dir created: /share/sablab/nfs02/users/vib9/WordRL/wordrl/wandb/run-20220504_231117-8vjkqaum/files/output.log
+2022-05-04 23:11:26,065 INFO    Thread-7  :1462204 [dir_watcher.py:_on_file_modified():226] file/dir modified: /share/sablab/nfs02/users/vib9/WordRL/wordrl/wandb/run-20220504_231117-8vjkqaum/files/output.log
+2022-05-04 23:11:27,066 INFO    Thread-7  :1462204 [dir_watcher.py:_on_file_modified():226] file/dir modified: /share/sablab/nfs02/users/vib9/WordRL/wordrl/wandb/run-20220504_231117-8vjkqaum/files/output.log
+2022-05-04 23:11:32,578 DEBUG   HandlerThread:1462204 [meta.py:_save_conda():84] save conda done
+2022-05-04 23:11:32,578 DEBUG   HandlerThread:1462204 [meta.py:probe():247] probe done
+2022-05-04 23:11:32,674 DEBUG   HandlerThread:1462204 [handler.py:handle_request():141] handle_request: stop_status
+2022-05-04 23:11:32,674 DEBUG   SenderThread:1462204 [sender.py:send_request():246] send_request: stop_status
+2022-05-04 23:11:32,678 DEBUG   HandlerThread:1462204 [handler.py:handle_request():141] handle_request: poll_exit
+2022-05-04 23:11:32,679 DEBUG   HandlerThread:1462204 [handler.py:handle_request():141] handle_request: poll_exit
+2022-05-04 23:11:32,936 DEBUG   SenderThread:1462204 [sender.py:send():232] send: telemetry
+2022-05-04 23:11:32,936 DEBUG   SenderThread:1462204 [sender.py:send():232] send: config
+2022-05-04 23:11:32,937 DEBUG   SenderThread:1462204 [sender.py:send():232] send: telemetry
+2022-05-04 23:11:32,937 DEBUG   SenderThread:1462204 [sender.py:send():232] send: telemetry
+2022-05-04 23:11:32,938 DEBUG   SenderThread:1462204 [sender.py:send():232] send: exit
+2022-05-04 23:11:32,941 INFO    SenderThread:1462204 [sender.py:send_exit():368] handling exit code: 1
+2022-05-04 23:11:32,942 INFO    SenderThread:1462204 [sender.py:send_exit():370] handling runtime: 14
+2022-05-04 23:11:32,986 INFO    SenderThread:1462204 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-05-04 23:11:32,986 INFO    SenderThread:1462204 [sender.py:send_exit():376] send defer
+2022-05-04 23:11:32,986 DEBUG   SenderThread:1462204 [sender.py:send_request():246] send_request: poll_exit
+2022-05-04 23:11:32,986 DEBUG   HandlerThread:1462204 [handler.py:handle_request():141] handle_request: defer
+2022-05-04 23:11:32,987 INFO    HandlerThread:1462204 [handler.py:handle_request_defer():164] handle defer: 0
+2022-05-04 23:11:32,987 DEBUG   SenderThread:1462204 [sender.py:send_request():246] send_request: poll_exit
+2022-05-04 23:11:32,987 DEBUG   SenderThread:1462204 [sender.py:send():232] send: files
+2022-05-04 23:11:32,988 INFO    SenderThread:1462204 [sender.py:_save_file():946] saving file wandb-metadata.json with policy now
+2022-05-04 23:11:32,989 DEBUG   SenderThread:1462204 [sender.py:send_request():246] send_request: defer
+2022-05-04 23:11:32,989 INFO    SenderThread:1462204 [sender.py:send_request_defer():385] handle sender defer: 0
+2022-05-04 23:11:32,989 INFO    SenderThread:1462204 [sender.py:transition_state():389] send defer: 1
+2022-05-04 23:11:32,990 DEBUG   HandlerThread:1462204 [handler.py:handle_request():141] handle_request: defer
+2022-05-04 23:11:32,990 INFO    HandlerThread:1462204 [handler.py:handle_request_defer():164] handle defer: 1
+2022-05-04 23:11:33,029 DEBUG   SenderThread:1462204 [sender.py:send_request():246] send_request: defer
+2022-05-04 23:11:33,029 INFO    SenderThread:1462204 [sender.py:send_request_defer():385] handle sender defer: 1
+2022-05-04 23:11:33,029 INFO    SenderThread:1462204 [sender.py:transition_state():389] send defer: 2
+2022-05-04 23:11:33,029 DEBUG   SenderThread:1462204 [sender.py:send():232] send: stats
+2022-05-04 23:11:33,030 DEBUG   HandlerThread:1462204 [handler.py:handle_request():141] handle_request: defer
+2022-05-04 23:11:33,030 INFO    HandlerThread:1462204 [handler.py:handle_request_defer():164] handle defer: 2
+2022-05-04 23:11:33,030 DEBUG   SenderThread:1462204 [sender.py:send_request():246] send_request: defer
+2022-05-04 23:11:33,030 INFO    SenderThread:1462204 [sender.py:send_request_defer():385] handle sender defer: 2
+2022-05-04 23:11:33,030 INFO    SenderThread:1462204 [sender.py:transition_state():389] send defer: 3
+2022-05-04 23:11:33,030 DEBUG   HandlerThread:1462204 [handler.py:handle_request():141] handle_request: defer
+2022-05-04 23:11:33,030 INFO    HandlerThread:1462204 [handler.py:handle_request_defer():164] handle defer: 3
+2022-05-04 23:11:33,031 DEBUG   SenderThread:1462204 [sender.py:send_request():246] send_request: defer
+2022-05-04 23:11:33,031 INFO    SenderThread:1462204 [sender.py:send_request_defer():385] handle sender defer: 3
+2022-05-04 23:11:33,031 INFO    SenderThread:1462204 [sender.py:transition_state():389] send defer: 4
+2022-05-04 23:11:33,031 DEBUG   HandlerThread:1462204 [handler.py:handle_request():141] handle_request: defer
+2022-05-04 23:11:33,031 INFO    HandlerThread:1462204 [handler.py:handle_request_defer():164] handle defer: 4
+2022-05-04 23:11:33,031 DEBUG   SenderThread:1462204 [sender.py:send():232] send: summary
+2022-05-04 23:11:33,032 INFO    SenderThread:1462204 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-05-04 23:11:33,033 DEBUG   SenderThread:1462204 [sender.py:send_request():246] send_request: defer
+2022-05-04 23:11:33,033 INFO    SenderThread:1462204 [sender.py:send_request_defer():385] handle sender defer: 4
+2022-05-04 23:11:33,033 INFO    SenderThread:1462204 [sender.py:transition_state():389] send defer: 5
+2022-05-04 23:11:33,033 DEBUG   HandlerThread:1462204 [handler.py:handle_request():141] handle_request: defer
+2022-05-04 23:11:33,033 INFO    HandlerThread:1462204 [handler.py:handle_request_defer():164] handle defer: 5
+2022-05-04 23:11:33,033 DEBUG   SenderThread:1462204 [sender.py:send_request():246] send_request: defer
+2022-05-04 23:11:33,033 INFO    SenderThread:1462204 [sender.py:send_request_defer():385] handle sender defer: 5
+2022-05-04 23:11:33,071 INFO    Thread-7  :1462204 [dir_watcher.py:_on_file_modified():226] file/dir modified: /share/sablab/nfs02/users/vib9/WordRL/wordrl/wandb/run-20220504_231117-8vjkqaum/files/wandb-summary.json
+2022-05-04 23:11:33,071 INFO    Thread-7  :1462204 [dir_watcher.py:_on_file_modified():226] file/dir modified: /share/sablab/nfs02/users/vib9/WordRL/wordrl/wandb/run-20220504_231117-8vjkqaum/files/conda-environment.yaml
+2022-05-04 23:11:33,071 INFO    Thread-7  :1462204 [dir_watcher.py:_on_file_created():213] file/dir created: /share/sablab/nfs02/users/vib9/WordRL/wordrl/wandb/run-20220504_231117-8vjkqaum/files/wandb-metadata.json
+2022-05-04 23:11:33,089 DEBUG   HandlerThread:1462204 [handler.py:handle_request():141] handle_request: poll_exit
+2022-05-04 23:11:33,348 INFO    SenderThread:1462204 [sender.py:transition_state():389] send defer: 6
+2022-05-04 23:11:33,348 DEBUG   SenderThread:1462204 [sender.py:send_request():246] send_request: poll_exit
+2022-05-04 23:11:33,349 DEBUG   HandlerThread:1462204 [handler.py:handle_request():141] handle_request: defer
+2022-05-04 23:11:33,349 INFO    HandlerThread:1462204 [handler.py:handle_request_defer():164] handle defer: 6
+2022-05-04 23:11:33,350 DEBUG   SenderThread:1462204 [sender.py:send_request():246] send_request: defer
+2022-05-04 23:11:33,350 INFO    SenderThread:1462204 [sender.py:send_request_defer():385] handle sender defer: 6
+2022-05-04 23:11:33,350 INFO    SenderThread:1462204 [dir_watcher.py:finish():279] shutting down directory watcher
+2022-05-04 23:11:33,451 DEBUG   HandlerThread:1462204 [handler.py:handle_request():141] handle_request: poll_exit
+2022-05-04 23:11:33,481 INFO    Thread-11 :1462204 [upload_job.py:push():137] Uploaded file /tmp/tmpeddn5oq0wandb/35kf8kxe-wandb-metadata.json
+2022-05-04 23:11:34,073 INFO    SenderThread:1462204 [dir_watcher.py:_on_file_modified():226] file/dir modified: /share/sablab/nfs02/users/vib9/WordRL/wordrl/wandb/run-20220504_231117-8vjkqaum/files/config.yaml
+2022-05-04 23:11:34,074 INFO    SenderThread:1462204 [dir_watcher.py:finish():309] scan: /share/sablab/nfs02/users/vib9/WordRL/wordrl/wandb/run-20220504_231117-8vjkqaum/files
+2022-05-04 23:11:34,075 INFO    SenderThread:1462204 [dir_watcher.py:finish():323] scan save: /share/sablab/nfs02/users/vib9/WordRL/wordrl/wandb/run-20220504_231117-8vjkqaum/files/config.yaml config.yaml
+2022-05-04 23:11:34,075 INFO    SenderThread:1462204 [dir_watcher.py:finish():323] scan save: /share/sablab/nfs02/users/vib9/WordRL/wordrl/wandb/run-20220504_231117-8vjkqaum/files/wandb-summary.json wandb-summary.json
+2022-05-04 23:11:34,075 INFO    SenderThread:1462204 [dir_watcher.py:finish():323] scan save: /share/sablab/nfs02/users/vib9/WordRL/wordrl/wandb/run-20220504_231117-8vjkqaum/files/requirements.txt requirements.txt
+2022-05-04 23:11:34,076 INFO    SenderThread:1462204 [dir_watcher.py:finish():323] scan save: /share/sablab/nfs02/users/vib9/WordRL/wordrl/wandb/run-20220504_231117-8vjkqaum/files/conda-environment.yaml conda-environment.yaml
+2022-05-04 23:11:34,076 INFO    SenderThread:1462204 [dir_watcher.py:finish():323] scan save: /share/sablab/nfs02/users/vib9/WordRL/wordrl/wandb/run-20220504_231117-8vjkqaum/files/output.log output.log
+2022-05-04 23:11:34,076 INFO    SenderThread:1462204 [dir_watcher.py:finish():323] scan save: /share/sablab/nfs02/users/vib9/WordRL/wordrl/wandb/run-20220504_231117-8vjkqaum/files/wandb-metadata.json wandb-metadata.json
+2022-05-04 23:11:34,077 INFO    SenderThread:1462204 [sender.py:transition_state():389] send defer: 7
+2022-05-04 23:11:34,077 DEBUG   SenderThread:1462204 [sender.py:send_request():246] send_request: poll_exit
+2022-05-04 23:11:34,077 DEBUG   HandlerThread:1462204 [handler.py:handle_request():141] handle_request: defer
+2022-05-04 23:11:34,078 INFO    HandlerThread:1462204 [handler.py:handle_request_defer():164] handle defer: 7
+2022-05-04 23:11:34,078 DEBUG   SenderThread:1462204 [sender.py:send_request():246] send_request: defer
+2022-05-04 23:11:34,078 INFO    SenderThread:1462204 [sender.py:send_request_defer():385] handle sender defer: 7
+2022-05-04 23:11:34,078 INFO    SenderThread:1462204 [file_pusher.py:finish():145] shutting down file pusher
+2022-05-04 23:11:34,179 DEBUG   HandlerThread:1462204 [handler.py:handle_request():141] handle_request: poll_exit
+2022-05-04 23:11:34,179 DEBUG   SenderThread:1462204 [sender.py:send_request():246] send_request: poll_exit
+2022-05-04 23:11:34,281 DEBUG   HandlerThread:1462204 [handler.py:handle_request():141] handle_request: poll_exit
+2022-05-04 23:11:34,282 DEBUG   SenderThread:1462204 [sender.py:send_request():246] send_request: poll_exit
+2022-05-04 23:11:34,383 DEBUG   HandlerThread:1462204 [handler.py:handle_request():141] handle_request: poll_exit
+2022-05-04 23:11:34,384 DEBUG   SenderThread:1462204 [sender.py:send_request():246] send_request: poll_exit
+2022-05-04 23:11:34,485 DEBUG   HandlerThread:1462204 [handler.py:handle_request():141] handle_request: poll_exit
+2022-05-04 23:11:34,486 DEBUG   SenderThread:1462204 [sender.py:send_request():246] send_request: poll_exit
+2022-05-04 23:11:34,546 INFO    Thread-12 :1462204 [upload_job.py:push():137] Uploaded file /share/sablab/nfs02/users/vib9/WordRL/wordrl/wandb/run-20220504_231117-8vjkqaum/files/config.yaml
+2022-05-04 23:11:34,576 INFO    Thread-13 :1462204 [upload_job.py:push():137] Uploaded file /share/sablab/nfs02/users/vib9/WordRL/wordrl/wandb/run-20220504_231117-8vjkqaum/files/wandb-summary.json
+2022-05-04 23:11:34,577 INFO    Thread-14 :1462204 [upload_job.py:push():137] Uploaded file /share/sablab/nfs02/users/vib9/WordRL/wordrl/wandb/run-20220504_231117-8vjkqaum/files/requirements.txt
+2022-05-04 23:11:34,578 INFO    Thread-15 :1462204 [upload_job.py:push():137] Uploaded file /share/sablab/nfs02/users/vib9/WordRL/wordrl/wandb/run-20220504_231117-8vjkqaum/files/conda-environment.yaml
+2022-05-04 23:11:34,578 INFO    Thread-16 :1462204 [upload_job.py:push():137] Uploaded file /share/sablab/nfs02/users/vib9/WordRL/wordrl/wandb/run-20220504_231117-8vjkqaum/files/output.log
+2022-05-04 23:11:34,588 DEBUG   HandlerThread:1462204 [handler.py:handle_request():141] handle_request: poll_exit
+2022-05-04 23:11:34,588 DEBUG   SenderThread:1462204 [sender.py:send_request():246] send_request: poll_exit
+2022-05-04 23:11:34,690 DEBUG   HandlerThread:1462204 [handler.py:handle_request():141] handle_request: poll_exit
+2022-05-04 23:11:34,690 DEBUG   SenderThread:1462204 [sender.py:send_request():246] send_request: poll_exit
+2022-05-04 23:11:34,779 INFO    Thread-6  :1462204 [sender.py:transition_state():389] send defer: 8
+2022-05-04 23:11:34,780 DEBUG   HandlerThread:1462204 [handler.py:handle_request():141] handle_request: defer
+2022-05-04 23:11:34,780 INFO    HandlerThread:1462204 [handler.py:handle_request_defer():164] handle defer: 8
+2022-05-04 23:11:34,780 DEBUG   SenderThread:1462204 [sender.py:send_request():246] send_request: defer
+2022-05-04 23:11:34,780 INFO    SenderThread:1462204 [sender.py:send_request_defer():385] handle sender defer: 8
+2022-05-04 23:11:34,792 DEBUG   HandlerThread:1462204 [handler.py:handle_request():141] handle_request: poll_exit
+2022-05-04 23:11:35,001 INFO    SenderThread:1462204 [sender.py:transition_state():389] send defer: 9
+2022-05-04 23:11:35,001 DEBUG   SenderThread:1462204 [sender.py:send_request():246] send_request: poll_exit
+2022-05-04 23:11:35,002 DEBUG   HandlerThread:1462204 [handler.py:handle_request():141] handle_request: defer
+2022-05-04 23:11:35,002 INFO    HandlerThread:1462204 [handler.py:handle_request_defer():164] handle defer: 9
+2022-05-04 23:11:35,003 DEBUG   SenderThread:1462204 [sender.py:send_request():246] send_request: defer
+2022-05-04 23:11:35,003 INFO    SenderThread:1462204 [sender.py:send_request_defer():385] handle sender defer: 9
+2022-05-04 23:11:35,003 INFO    SenderThread:1462204 [sender.py:transition_state():389] send defer: 10
+2022-05-04 23:11:35,004 DEBUG   HandlerThread:1462204 [handler.py:handle_request():141] handle_request: defer
+2022-05-04 23:11:35,004 INFO    HandlerThread:1462204 [handler.py:handle_request_defer():164] handle defer: 10
+2022-05-04 23:11:35,004 DEBUG   SenderThread:1462204 [sender.py:send():232] send: final
+2022-05-04 23:11:35,005 DEBUG   SenderThread:1462204 [sender.py:send():232] send: footer
+2022-05-04 23:11:35,005 DEBUG   SenderThread:1462204 [sender.py:send_request():246] send_request: defer
+2022-05-04 23:11:35,005 INFO    SenderThread:1462204 [sender.py:send_request_defer():385] handle sender defer: 10
+2022-05-04 23:11:35,104 DEBUG   HandlerThread:1462204 [handler.py:handle_request():141] handle_request: poll_exit
+2022-05-04 23:11:35,104 DEBUG   SenderThread:1462204 [sender.py:send_request():246] send_request: poll_exit
+2022-05-04 23:11:35,104 INFO    SenderThread:1462204 [file_pusher.py:join():150] waiting for file pusher
+2022-05-04 23:11:35,406 DEBUG   HandlerThread:1462204 [handler.py:handle_request():141] handle_request: sampled_history
+2022-05-04 23:11:35,407 DEBUG   HandlerThread:1462204 [handler.py:handle_request():141] handle_request: get_summary
+2022-05-04 23:11:35,408 DEBUG   HandlerThread:1462204 [handler.py:handle_request():141] handle_request: shutdown
+2022-05-04 23:11:35,408 INFO    HandlerThread:1462204 [handler.py:finish():806] shutting down handler
+2022-05-04 23:11:36,005 INFO    WriterThread:1462204 [datastore.py:close():279] close: /share/sablab/nfs02/users/vib9/WordRL/wordrl/wandb/run-20220504_231117-8vjkqaum/run-8vjkqaum.wandb
+2022-05-04 23:11:36,305 INFO    SenderThread:1462204 [sender.py:finish():1106] shutting down sender
+2022-05-04 23:11:36,305 INFO    SenderThread:1462204 [file_pusher.py:finish():145] shutting down file pusher
+2022-05-04 23:11:36,305 INFO    SenderThread:1462204 [file_pusher.py:join():150] waiting for file pusher
+2022-05-04 23:11:36,308 INFO    MainThread:1462204 [internal.py:handle_exit():80] Internal process exited

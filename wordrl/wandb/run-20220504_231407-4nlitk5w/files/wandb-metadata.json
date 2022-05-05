@@ -1,0 +1,24 @@
+{
+    "os": "Linux-5.4.0-105-generic-x86_64-with-debian-bullseye-sid",
+    "python": "3.7.5",
+    "heartbeatAt": "2022-05-05T03:14:08.711588",
+    "startedAt": "2022-05-05T03:14:07.775329",
+    "docker": null,
+    "gpu": "NVIDIA RTX A6000",
+    "gpu_count": 1,
+    "cpu_count": 32,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "a2c_train.py",
+    "codePath": "wordrl/a2c_train.py",
+    "git": {
+        "remote": "git@github.com:VictorButoi/WordRL",
+        "commit": "f7e3c676bc56791682aff5c9b351dcdeec7f001d"
+    },
+    "email": "vib9@cornell.edu",
+    "root": "/share/sablab/nfs02/users/vib9/WordRL",
+    "host": "sablab-gpu-12.ece.cornell.edu",
+    "username": "vib9",
+    "executable": "/home/vib9/anaconda3/envs/wordrl/bin/python"
+}
