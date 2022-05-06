@@ -1,0 +1,966 @@
+2022-05-05 19:42:55,316 INFO    MainThread:72722 [internal.py:wandb_internal():93] W&B internal server running at pid: 72722, started at: 2022-05-05 19:42:55.316726
+2022-05-05 19:42:55,318 INFO    WriterThread:72722 [datastore.py:open_for_write():75] open: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/run-2wood8s4.wandb
+2022-05-05 19:42:55,319 DEBUG   SenderThread:72722 [sender.py:send():232] send: header
+2022-05-05 19:42:55,319 DEBUG   SenderThread:72722 [sender.py:send():232] send: run
+2022-05-05 19:42:55,469 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: check_version
+2022-05-05 19:42:55,474 INFO    SenderThread:72722 [dir_watcher.py:__init__():166] watching files in: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files
+2022-05-05 19:42:55,474 INFO    SenderThread:72722 [sender.py:_start_run_threads():814] run started: 2wood8s4 with start time 1651794174
+2022-05-05 19:42:55,474 DEBUG   SenderThread:72722 [sender.py:send():232] send: summary
+2022-05-05 19:42:55,475 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-05-05 19:42:55,475 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: check_version
+2022-05-05 19:42:55,576 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: run_start
+2022-05-05 19:42:55,578 DEBUG   HandlerThread:72722 [meta.py:__init__():35] meta init
+2022-05-05 19:42:55,578 DEBUG   HandlerThread:72722 [meta.py:__init__():49] meta init done
+2022-05-05 19:42:55,578 DEBUG   HandlerThread:72722 [meta.py:probe():209] probe
+2022-05-05 19:42:55,579 DEBUG   HandlerThread:72722 [meta.py:_setup_git():199] setup git
+2022-05-05 19:42:55,619 DEBUG   HandlerThread:72722 [meta.py:_setup_git():206] setup git done
+2022-05-05 19:42:55,620 DEBUG   HandlerThread:72722 [meta.py:_save_pip():53] save pip
+2022-05-05 19:42:55,620 DEBUG   HandlerThread:72722 [meta.py:_save_pip():67] save pip done
+2022-05-05 19:42:55,620 DEBUG   HandlerThread:72722 [meta.py:_save_conda():74] save conda
+2022-05-05 19:42:56,482 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/conda-environment.yaml
+2022-05-05 19:42:56,483 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/requirements.txt
+2022-05-05 19:42:56,483 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/wandb-summary.json
+2022-05-05 19:42:56,826 DEBUG   HandlerThread:72722 [meta.py:_save_conda():84] save conda done
+2022-05-05 19:42:56,826 DEBUG   HandlerThread:72722 [meta.py:probe():247] probe done
+2022-05-05 19:42:56,861 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:42:56,861 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file wandb-metadata.json with policy now
+2022-05-05 19:42:56,864 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: stop_status
+2022-05-05 19:42:56,864 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: stop_status
+2022-05-05 19:42:57,954 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:42:57,955 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:42:57,958 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/conda-environment.yaml
+2022-05-05 19:42:57,958 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/wandb-metadata.json
+2022-05-05 19:42:57,958 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_0_efe169b7590f1b3d1986.table.json
+2022-05-05 19:42:57,958 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:42:57,958 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:42:57,958 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media
+2022-05-05 19:42:58,009 DEBUG   SenderThread:72722 [sender.py:send():232] send: telemetry
+2022-05-05 19:42:58,009 DEBUG   SenderThread:72722 [sender.py:send():232] send: config
+2022-05-05 19:42:58,009 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:42:58,416 INFO    Thread-11 :72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/astaqzpv-wandb-metadata.json
+2022-05-05 19:42:59,504 INFO    Thread-13 :72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/4a/4feedb37a5dc526a7695024e52f585
+2022-05-05 19:42:59,971 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:43:00,157 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:00,238 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_loss - {'id': 'QXJ0aWZhY3Q6MTIzNDQxMzE2', 'digest': 'df0b0a7f054415ebd468646cd05e8703', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk1', 'latestArtifact': None}, 'version': 'latest'}
+2022-05-05 19:43:00,238 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:43:00,238 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_loss_0_efe169b7590f1b3d1986.table.json with policy now
+2022-05-05 19:43:00,238 DEBUG   SenderThread:72722 [sender.py:send():232] send: history
+2022-05-05 19:43:00,239 DEBUG   SenderThread:72722 [sender.py:send():232] send: summary
+2022-05-05 19:43:00,240 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-05-05 19:43:00,240 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:43:00,276 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:00,283 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:43:00,691 INFO    Thread-14 :72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/qnkp28s7-media/table/last_loss_0_efe169b7590f1b3d1986.table.json
+2022-05-05 19:43:00,972 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/wandb-summary.json
+2022-05-05 19:43:00,972 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_1_480b4fcc9788e2ac4eb1.table.json
+2022-05-05 19:43:00,972 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_1_5b39c64291ee2cc575ca.table.json
+2022-05-05 19:43:00,972 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:01,046 INFO    Thread-16 :72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/73/0de5fe8ad031dace8275052683c40c
+2022-05-05 19:43:01,826 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_win - {'id': 'QXJ0aWZhY3Q6MTIzNDQxMzI0', 'digest': 'af40440fa4e88965e3f51393caca05c5', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk2', 'latestArtifact': None}, 'version': 'latest'}
+2022-05-05 19:43:01,826 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:43:01,826 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_win_1_5b39c64291ee2cc575ca.table.json with policy now
+2022-05-05 19:43:01,827 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:43:01,973 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:43:02,267 INFO    Thread-17 :72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/5bu6o56d-media/table/last_win_1_5b39c64291ee2cc575ca.table.json
+2022-05-05 19:43:02,711 INFO    Thread-19 :72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/16/143b43580a733e12ca2d64d9d2039c
+2022-05-05 19:43:03,573 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_loss - {'id': 'QXJ0aWZhY3Q6MTIzNDQxMzMz', 'digest': '7eb7482697808822c85c828e49cc27d9', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk1', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxMzE2', 'versionIndex': 0}}, 'version': 'latest'}
+2022-05-05 19:43:03,574 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:43:03,574 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_loss_1_480b4fcc9788e2ac4eb1.table.json with policy now
+2022-05-05 19:43:03,574 DEBUG   SenderThread:72722 [sender.py:send():232] send: history
+2022-05-05 19:43:03,575 DEBUG   SenderThread:72722 [sender.py:send():232] send: summary
+2022-05-05 19:43:03,575 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-05-05 19:43:03,986 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:43:03,987 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/wandb-summary.json
+2022-05-05 19:43:04,026 INFO    Thread-20 :72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/t74n3ai6-media/table/last_loss_1_480b4fcc9788e2ac4eb1.table.json
+2022-05-05 19:43:05,485 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:05,485 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:43:05,607 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:05,617 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:43:05,994 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_2_6585a6f39da12f621361.table.json
+2022-05-05 19:43:05,995 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_2_14055994ad83d58718a7.table.json
+2022-05-05 19:43:05,995 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:06,329 INFO    Thread-22 :72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/f8/1721896dcdba55f65b94ae9b94f3b4
+2022-05-05 19:43:06,903 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:07,000 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_3_12450d71b9f502ca219a.table.json
+2022-05-05 19:43:07,000 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:07,022 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:07,031 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:43:07,178 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_win - {'id': 'QXJ0aWZhY3Q6MTIzNDQxMzQ1', 'digest': 'fb5f76aa7edc3419c3a3c7580980632b', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk2', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxMzI0', 'versionIndex': 0}}, 'version': 'latest'}
+2022-05-05 19:43:07,179 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:43:07,179 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_win_2_14055994ad83d58718a7.table.json with policy now
+2022-05-05 19:43:07,179 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:43:07,710 INFO    Thread-23 :72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/2wot8ui5-media/table/last_win_2_14055994ad83d58718a7.table.json
+2022-05-05 19:43:08,005 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:43:08,005 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_3_4efea344a5796061ba94.table.json
+2022-05-05 19:43:08,006 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:08,045 INFO    Thread-25 :72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/74/8499406ff52706ff5aa3126537f6cb
+2022-05-05 19:43:08,585 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:08,713 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:08,725 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:43:09,009 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_4_60e39ffbee256ac81b3d.table.json
+2022-05-05 19:43:09,009 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_4_1e9b017c79a61aa7895a.table.json
+2022-05-05 19:43:09,010 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:09,520 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_loss - {'id': 'QXJ0aWZhY3Q6MTIzNDQxMzUx', 'digest': 'ac6d5f98a14566bb949b121ea469f1d1', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk1', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxMzMz', 'versionIndex': 1}}, 'version': 'latest'}
+2022-05-05 19:43:09,520 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:43:09,520 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_loss_2_6585a6f39da12f621361.table.json with policy now
+2022-05-05 19:43:09,521 DEBUG   SenderThread:72722 [sender.py:send():232] send: history
+2022-05-05 19:43:09,521 DEBUG   SenderThread:72722 [sender.py:send():232] send: summary
+2022-05-05 19:43:09,524 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-05-05 19:43:09,524 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:43:10,011 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:43:10,011 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/wandb-summary.json
+2022-05-05 19:43:10,046 INFO    Thread-26 :72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/358f0dk9-media/table/last_loss_2_6585a6f39da12f621361.table.json
+2022-05-05 19:43:10,152 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:10,274 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:10,279 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:43:10,759 INFO    Thread-28 :72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/94/bb86445128bb751cff087e610033b2
+2022-05-05 19:43:11,016 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_5_060b2d8d87dc1597fe64.table.json
+2022-05-05 19:43:11,017 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_5_4b3d09692f96024aaff2.table.json
+2022-05-05 19:43:11,017 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:11,681 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:11,809 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_win - {'id': 'QXJ0aWZhY3Q6MTIzNDQxMzU5', 'digest': '28a583dfaf329fdc1d36c1cd6a428d96', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk2', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxMzQ1', 'versionIndex': 1}}, 'version': 'latest'}
+2022-05-05 19:43:11,810 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:43:11,810 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_win_3_12450d71b9f502ca219a.table.json with policy now
+2022-05-05 19:43:11,810 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:43:11,830 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:11,839 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:43:12,022 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:43:12,022 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_6_7ad3bd3597a8cbdaa333.table.json
+2022-05-05 19:43:12,022 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_6_77d72c8e434b433a3227.table.json
+2022-05-05 19:43:12,022 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:12,601 INFO    Thread-29 :72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/1vo5jc1i-media/table/last_win_3_12450d71b9f502ca219a.table.json
+2022-05-05 19:43:13,015 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: stop_status
+2022-05-05 19:43:13,125 INFO    Thread-31 :72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/aa/7c3b17b4242fc6e257eeb732a8ff0c
+2022-05-05 19:43:13,256 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:13,413 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:13,423 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:43:14,009 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_loss - {'id': 'QXJ0aWZhY3Q6MTIzNDQxMzY0', 'digest': 'e013db4e84026004313d68cca7f23c3d', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk1', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxMzUx', 'versionIndex': 2}}, 'version': 'latest'}
+2022-05-05 19:43:14,009 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:43:14,009 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_loss_3_4efea344a5796061ba94.table.json with policy now
+2022-05-05 19:43:14,009 DEBUG   SenderThread:72722 [sender.py:send():232] send: history
+2022-05-05 19:43:14,009 DEBUG   SenderThread:72722 [sender.py:send():232] send: summary
+2022-05-05 19:43:14,010 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-05-05 19:43:14,010 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:43:14,033 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:43:14,033 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/wandb-summary.json
+2022-05-05 19:43:14,033 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_7_5ccbd5e22bc502ac6b1d.table.json
+2022-05-05 19:43:14,033 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_7_87a09e819e8f6a6d3f07.table.json
+2022-05-05 19:43:14,033 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:14,698 INFO    Thread-32 :72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/t4igadm1-media/table/last_loss_3_4efea344a5796061ba94.table.json
+2022-05-05 19:43:14,831 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:14,949 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:14,959 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:43:15,038 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_8_c57c323cc001cd8db7aa.table.json
+2022-05-05 19:43:15,038 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_8_12c9d9653f5fe5ed866b.table.json
+2022-05-05 19:43:15,039 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:15,452 INFO    Thread-34 :72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/f4/8b43e990f105a7f82498f5a13d40ff
+2022-05-05 19:43:16,044 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:43:16,272 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_win - {'id': 'QXJ0aWZhY3Q6MTIzNDQxMzcw', 'digest': '858be7b0efcaa2f4dcc4fd8b888313c3', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk2', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxMzU5', 'versionIndex': 2}}, 'version': 'latest'}
+2022-05-05 19:43:16,272 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:43:16,272 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_win_4_1e9b017c79a61aa7895a.table.json with policy now
+2022-05-05 19:43:16,272 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:43:16,372 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:16,492 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:16,499 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:43:16,743 INFO    Thread-35 :72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/3tea87b2-media/table/last_win_4_1e9b017c79a61aa7895a.table.json
+2022-05-05 19:43:17,049 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_9_57bc2abf1bcb0ab0c950.table.json
+2022-05-05 19:43:17,049 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_9_a078c968b13c9f051175.table.json
+2022-05-05 19:43:17,049 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:17,319 INFO    Thread-37 :72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/89/187ec86a1c329aa1f2acfc2c933c14
+2022-05-05 19:43:17,811 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:17,922 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:17,930 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:43:18,055 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:43:18,055 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_10_7dd4a3e9824da037c368.table.json
+2022-05-05 19:43:18,055 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_10_c015152ff049c445cc29.table.json
+2022-05-05 19:43:18,055 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:18,368 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_loss - {'id': 'QXJ0aWZhY3Q6MTIzNDQxMzc5', 'digest': '81b4fa15479fa214110487cf36aa027a', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk1', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxMzY0', 'versionIndex': 3}}, 'version': 'latest'}
+2022-05-05 19:43:18,368 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:43:18,368 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_loss_4_60e39ffbee256ac81b3d.table.json with policy now
+2022-05-05 19:43:18,368 DEBUG   SenderThread:72722 [sender.py:send():232] send: history
+2022-05-05 19:43:18,369 DEBUG   SenderThread:72722 [sender.py:send():232] send: summary
+2022-05-05 19:43:18,369 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-05-05 19:43:18,369 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:43:18,840 INFO    Thread-38 :72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/278wlm62-media/table/last_loss_4_60e39ffbee256ac81b3d.table.json
+2022-05-05 19:43:19,056 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/wandb-summary.json
+2022-05-05 19:43:19,233 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:19,650 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:19,666 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:43:19,672 INFO    Thread-40 :72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/da/7ab111a0774f41e0d750027231d5b1
+2022-05-05 19:43:20,062 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:43:20,062 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_11_e06c098932f9af68e360.table.json
+2022-05-05 19:43:20,062 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_11_09c65bd64fef2cc22d1e.table.json
+2022-05-05 19:43:20,062 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:20,858 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_win - {'id': 'QXJ0aWZhY3Q6MTIzNDQxMzg4', 'digest': '8bbb88d8ab46e351aa714c186ca94086', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk2', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxMzcw', 'versionIndex': 3}}, 'version': 'latest'}
+2022-05-05 19:43:20,859 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:43:20,859 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_win_5_060b2d8d87dc1597fe64.table.json with policy now
+2022-05-05 19:43:20,859 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:43:20,983 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:21,068 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_12_ccc5569aaa8452510543.table.json
+2022-05-05 19:43:21,068 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:21,106 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:21,115 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:43:21,336 INFO    Thread-41 :72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/1tsnyf6z-media/table/last_win_5_060b2d8d87dc1597fe64.table.json
+2022-05-05 19:43:21,906 INFO    Thread-43 :72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/49/5bb95c0fd93d4e3bf6ea5d93f65075
+2022-05-05 19:43:22,073 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:43:22,073 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_12_d4f6cfb6aae16cb1fe1e.table.json
+2022-05-05 19:43:22,073 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:22,848 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_loss - {'id': 'QXJ0aWZhY3Q6MTIzNDQxMzk1', 'digest': 'f106886711ca6d327c9c98e536dcc7a2', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk1', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxMzc5', 'versionIndex': 4}}, 'version': 'latest'}
+2022-05-05 19:43:22,849 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:43:22,849 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_loss_5_4b3d09692f96024aaff2.table.json with policy now
+2022-05-05 19:43:22,850 DEBUG   SenderThread:72722 [sender.py:send():232] send: history
+2022-05-05 19:43:22,850 DEBUG   SenderThread:72722 [sender.py:send():232] send: summary
+2022-05-05 19:43:22,852 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-05-05 19:43:22,853 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:43:23,084 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/wandb-summary.json
+2022-05-05 19:43:23,100 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:23,615 INFO    Thread-44 :72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/2vewt7wa-media/table/last_loss_5_4b3d09692f96024aaff2.table.json
+2022-05-05 19:43:23,616 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:23,627 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:43:24,059 INFO    Thread-46 :72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/5a/6d9865953a37deaf41c0a5a1d2267f
+2022-05-05 19:43:24,087 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:43:24,087 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_13_55186af1a204056fbac0.table.json
+2022-05-05 19:43:24,087 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_13_3cf98300262245f8de48.table.json
+2022-05-05 19:43:24,087 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:25,054 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_win - {'id': 'QXJ0aWZhY3Q6MTIzNDQxMzk5', 'digest': 'da0f0b798531ab8cb5af21221019154b', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk2', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxMzg4', 'versionIndex': 4}}, 'version': 'latest'}
+2022-05-05 19:43:25,054 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:43:25,054 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_win_6_77d72c8e434b433a3227.table.json with policy now
+2022-05-05 19:43:25,055 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:43:25,113 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:25,269 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:25,278 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:43:25,489 INFO    Thread-47 :72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/8bzuswm5-media/table/last_win_6_77d72c8e434b433a3227.table.json
+2022-05-05 19:43:26,092 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:43:26,092 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_14_34929a8fa1693d43a12a.table.json
+2022-05-05 19:43:26,092 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_14_63f34180ab09544788ed.table.json
+2022-05-05 19:43:26,093 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:26,545 INFO    Thread-49 :72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/8a/a20302a20bd5dc5be959e9589a5153
+2022-05-05 19:43:26,588 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:26,731 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:26,741 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:43:27,095 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_15_ded8e29c55452d95d3e2.table.json
+2022-05-05 19:43:27,095 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_15_02033a36af1c9b6f58b1.table.json
+2022-05-05 19:43:27,095 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:27,411 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_loss - {'id': 'QXJ0aWZhY3Q6MTIzNDQxNDA3', 'digest': 'c782a55f612afc3a70892a022bc94100', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk1', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxMzk1', 'versionIndex': 5}}, 'version': 'latest'}
+2022-05-05 19:43:27,539 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:43:27,539 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_loss_6_7ad3bd3597a8cbdaa333.table.json with policy now
+2022-05-05 19:43:27,539 DEBUG   SenderThread:72722 [sender.py:send():232] send: history
+2022-05-05 19:43:27,539 DEBUG   SenderThread:72722 [sender.py:send():232] send: summary
+2022-05-05 19:43:27,540 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-05-05 19:43:27,540 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: stop_status
+2022-05-05 19:43:27,647 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:43:28,014 INFO    Thread-50 :72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/npkk597i-media/table/last_loss_6_7ad3bd3597a8cbdaa333.table.json
+2022-05-05 19:43:28,043 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:28,101 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/config.yaml
+2022-05-05 19:43:28,101 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:43:28,101 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/wandb-summary.json
+2022-05-05 19:43:28,101 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_16_1928a2d4df94bd64d210.table.json
+2022-05-05 19:43:28,102 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:28,154 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:28,162 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:43:28,486 INFO    Thread-52 :72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/29/1f5b3c1e6f005698c567a14fa0b86d
+2022-05-05 19:43:29,106 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_16_b048e4d5d9038b3b6c4e.table.json
+2022-05-05 19:43:29,107 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:29,234 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_win - {'id': 'QXJ0aWZhY3Q6MTIzNDQxNDE0', 'digest': 'a09dca8a8ce7862d6696476251b34426', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk2', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxMzk5', 'versionIndex': 5}}, 'version': 'latest'}
+2022-05-05 19:43:29,235 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:43:29,235 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_win_7_87a09e819e8f6a6d3f07.table.json with policy now
+2022-05-05 19:43:29,235 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:43:29,444 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:29,559 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:29,567 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:43:29,650 INFO    Thread-53 :72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/jtv8iwt7-media/table/last_win_7_87a09e819e8f6a6d3f07.table.json
+2022-05-05 19:43:30,285 INFO    Thread-55 :72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/76/772b4cdb038534abe37676df991458
+2022-05-05 19:43:30,286 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:43:30,286 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_17_22385149a8026ea20883.table.json
+2022-05-05 19:43:30,288 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_17_705c380c79dd97e52af1.table.json
+2022-05-05 19:43:30,288 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:30,864 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:30,990 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:31,000 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:43:31,102 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_loss - {'id': 'QXJ0aWZhY3Q6MTIzNDQxNDIx', 'digest': 'ec3c23420d74fe6cdaef7fce87de2fb6', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk1', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxNDA3', 'versionIndex': 6}}, 'version': 'latest'}
+2022-05-05 19:43:31,102 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:43:31,102 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_loss_7_5ccbd5e22bc502ac6b1d.table.json with policy now
+2022-05-05 19:43:31,102 DEBUG   SenderThread:72722 [sender.py:send():232] send: history
+2022-05-05 19:43:31,102 DEBUG   SenderThread:72722 [sender.py:send():232] send: summary
+2022-05-05 19:43:31,103 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-05-05 19:43:31,103 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:43:31,289 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/wandb-summary.json
+2022-05-05 19:43:31,289 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_18_72212e2e602f6eda25b8.table.json
+2022-05-05 19:43:31,289 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_18_98fce1400f19dd19b02f.table.json
+2022-05-05 19:43:31,289 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:31,508 INFO    Thread-56 :72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/1p7kbaj8-media/table/last_loss_7_5ccbd5e22bc502ac6b1d.table.json
+2022-05-05 19:43:31,934 INFO    Thread-58 :72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/f1/b646814ea2301879c663bfb3c9ed3c
+2022-05-05 19:43:32,285 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:32,292 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:43:32,292 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_19_76dfea5e17e8a2cc539e.table.json
+2022-05-05 19:43:32,292 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:32,397 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:32,406 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:43:32,761 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_win - {'id': 'QXJ0aWZhY3Q6MTIzNDQxNDI5', 'digest': 'f052b39b3cfd206e440b0cf86360ed76', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk2', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxNDE0', 'versionIndex': 6}}, 'version': 'latest'}
+2022-05-05 19:43:32,761 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:43:32,761 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_win_8_c57c323cc001cd8db7aa.table.json with policy now
+2022-05-05 19:43:32,762 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:43:33,022 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: stop_status
+2022-05-05 19:43:33,219 INFO    Thread-59 :72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/1zhdd497-media/table/last_win_8_c57c323cc001cd8db7aa.table.json
+2022-05-05 19:43:33,297 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_19_df53bc8ad3c297a32355.table.json
+2022-05-05 19:43:33,298 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:33,527 INFO    Thread-61 :72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/27/5ab3be60ae5cdb8ff1cae12c821cf2
+2022-05-05 19:43:33,684 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:33,795 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:33,802 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:43:34,303 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:43:34,303 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_20_b619f8808b2f57adce38.table.json
+2022-05-05 19:43:34,303 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_20_6b75c026e9058ddf84e5.table.json
+2022-05-05 19:43:34,304 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:34,386 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_loss - {'id': 'QXJ0aWZhY3Q6MTIzNDQxNDM1', 'digest': '5192d0a5575879c38d58ede5f580ef65', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk1', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxNDIx', 'versionIndex': 7}}, 'version': 'latest'}
+2022-05-05 19:43:34,386 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:43:34,386 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_loss_8_12c9d9653f5fe5ed866b.table.json with policy now
+2022-05-05 19:43:34,387 DEBUG   SenderThread:72722 [sender.py:send():232] send: history
+2022-05-05 19:43:34,387 DEBUG   SenderThread:72722 [sender.py:send():232] send: summary
+2022-05-05 19:43:34,387 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-05-05 19:43:34,388 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:43:34,785 INFO    Thread-62 :72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/bae4l91f-media/table/last_loss_8_12c9d9653f5fe5ed866b.table.json
+2022-05-05 19:43:35,093 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:35,213 INFO    Thread-64 :72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/a1/16c87e30d33ce6bdc03a866010d253
+2022-05-05 19:43:35,213 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:35,222 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:43:35,309 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/wandb-summary.json
+2022-05-05 19:43:35,309 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_21_a678fe3d707a27fec04c.table.json
+2022-05-05 19:43:35,309 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_21_375550f054618cab3162.table.json
+2022-05-05 19:43:35,309 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:36,130 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_win - {'id': 'QXJ0aWZhY3Q6MTIzNDQxNDQw', 'digest': 'ba6d656f3762cd9266494956fa32091c', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk2', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxNDI5', 'versionIndex': 7}}, 'version': 'latest'}
+2022-05-05 19:43:36,130 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:43:36,130 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_win_9_57bc2abf1bcb0ab0c950.table.json with policy now
+2022-05-05 19:43:36,130 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:43:36,314 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:43:36,520 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:36,569 INFO    Thread-65 :72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/37o7h88h-media/table/last_win_9_57bc2abf1bcb0ab0c950.table.json
+2022-05-05 19:43:36,659 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:36,669 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:43:37,005 INFO    Thread-67 :72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/bc/61219f278909df43fc995fabd6aca7
+2022-05-05 19:43:37,320 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_22_174a03bf27728c363282.table.json
+2022-05-05 19:43:37,320 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_22_25802520485508ccdd6c.table.json
+2022-05-05 19:43:37,321 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:37,830 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_loss - {'id': 'QXJ0aWZhY3Q6MTIzNDQxNDQ1', 'digest': '0048b167ba28d9a1bd8ec45a67ca5ed9', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk1', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxNDM1', 'versionIndex': 8}}, 'version': 'latest'}
+2022-05-05 19:43:37,830 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:43:37,830 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_loss_9_a078c968b13c9f051175.table.json with policy now
+2022-05-05 19:43:37,831 DEBUG   SenderThread:72722 [sender.py:send():232] send: history
+2022-05-05 19:43:37,831 DEBUG   SenderThread:72722 [sender.py:send():232] send: summary
+2022-05-05 19:43:37,831 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-05-05 19:43:37,831 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:43:38,011 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:38,126 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:38,135 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:43:38,323 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:43:38,323 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/wandb-summary.json
+2022-05-05 19:43:38,323 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_23_9518e5957537e8a10609.table.json
+2022-05-05 19:43:38,324 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_23_b4091f7529ae54ac653d.table.json
+2022-05-05 19:43:38,324 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:38,333 INFO    Thread-68 :72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/2h4jp742-media/table/last_loss_9_a078c968b13c9f051175.table.json
+2022-05-05 19:43:38,856 INFO    Thread-70 :72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/b7/6e3240764ce5496d92a56b0c4a9294
+2022-05-05 19:43:39,433 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:39,589 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:39,601 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:43:39,694 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_win - {'id': 'QXJ0aWZhY3Q6MTIzNDQxNDU1', 'digest': '16dbfe5bd88cdf7c377d26bb6a68f38f', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk2', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxNDQw', 'versionIndex': 8}}, 'version': 'latest'}
+2022-05-05 19:43:39,694 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:43:39,694 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_win_10_7dd4a3e9824da037c368.table.json with policy now
+2022-05-05 19:43:39,694 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:43:40,146 INFO    Thread-71 :72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/13blgb8p-media/table/last_win_10_7dd4a3e9824da037c368.table.json
+2022-05-05 19:43:40,330 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:43:40,331 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_24_90fcbbf73c019c7f09bf.table.json
+2022-05-05 19:43:40,331 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_24_9c078c976bfea59b3f2c.table.json
+2022-05-05 19:43:40,331 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:40,636 INFO    Thread-73 :72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/8d/45316b031401b76e83a3d4484d7f23
+2022-05-05 19:43:40,884 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:41,293 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:41,306 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:43:41,332 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_25_ea8b067dbbb31a705baf.table.json
+2022-05-05 19:43:41,333 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_25_5ba873dc927b26317200.table.json
+2022-05-05 19:43:41,333 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:41,856 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_loss - {'id': 'QXJ0aWZhY3Q6MTIzNDQxNDY2', 'digest': '57078b9b4d17014843770544dad02cd4', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk1', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxNDQ1', 'versionIndex': 9}}, 'version': 'latest'}
+2022-05-05 19:43:41,856 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:43:41,856 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_loss_10_c015152ff049c445cc29.table.json with policy now
+2022-05-05 19:43:41,857 DEBUG   SenderThread:72722 [sender.py:send():232] send: history
+2022-05-05 19:43:41,857 DEBUG   SenderThread:72722 [sender.py:send():232] send: summary
+2022-05-05 19:43:41,858 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-05-05 19:43:41,858 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:43:42,263 INFO    Thread-74 :72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/3d3h8ui0-media/table/last_loss_10_c015152ff049c445cc29.table.json
+2022-05-05 19:43:42,338 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:43:42,338 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/wandb-summary.json
+2022-05-05 19:43:42,608 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:42,684 INFO    Thread-76 :72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/93/380f376d08d611e2b29537d9840b17
+2022-05-05 19:43:42,756 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:42,809 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:43:43,344 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_26_4887f40eb49d5ea58ca6.table.json
+2022-05-05 19:43:43,344 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_26_6edef54a64e97b4b7a14.table.json
+2022-05-05 19:43:43,344 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:43,440 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_win - {'id': 'QXJ0aWZhY3Q6MTIzNDQxNDc2', 'digest': '18501bba70508d188524eed6e5ae6172', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk2', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxNDU1', 'versionIndex': 9}}, 'version': 'latest'}
+2022-05-05 19:43:43,440 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:43:43,440 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_win_11_09c65bd64fef2cc22d1e.table.json with policy now
+2022-05-05 19:43:43,441 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:43:43,867 INFO    Thread-77 :72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/2zt7iy4v-media/table/last_win_11_09c65bd64fef2cc22d1e.table.json
+2022-05-05 19:43:44,078 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:44,198 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:44,207 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:43:44,253 INFO    Thread-79 :72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/ec/c9da6a8fd369a811887d6d98d849d8
+2022-05-05 19:43:44,349 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:43:44,350 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_27_89763000d2baeaf32c14.table.json
+2022-05-05 19:43:44,350 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_27_87bcf8664a0e4b77f790.table.json
+2022-05-05 19:43:44,350 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:45,057 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_loss - {'id': 'QXJ0aWZhY3Q6MTIzNDQxNDg0', 'digest': '1648db0c6bd9afa075ca25d21a9d5a23', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk1', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxNDY2', 'versionIndex': 10}}, 'version': 'latest'}
+2022-05-05 19:43:45,057 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:43:45,057 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_loss_11_e06c098932f9af68e360.table.json with policy now
+2022-05-05 19:43:45,058 DEBUG   SenderThread:72722 [sender.py:send():232] send: history
+2022-05-05 19:43:45,058 DEBUG   SenderThread:72722 [sender.py:send():232] send: summary
+2022-05-05 19:43:45,058 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-05-05 19:43:45,058 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:43:45,350 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/wandb-summary.json
+2022-05-05 19:43:45,493 INFO    Thread-80 :72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/19k1wj47-media/table/last_loss_11_e06c098932f9af68e360.table.json
+2022-05-05 19:43:45,513 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:45,654 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:45,663 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:43:45,909 INFO    Thread-82 :72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/12/49edccc6b38699d3b92cf82bca12bc
+2022-05-05 19:43:46,356 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:43:46,356 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_28_f5b67431cc716cd546de.table.json
+2022-05-05 19:43:46,357 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_28_b58510c4d6b6df9e9899.table.json
+2022-05-05 19:43:46,357 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:46,675 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_win - {'id': 'QXJ0aWZhY3Q6MTIzNDQxNDkx', 'digest': 'f6330b64fd512e70518afb98e405323e', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk2', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxNDc2', 'versionIndex': 10}}, 'version': 'latest'}
+2022-05-05 19:43:46,675 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:43:46,675 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_win_12_ccc5569aaa8452510543.table.json with policy now
+2022-05-05 19:43:46,675 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:43:47,097 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:47,097 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:47,097 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:43:47,362 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_29_e9a546b16f048dd0a8b5.table.json
+2022-05-05 19:43:47,362 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_29_96188e2e2d07eccc43f7.table.json
+2022-05-05 19:43:47,363 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:47,589 INFO    Thread-83 :72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/2wwft88x-media/table/last_win_12_ccc5569aaa8452510543.table.json
+2022-05-05 19:43:48,363 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:43:48,676 INFO    Thread-85 :72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/32/aec7786e537520d45ed058dd3bc0a3
+2022-05-05 19:43:48,745 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:48,893 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:48,904 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:43:49,364 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_30_e24c079816883e4a1463.table.json
+2022-05-05 19:43:49,365 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_30_c9429a183a30ce72228a.table.json
+2022-05-05 19:43:49,365 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:49,621 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_loss - {'id': 'QXJ0aWZhY3Q6MTIzNDQxNDk3', 'digest': 'f8a4524fb764b1bb01b0a1c91afe8851', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk1', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxNDg0', 'versionIndex': 11}}, 'version': 'latest'}
+2022-05-05 19:43:49,621 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:43:49,621 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_loss_12_d4f6cfb6aae16cb1fe1e.table.json with policy now
+2022-05-05 19:43:49,621 DEBUG   SenderThread:72722 [sender.py:send():232] send: history
+2022-05-05 19:43:49,622 DEBUG   SenderThread:72722 [sender.py:send():232] send: summary
+2022-05-05 19:43:49,622 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-05-05 19:43:49,622 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:43:50,145 INFO    Thread-86 :72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/en9d8qtw-media/table/last_loss_12_d4f6cfb6aae16cb1fe1e.table.json
+2022-05-05 19:43:50,267 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:50,370 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:43:50,371 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/wandb-summary.json
+2022-05-05 19:43:50,371 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_31_5e5b0c1dec641d05741d.table.json
+2022-05-05 19:43:50,371 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:50,393 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:50,404 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:43:50,668 INFO    Thread-88 :72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/1a/9dfa4d869a1c6e4f6a7feff07210e8
+2022-05-05 19:43:51,376 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_31_8c12c65af2ddb4cbb268.table.json
+2022-05-05 19:43:51,377 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:51,719 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_win - {'id': 'QXJ0aWZhY3Q6MTIzNDQxNTA3', 'digest': 'e0dd8d78b9a1d83f9022dbb0d984d6d3', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk2', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxNDkx', 'versionIndex': 11}}, 'version': 'latest'}
+2022-05-05 19:43:51,719 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:43:51,719 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_win_13_55186af1a204056fbac0.table.json with policy now
+2022-05-05 19:43:51,720 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:43:51,847 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:52,003 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:52,012 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:43:52,241 INFO    Thread-89 :72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/260vcrf3-media/table/last_win_13_55186af1a204056fbac0.table.json
+2022-05-05 19:43:52,379 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:43:52,380 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_32_a252d634f9d53275e3dc.table.json
+2022-05-05 19:43:52,380 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_32_ff0d1bf29b62a4e9aa64.table.json
+2022-05-05 19:43:52,380 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:53,029 INFO    Thread-91 :72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/bf/af17041e8efdc6fc05513931a4f0f8
+2022-05-05 19:43:53,029 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: stop_status
+2022-05-05 19:43:53,425 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:53,882 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:53,892 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:43:54,337 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_loss - {'id': 'QXJ0aWZhY3Q6MTIzNDQxNTE3', 'digest': '2bf4367b0cb0cc262d7edf611a28fa47', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk1', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxNDk3', 'versionIndex': 12}}, 'version': 'latest'}
+2022-05-05 19:43:54,338 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:43:54,338 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_loss_13_3cf98300262245f8de48.table.json with policy now
+2022-05-05 19:43:54,338 DEBUG   SenderThread:72722 [sender.py:send():232] send: history
+2022-05-05 19:43:54,338 DEBUG   SenderThread:72722 [sender.py:send():232] send: summary
+2022-05-05 19:43:54,339 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-05-05 19:43:54,339 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:43:54,611 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:43:54,611 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/wandb-summary.json
+2022-05-05 19:43:54,611 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_33_cd17e74dca9824e0be53.table.json
+2022-05-05 19:43:54,612 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_33_3f90043dbf2565151d60.table.json
+2022-05-05 19:43:54,612 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:54,996 INFO    Thread-92 :72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/2svqm7rk-media/table/last_loss_13_3cf98300262245f8de48.table.json
+2022-05-05 19:43:55,202 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:55,337 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:55,346 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:43:55,409 INFO    Thread-94 :72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/33/3756d59fc17fa07ac9eead3f145709
+2022-05-05 19:43:55,617 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_34_790052920b0a8eae0e09.table.json
+2022-05-05 19:43:55,618 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_34_dc5d20015bad52eaf378.table.json
+2022-05-05 19:43:55,618 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:56,280 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_win - {'id': 'QXJ0aWZhY3Q6MTIzNDQxNTI2', 'digest': '2f2e530c097aae69fa08df8488cbff81', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk2', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxNTA3', 'versionIndex': 12}}, 'version': 'latest'}
+2022-05-05 19:43:56,280 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:43:56,280 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_win_14_34929a8fa1693d43a12a.table.json with policy now
+2022-05-05 19:43:56,281 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:43:56,623 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:43:56,627 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:56,711 INFO    Thread-95 :72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/1u7gq5ht-media/table/last_win_14_34929a8fa1693d43a12a.table.json
+2022-05-05 19:43:56,743 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:56,750 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:43:57,104 INFO    Thread-97 :72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/59/ac111be4bff8b3f8ffd26c89b2c369
+2022-05-05 19:43:57,859 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:43:57,859 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_35_684b753ef6608fab9dbd.table.json
+2022-05-05 19:43:57,860 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_35_40c121fe8ed21f203b60.table.json
+2022-05-05 19:43:57,860 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:58,028 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:58,137 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:58,145 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:43:58,411 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_loss - {'id': 'QXJ0aWZhY3Q6MTIzNDQxNTMz', 'digest': '8eeb07913e481793a476b5f7024555b4', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk1', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxNTE3', 'versionIndex': 13}}, 'version': 'latest'}
+2022-05-05 19:43:58,411 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:43:58,411 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_loss_14_63f34180ab09544788ed.table.json with policy now
+2022-05-05 19:43:58,412 DEBUG   SenderThread:72722 [sender.py:send():232] send: history
+2022-05-05 19:43:58,412 DEBUG   SenderThread:72722 [sender.py:send():232] send: summary
+2022-05-05 19:43:58,412 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-05-05 19:43:58,412 DEBUG   SenderThread:72722 [sender.py:send():232] send: stats
+2022-05-05 19:43:58,413 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:43:58,841 INFO    Thread-98 :72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/2u5f7wk6-media/table/last_loss_14_63f34180ab09544788ed.table.json
+2022-05-05 19:43:58,863 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/wandb-summary.json
+2022-05-05 19:43:58,863 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_36_72d56e195418c93e7e51.table.json
+2022-05-05 19:43:58,864 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_36_19560551ab633d14d94f.table.json
+2022-05-05 19:43:58,864 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:43:59,335 INFO    Thread-100:72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/c5/babe6b85c6583fe5cbdffd98866717
+2022-05-05 19:43:59,436 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:59,552 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:43:59,560 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:43:59,869 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:43:59,869 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_37_5fa913b13bed90702439.table.json
+2022-05-05 19:43:59,870 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_37_fc7466cf17fab7e07b05.table.json
+2022-05-05 19:43:59,870 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:44:00,153 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_win - {'id': 'QXJ0aWZhY3Q6MTIzNDQxNTM5', 'digest': '7dc8c5512000294762cfbd263484c5b6', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk2', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxNTI2', 'versionIndex': 13}}, 'version': 'latest'}
+2022-05-05 19:44:00,154 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:44:00,154 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_win_15_ded8e29c55452d95d3e2.table.json with policy now
+2022-05-05 19:44:00,154 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:44:00,594 INFO    Thread-101:72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/14dk928s-media/table/last_win_15_ded8e29c55452d95d3e2.table.json
+2022-05-05 19:44:00,848 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:44:00,875 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_38_31862677692c41c21ff3.table.json
+2022-05-05 19:44:00,876 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:44:00,968 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:44:00,979 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:44:01,001 INFO    Thread-103:72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/20/3d33a609dd1984571ab61da0477d66
+2022-05-05 19:44:01,851 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_loss - {'id': 'QXJ0aWZhY3Q6MTIzNDQxNTQy', 'digest': '4b3278df0954e3b72cfb539b66c41240', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk1', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxNTMz', 'versionIndex': 14}}, 'version': 'latest'}
+2022-05-05 19:44:01,851 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:44:01,851 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_loss_15_02033a36af1c9b6f58b1.table.json with policy now
+2022-05-05 19:44:01,852 DEBUG   SenderThread:72722 [sender.py:send():232] send: history
+2022-05-05 19:44:01,852 DEBUG   SenderThread:72722 [sender.py:send():232] send: summary
+2022-05-05 19:44:01,853 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-05-05 19:44:01,853 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:44:01,881 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:44:01,881 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/wandb-summary.json
+2022-05-05 19:44:01,881 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_38_73452f171d4fee87965f.table.json
+2022-05-05 19:44:01,882 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:44:02,255 INFO    Thread-104:72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/o080zpum-media/table/last_loss_15_02033a36af1c9b6f58b1.table.json
+2022-05-05 19:44:02,271 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:44:02,393 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:44:02,401 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:44:02,668 INFO    Thread-106:72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/40/c2df03cae4a42dfd995a8d36617f55
+2022-05-05 19:44:02,887 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_39_bc445b991533e0ee64c6.table.json
+2022-05-05 19:44:02,888 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_39_721aef38cbba7d2f21ae.table.json
+2022-05-05 19:44:02,888 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:44:03,533 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_win - {'id': 'QXJ0aWZhY3Q6MTIzNDQxNTUw', 'digest': '9f57b8145168ca20a0c9e5053ab8b5c8', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk2', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxNTM5', 'versionIndex': 14}}, 'version': 'latest'}
+2022-05-05 19:44:03,533 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:44:03,533 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_win_16_1928a2d4df94bd64d210.table.json with policy now
+2022-05-05 19:44:03,533 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:44:03,701 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:44:03,822 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:44:03,831 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:44:03,893 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:44:03,893 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_40_e5aa4a1f1832b133a0cf.table.json
+2022-05-05 19:44:03,894 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_40_b76183588e1154fc4762.table.json
+2022-05-05 19:44:03,894 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:44:03,966 INFO    Thread-107:72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/1bpfrx7i-media/table/last_win_16_1928a2d4df94bd64d210.table.json
+2022-05-05 19:44:04,557 INFO    Thread-109:72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/99/adece1c1d00c67b6d782fe1045887b
+2022-05-05 19:44:05,139 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:44:05,279 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:44:05,285 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:44:05,377 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_loss - {'id': 'QXJ0aWZhY3Q6MTIzNDQxNTU2', 'digest': 'd30cd3e014298e5ea10fa37e4d851683', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk1', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxNTQy', 'versionIndex': 15}}, 'version': 'latest'}
+2022-05-05 19:44:05,378 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:44:05,378 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_loss_16_b048e4d5d9038b3b6c4e.table.json with policy now
+2022-05-05 19:44:05,378 DEBUG   SenderThread:72722 [sender.py:send():232] send: history
+2022-05-05 19:44:05,378 DEBUG   SenderThread:72722 [sender.py:send():232] send: summary
+2022-05-05 19:44:05,379 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-05-05 19:44:05,379 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:44:05,806 INFO    Thread-110:72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/1uaizkym-media/table/last_loss_16_b048e4d5d9038b3b6c4e.table.json
+2022-05-05 19:44:05,904 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:44:05,904 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/wandb-summary.json
+2022-05-05 19:44:05,904 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_41_ba3e5a2af25a3668f46c.table.json
+2022-05-05 19:44:05,904 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_41_0c706424124f1ed0fdae.table.json
+2022-05-05 19:44:05,904 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:44:06,200 INFO    Thread-112:72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/2f/0d97913f81020e5155d61248046288
+2022-05-05 19:44:06,617 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:44:06,737 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:44:06,746 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:44:06,905 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_42_657cfae5853e40488014.table.json
+2022-05-05 19:44:06,905 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_42_ff1b57cc33ed18938a11.table.json
+2022-05-05 19:44:06,906 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:44:07,104 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_win - {'id': 'QXJ0aWZhY3Q6MTIzNDQxNTYy', 'digest': '163628c7840637978f000e7fd7c73eb0', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk2', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxNTUw', 'versionIndex': 15}}, 'version': 'latest'}
+2022-05-05 19:44:07,104 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:44:07,104 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_win_17_22385149a8026ea20883.table.json with policy now
+2022-05-05 19:44:07,105 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:44:07,563 INFO    Thread-113:72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/2ea2mliu-media/table/last_win_17_22385149a8026ea20883.table.json
+2022-05-05 19:44:07,909 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:44:08,030 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:44:08,148 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:44:08,157 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:44:08,284 INFO    Thread-115:72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/72/26d71bffce5ee509c6a5f6511d8760
+2022-05-05 19:44:08,915 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_43_096e5160cac768cbc70f.table.json
+2022-05-05 19:44:08,916 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_43_9efe812cc294480b0bad.table.json
+2022-05-05 19:44:08,916 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:44:09,076 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_loss - {'id': 'QXJ0aWZhY3Q6MTIzNDQxNTcw', 'digest': '3d92761e28d4926332bffac6e110a1b8', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk1', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxNTU2', 'versionIndex': 16}}, 'version': 'latest'}
+2022-05-05 19:44:09,076 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:44:09,076 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_loss_17_705c380c79dd97e52af1.table.json with policy now
+2022-05-05 19:44:09,076 DEBUG   SenderThread:72722 [sender.py:send():232] send: history
+2022-05-05 19:44:09,077 DEBUG   SenderThread:72722 [sender.py:send():232] send: summary
+2022-05-05 19:44:09,077 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-05-05 19:44:09,077 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:44:09,446 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:44:09,489 INFO    Thread-116:72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/1a7wnrvs-media/table/last_loss_17_705c380c79dd97e52af1.table.json
+2022-05-05 19:44:09,563 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:44:09,571 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:44:09,921 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:44:09,922 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/wandb-summary.json
+2022-05-05 19:44:09,922 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_44_51adc40b552926f0ca2c.table.json
+2022-05-05 19:44:09,922 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_44_7364129e80f467f6c9bb.table.json
+2022-05-05 19:44:09,922 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:44:10,010 INFO    Thread-118:72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/c5/93e7e6d980fe73441694910f399d1f
+2022-05-05 19:44:10,851 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:44:10,928 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_win - {'id': 'QXJ0aWZhY3Q6MTIzNDQxNTc4', 'digest': 'a34f3b7771977467323ea5f3bc17a617', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk2', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxNTYy', 'versionIndex': 16}}, 'version': 'latest'}
+2022-05-05 19:44:10,928 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:44:10,928 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_win_18_98fce1400f19dd19b02f.table.json with policy now
+2022-05-05 19:44:10,930 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:44:10,935 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_45_ec2c4ac4f037596a9b9f.table.json
+2022-05-05 19:44:10,936 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:44:10,961 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:44:10,968 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:44:11,384 INFO    Thread-119:72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/3587yck8-media/table/last_win_18_98fce1400f19dd19b02f.table.json
+2022-05-05 19:44:11,833 INFO    Thread-121:72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/e8/e0d5d679775b1ee07121f354557d3c
+2022-05-05 19:44:11,937 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:44:11,937 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_45_e252729a054fd27d8302.table.json
+2022-05-05 19:44:11,937 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:44:12,279 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:44:12,432 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:44:12,442 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:44:12,668 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_loss - {'id': 'QXJ0aWZhY3Q6MTIzNDQxNTg1', 'digest': '4c6be07bb82eb4a35e2c80b443fc38ef', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk1', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxNTcw', 'versionIndex': 17}}, 'version': 'latest'}
+2022-05-05 19:44:12,668 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:44:12,668 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_loss_18_72212e2e602f6eda25b8.table.json with policy now
+2022-05-05 19:44:12,669 DEBUG   SenderThread:72722 [sender.py:send():232] send: history
+2022-05-05 19:44:12,669 DEBUG   SenderThread:72722 [sender.py:send():232] send: summary
+2022-05-05 19:44:12,672 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-05-05 19:44:12,672 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:44:12,943 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/wandb-summary.json
+2022-05-05 19:44:12,943 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_46_5e0511828a914d1840ef.table.json
+2022-05-05 19:44:12,944 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_46_6aec556583a045efc289.table.json
+2022-05-05 19:44:12,944 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:44:13,040 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: stop_status
+2022-05-05 19:44:13,093 INFO    Thread-122:72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/2lo9owil-media/table/last_loss_18_72212e2e602f6eda25b8.table.json
+2022-05-05 19:44:13,586 INFO    Thread-124:72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/64/7ac300de10d12f6ddf8aaa6dee8b82
+2022-05-05 19:44:13,759 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:44:13,876 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:44:13,886 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:44:13,949 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:44:13,949 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_47_a7f71ae03a4d58e5b2df.table.json
+2022-05-05 19:44:13,950 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_47_4b403cda7fe566ff4017.table.json
+2022-05-05 19:44:13,950 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:44:14,387 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_win - {'id': 'QXJ0aWZhY3Q6MTIzNDQxNTk0', 'digest': 'cb07f2925aa0732e4af561c4da7aca3c', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk2', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxNTc4', 'versionIndex': 17}}, 'version': 'latest'}
+2022-05-05 19:44:14,387 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:44:14,387 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_win_19_76dfea5e17e8a2cc539e.table.json with policy now
+2022-05-05 19:44:14,388 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:44:14,858 INFO    Thread-125:72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/1gxq2zi3-media/table/last_win_19_76dfea5e17e8a2cc539e.table.json
+2022-05-05 19:44:15,189 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:44:15,216 INFO    Thread-127:72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/61/b5d2d02d1200d7adbe85da1a0ba5c2
+2022-05-05 19:44:15,300 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: log_artifact
+2022-05-05 19:44:15,309 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: partial_history
+2022-05-05 19:44:15,468 WARNING MainThread:72722 [internal.py:wandb_internal():153] Internal process interrupt: 1
+2022-05-05 19:44:16,027 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_loss - {'id': 'QXJ0aWZhY3Q6MTIzNDQxNjA0', 'digest': 'f2de846963cfee4ba4daff4e5bbe539f', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk1', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxNTg1', 'versionIndex': 18}}, 'version': 'latest'}
+2022-05-05 19:44:16,027 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:44:16,028 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_loss_19_df53bc8ad3c297a32355.table.json with policy now
+2022-05-05 19:44:16,029 DEBUG   SenderThread:72722 [sender.py:send():232] send: history
+2022-05-05 19:44:16,029 DEBUG   SenderThread:72722 [sender.py:send():232] send: summary
+2022-05-05 19:44:16,031 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-05-05 19:44:16,031 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: stop_status
+2022-05-05 19:44:16,142 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:44:16,506 INFO    Thread-128:72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/32nwh9t1-media/table/last_loss_19_df53bc8ad3c297a32355.table.json
+2022-05-05 19:44:16,961 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:44:16,961 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/wandb-summary.json
+2022-05-05 19:44:16,961 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_48_d24e248ba97c3f3c37c4.table.json
+2022-05-05 19:44:16,962 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_created():213] file/dir created: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_48_f3163555ce3425e82a53.table.json
+2022-05-05 19:44:16,963 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table
+2022-05-05 19:44:17,299 INFO    Thread-130:72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/8a/4dbec0af967d421a19f0ddf94a5156
+2022-05-05 19:44:17,636 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: poll_exit
+2022-05-05 19:44:18,351 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_win - {'id': 'QXJ0aWZhY3Q6MTIzNDQxNjE1', 'digest': '86f83480f0acd471005de5a21dcaa291', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk2', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxNTk0', 'versionIndex': 18}}, 'version': 'latest'}
+2022-05-05 19:44:18,351 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:44:18,352 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_win_20_b619f8808b2f57adce38.table.json with policy now
+2022-05-05 19:44:18,353 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:44:18,973 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:44:19,481 INFO    Thread-131:72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/2ebobfk1-media/table/last_win_20_b619f8808b2f57adce38.table.json
+2022-05-05 19:44:19,762 INFO    Thread-133:72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/57/3a998d67f94ef144c2e8587b06d403
+2022-05-05 19:44:20,830 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_loss - {'id': 'QXJ0aWZhY3Q6MTIzNDQxNjMw', 'digest': '018872f13fde19e3ea84bbdc4130b19e', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk1', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxNjA0', 'versionIndex': 19}}, 'version': 'latest'}
+2022-05-05 19:44:20,831 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:44:20,831 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_loss_20_6b75c026e9058ddf84e5.table.json with policy now
+2022-05-05 19:44:20,832 DEBUG   SenderThread:72722 [sender.py:send():232] send: history
+2022-05-05 19:44:20,833 DEBUG   SenderThread:72722 [sender.py:send():232] send: summary
+2022-05-05 19:44:20,834 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-05-05 19:44:20,834 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:44:20,977 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/wandb-summary.json
+2022-05-05 19:44:21,586 INFO    Thread-134:72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/32k1r11g-media/table/last_loss_20_6b75c026e9058ddf84e5.table.json
+2022-05-05 19:44:22,688 INFO    Thread-136:72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/5c/de29fe873aebe1feabcdec668c5d77
+2022-05-05 19:44:23,076 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: poll_exit
+2022-05-05 19:44:26,170 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_win - {'id': 'QXJ0aWZhY3Q6MTIzNDQxNjQx', 'digest': 'a4c283d37719659e6ed11f39404ef652', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk2', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxNjE1', 'versionIndex': 19}}, 'version': 'latest'}
+2022-05-05 19:44:26,171 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:44:26,171 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_win_21_a678fe3d707a27fec04c.table.json with policy now
+2022-05-05 19:44:26,172 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:44:26,825 INFO    Thread-137:72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/2mpxqtx2-media/table/last_win_21_a678fe3d707a27fec04c.table.json
+2022-05-05 19:44:27,280 INFO    Thread-139:72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/a0/8a27568f37d27c4f34000897a5d313
+2022-05-05 19:44:27,855 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: poll_exit
+2022-05-05 19:44:28,571 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_loss - {'id': 'QXJ0aWZhY3Q6MTIzNDQxNjU4', 'digest': '2d8b9e01b6283adc60325004554b7032', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk1', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxNjMw', 'versionIndex': 20}}, 'version': 'latest'}
+2022-05-05 19:44:28,571 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:44:28,572 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_loss_21_375550f054618cab3162.table.json with policy now
+2022-05-05 19:44:28,573 DEBUG   SenderThread:72722 [sender.py:send():232] send: history
+2022-05-05 19:44:28,574 DEBUG   SenderThread:72722 [sender.py:send():232] send: summary
+2022-05-05 19:44:28,575 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-05-05 19:44:28,575 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:44:29,112 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/wandb-summary.json
+2022-05-05 19:44:29,612 INFO    Thread-140:72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/fmqkcm5g-media/table/last_loss_21_375550f054618cab3162.table.json
+2022-05-05 19:44:30,261 INFO    Thread-142:72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/04/84c8a215058677d1df1b897f402757
+2022-05-05 19:44:31,410 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_win - {'id': 'QXJ0aWZhY3Q6MTIzNDQxNjc1', 'digest': 'bb6f974e053fbda94c7c5190f5bfd016', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk2', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxNjQx', 'versionIndex': 20}}, 'version': 'latest'}
+2022-05-05 19:44:31,410 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:44:31,410 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_win_22_174a03bf27728c363282.table.json with policy now
+2022-05-05 19:44:31,411 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:44:32,075 INFO    Thread-143:72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/nthnitjb-media/table/last_win_22_174a03bf27728c363282.table.json
+2022-05-05 19:44:32,676 INFO    Thread-145:72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/b8/7a5f1546bd90aba95a0ddf668c1594
+2022-05-05 19:44:32,959 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: poll_exit
+2022-05-05 19:44:33,641 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_loss - {'id': 'QXJ0aWZhY3Q6MTIzNDQxNjg2', 'digest': '3ecaede7786b65e79a05969d59a94841', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk1', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxNjU4', 'versionIndex': 21}}, 'version': 'latest'}
+2022-05-05 19:44:33,641 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:44:33,641 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_loss_22_25802520485508ccdd6c.table.json with policy now
+2022-05-05 19:44:33,642 DEBUG   SenderThread:72722 [sender.py:send():232] send: history
+2022-05-05 19:44:33,643 DEBUG   SenderThread:72722 [sender.py:send():232] send: summary
+2022-05-05 19:44:33,645 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-05-05 19:44:33,645 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:44:34,169 INFO    Thread-146:72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/1rlaje3i-media/table/last_loss_22_25802520485508ccdd6c.table.json
+2022-05-05 19:44:35,025 INFO    Thread-148:72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/ae/a52dbbb8c8a4b4b5f471246e219775
+2022-05-05 19:44:35,139 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/wandb-summary.json
+2022-05-05 19:44:36,328 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_win - {'id': 'QXJ0aWZhY3Q6MTIzNDQxNjk4', 'digest': '85f913c707962e2028c202275f3bcd62', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk2', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxNjc1', 'versionIndex': 21}}, 'version': 'latest'}
+2022-05-05 19:44:36,329 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:44:36,329 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_win_23_9518e5957537e8a10609.table.json with policy now
+2022-05-05 19:44:36,333 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:44:36,836 INFO    Thread-149:72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/1okib0eh-media/table/last_win_23_9518e5957537e8a10609.table.json
+2022-05-05 19:44:37,358 INFO    Thread-151:72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/e5/3e84bb5c2bf404c035ef16c0415606
+2022-05-05 19:44:38,068 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: poll_exit
+2022-05-05 19:44:40,020 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_loss - {'id': 'QXJ0aWZhY3Q6MTIzNDQxNzEy', 'digest': 'd10522e39ce7390c06a111f691a59861', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk1', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxNjg2', 'versionIndex': 22}}, 'version': 'latest'}
+2022-05-05 19:44:40,021 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:44:40,021 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_loss_23_b4091f7529ae54ac653d.table.json with policy now
+2022-05-05 19:44:40,026 DEBUG   SenderThread:72722 [sender.py:send():232] send: history
+2022-05-05 19:44:40,027 DEBUG   SenderThread:72722 [sender.py:send():232] send: summary
+2022-05-05 19:44:40,028 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-05-05 19:44:40,029 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:44:40,506 INFO    Thread-152:72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/39c5eckl-media/table/last_loss_23_b4091f7529ae54ac653d.table.json
+2022-05-05 19:44:41,028 INFO    Thread-154:72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/ea/9f3c9f322b94e1ad9a63381f834f62
+2022-05-05 19:44:41,166 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/wandb-summary.json
+2022-05-05 19:44:42,106 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_win - {'id': 'QXJ0aWZhY3Q6MTIzNDQxNzMw', 'digest': '0a37aa2de245446db5e564a2870c7c16', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk2', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxNjk4', 'versionIndex': 22}}, 'version': 'latest'}
+2022-05-05 19:44:42,106 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:44:42,107 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_win_24_90fcbbf73c019c7f09bf.table.json with policy now
+2022-05-05 19:44:42,109 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:44:42,590 INFO    Thread-155:72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/1t28kion-media/table/last_win_24_90fcbbf73c019c7f09bf.table.json
+2022-05-05 19:44:43,094 INFO    Thread-157:72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/a3/91b0de7a1d2656a2e34c6675c6f38f
+2022-05-05 19:44:43,176 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: poll_exit
+2022-05-05 19:44:44,040 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_loss - {'id': 'QXJ0aWZhY3Q6MTIzNDQxNzM2', 'digest': '062cca354d9ba7888c84853c8c02fec6', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk1', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxNzEy', 'versionIndex': 23}}, 'version': 'latest'}
+2022-05-05 19:44:44,042 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:44:44,042 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_loss_24_9c078c976bfea59b3f2c.table.json with policy now
+2022-05-05 19:44:44,044 DEBUG   SenderThread:72722 [sender.py:send():232] send: history
+2022-05-05 19:44:44,044 DEBUG   SenderThread:72722 [sender.py:send():232] send: summary
+2022-05-05 19:44:44,048 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-05-05 19:44:44,056 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:44:44,563 INFO    Thread-158:72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/1y468mzs-media/table/last_loss_24_9c078c976bfea59b3f2c.table.json
+2022-05-05 19:44:45,069 INFO    Thread-160:72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/83/4a0d8f4b7d06dba71a36788d42303b
+2022-05-05 19:44:45,182 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/wandb-summary.json
+2022-05-05 19:44:45,955 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_win - {'id': 'QXJ0aWZhY3Q6MTIzNDQxNzQ1', 'digest': 'dd924ac5b7b4e4961798acc9b1fc532b', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk2', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxNzMw', 'versionIndex': 23}}, 'version': 'latest'}
+2022-05-05 19:44:45,955 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:44:45,955 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_win_25_5ba873dc927b26317200.table.json with policy now
+2022-05-05 19:44:45,956 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:44:46,398 INFO    Thread-161:72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/35xtij3d-media/table/last_win_25_5ba873dc927b26317200.table.json
+2022-05-05 19:44:46,997 INFO    Thread-163:72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/60/bea8917c0b3e7dd8ea3f4b0c367fbb
+2022-05-05 19:44:47,829 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_loss - {'id': 'QXJ0aWZhY3Q6MTIzNDQxNzUz', 'digest': '20bdd8f5f0c0f59ae886162709dffc31', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk1', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxNzM2', 'versionIndex': 24}}, 'version': 'latest'}
+2022-05-05 19:44:47,830 DEBUG   SenderThread:72722 [sender.py:send():232] send: files
+2022-05-05 19:44:47,830 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file media/table/last_loss_25_ea8b067dbbb31a705baf.table.json with policy now
+2022-05-05 19:44:47,830 DEBUG   SenderThread:72722 [sender.py:send():232] send: history
+2022-05-05 19:44:47,830 DEBUG   SenderThread:72722 [sender.py:send():232] send: summary
+2022-05-05 19:44:47,831 INFO    SenderThread:72722 [sender.py:_save_file():946] saving file wandb-summary.json with policy end
+2022-05-05 19:44:47,831 DEBUG   SenderThread:72722 [sender.py:send_request():246] send_request: log_artifact
+2022-05-05 19:44:48,262 INFO    Thread-164:72722 [upload_job.py:push():137] Uploaded file /var/folders/gj/n4qhg53s1hv9wg1hb82h0pyh0000gn/T/tmpzo26hqwzwandb/1dh82n1o-media/table/last_loss_25_ea8b067dbbb31a705baf.table.json
+2022-05-05 19:44:48,284 DEBUG   HandlerThread:72722 [handler.py:handle_request():141] handle_request: poll_exit
+2022-05-05 19:44:48,706 INFO    Thread-166:72722 [upload_job.py:push():95] Uploaded file /Users/kellylu/.cache/wandb/artifacts/obj/md5/23/ca15f6fc33745846c9b73067a5fb59
+2022-05-05 19:44:48,884 WARNING MainThread:72722 [internal.py:wandb_internal():153] Internal process interrupt: 2
+2022-05-05 19:44:48,884 ERROR   MainThread:72722 [internal.py:wandb_internal():156] Internal process interrupted.
+2022-05-05 19:44:49,035 INFO    WriterThread:72722 [datastore.py:close():279] close: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/run-2wood8s4.wandb
+2022-05-05 19:44:49,196 INFO    Thread-7  :72722 [dir_watcher.py:_on_file_modified():226] file/dir modified: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/wandb-summary.json
+2022-05-05 19:44:49,286 INFO    HandlerThread:72722 [handler.py:finish():806] shutting down handler
+2022-05-05 19:44:49,569 INFO    SenderThread:72722 [sender.py:send_request_log_artifact():1001] logged artifact run-2wood8s4-last_win - {'id': 'QXJ0aWZhY3Q6MTIzNDQxNzYw', 'digest': '47911d83f07493332344a1c9ed1ec476', 'state': 'PENDING', 'aliases': [], 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE5ODE3NDk2', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTIzNDQxNzQ1', 'versionIndex': 24}}, 'version': 'latest'}
+2022-05-05 19:44:49,569 INFO    SenderThread:72722 [sender.py:finish():1106] shutting down sender
+2022-05-05 19:44:49,569 INFO    SenderThread:72722 [dir_watcher.py:finish():279] shutting down directory watcher
+2022-05-05 19:44:50,208 INFO    SenderThread:72722 [dir_watcher.py:finish():309] scan: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files
+2022-05-05 19:44:50,208 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/requirements.txt requirements.txt
+2022-05-05 19:44:50,209 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log output.log
+2022-05-05 19:44:50,209 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/config.yaml config.yaml
+2022-05-05 19:44:50,214 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/wandb-summary.json wandb-summary.json
+2022-05-05 19:44:50,221 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/conda-environment.yaml conda-environment.yaml
+2022-05-05 19:44:50,224 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/wandb-metadata.json wandb-metadata.json
+2022-05-05 19:44:50,227 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_2_14055994ad83d58718a7.table.json media/table/last_win_2_14055994ad83d58718a7.table.json
+2022-05-05 19:44:50,227 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_4_1e9b017c79a61aa7895a.table.json media/table/last_win_4_1e9b017c79a61aa7895a.table.json
+2022-05-05 19:44:50,227 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_37_5fa913b13bed90702439.table.json media/table/last_loss_37_5fa913b13bed90702439.table.json
+2022-05-05 19:44:50,227 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_46_5e0511828a914d1840ef.table.json media/table/last_loss_46_5e0511828a914d1840ef.table.json
+2022-05-05 19:44:50,230 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_44_51adc40b552926f0ca2c.table.json media/table/last_loss_44_51adc40b552926f0ca2c.table.json
+2022-05-05 19:44:50,233 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_13_3cf98300262245f8de48.table.json media/table/last_loss_13_3cf98300262245f8de48.table.json
+2022-05-05 19:44:50,233 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_2_6585a6f39da12f621361.table.json media/table/last_loss_2_6585a6f39da12f621361.table.json
+2022-05-05 19:44:50,233 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_5_4b3d09692f96024aaff2.table.json media/table/last_loss_5_4b3d09692f96024aaff2.table.json
+2022-05-05 19:44:50,233 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_7_5ccbd5e22bc502ac6b1d.table.json media/table/last_loss_7_5ccbd5e22bc502ac6b1d.table.json
+2022-05-05 19:44:50,233 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_27_89763000d2baeaf32c14.table.json media/table/last_win_27_89763000d2baeaf32c14.table.json
+2022-05-05 19:44:50,235 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_20_6b75c026e9058ddf84e5.table.json media/table/last_loss_20_6b75c026e9058ddf84e5.table.json
+2022-05-05 19:44:50,235 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_26_6edef54a64e97b4b7a14.table.json media/table/last_loss_26_6edef54a64e97b4b7a14.table.json
+2022-05-05 19:44:50,235 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_14_34929a8fa1693d43a12a.table.json media/table/last_win_14_34929a8fa1693d43a12a.table.json
+2022-05-05 19:44:50,236 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_17_22385149a8026ea20883.table.json media/table/last_win_17_22385149a8026ea20883.table.json
+2022-05-05 19:44:50,236 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_13_55186af1a204056fbac0.table.json media/table/last_win_13_55186af1a204056fbac0.table.json
+2022-05-05 19:44:50,236 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_31_8c12c65af2ddb4cbb268.table.json media/table/last_loss_31_8c12c65af2ddb4cbb268.table.json
+2022-05-05 19:44:50,238 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_34_790052920b0a8eae0e09.table.json media/table/last_win_34_790052920b0a8eae0e09.table.json
+2022-05-05 19:44:50,242 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_16_1928a2d4df94bd64d210.table.json media/table/last_win_16_1928a2d4df94bd64d210.table.json
+2022-05-05 19:44:50,242 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_38_31862677692c41c21ff3.table.json media/table/last_win_38_31862677692c41c21ff3.table.json
+2022-05-05 19:44:50,243 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_24_9c078c976bfea59b3f2c.table.json media/table/last_loss_24_9c078c976bfea59b3f2c.table.json
+2022-05-05 19:44:50,243 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_47_a7f71ae03a4d58e5b2df.table.json media/table/last_win_47_a7f71ae03a4d58e5b2df.table.json
+2022-05-05 19:44:50,245 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_24_90fcbbf73c019c7f09bf.table.json media/table/last_win_24_90fcbbf73c019c7f09bf.table.json
+2022-05-05 19:44:50,245 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_37_fc7466cf17fab7e07b05.table.json media/table/last_win_37_fc7466cf17fab7e07b05.table.json
+2022-05-05 19:44:50,248 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_6_7ad3bd3597a8cbdaa333.table.json media/table/last_loss_6_7ad3bd3597a8cbdaa333.table.json
+2022-05-05 19:44:50,248 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_35_684b753ef6608fab9dbd.table.json media/table/last_loss_35_684b753ef6608fab9dbd.table.json
+2022-05-05 19:44:50,250 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_31_5e5b0c1dec641d05741d.table.json media/table/last_win_31_5e5b0c1dec641d05741d.table.json
+2022-05-05 19:44:50,253 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_22_25802520485508ccdd6c.table.json media/table/last_loss_22_25802520485508ccdd6c.table.json
+2022-05-05 19:44:50,253 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_26_4887f40eb49d5ea58ca6.table.json media/table/last_win_26_4887f40eb49d5ea58ca6.table.json
+2022-05-05 19:44:50,253 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_14_63f34180ab09544788ed.table.json media/table/last_loss_14_63f34180ab09544788ed.table.json
+2022-05-05 19:44:50,255 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_11_e06c098932f9af68e360.table.json media/table/last_loss_11_e06c098932f9af68e360.table.json
+2022-05-05 19:44:50,255 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_30_e24c079816883e4a1463.table.json media/table/last_loss_30_e24c079816883e4a1463.table.json
+2022-05-05 19:44:50,257 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_6_77d72c8e434b433a3227.table.json media/table/last_win_6_77d72c8e434b433a3227.table.json
+2022-05-05 19:44:50,257 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_5_060b2d8d87dc1597fe64.table.json media/table/last_win_5_060b2d8d87dc1597fe64.table.json
+2022-05-05 19:44:50,257 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_4_60e39ffbee256ac81b3d.table.json media/table/last_loss_4_60e39ffbee256ac81b3d.table.json
+2022-05-05 19:44:50,257 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_25_5ba873dc927b26317200.table.json media/table/last_win_25_5ba873dc927b26317200.table.json
+2022-05-05 19:44:50,259 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_9_a078c968b13c9f051175.table.json media/table/last_loss_9_a078c968b13c9f051175.table.json
+2022-05-05 19:44:50,259 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_39_bc445b991533e0ee64c6.table.json media/table/last_loss_39_bc445b991533e0ee64c6.table.json
+2022-05-05 19:44:50,267 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_30_c9429a183a30ce72228a.table.json media/table/last_win_30_c9429a183a30ce72228a.table.json
+2022-05-05 19:44:50,268 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_18_98fce1400f19dd19b02f.table.json media/table/last_win_18_98fce1400f19dd19b02f.table.json
+2022-05-05 19:44:50,270 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_1_5b39c64291ee2cc575ca.table.json media/table/last_win_1_5b39c64291ee2cc575ca.table.json
+2022-05-05 19:44:50,270 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_33_3f90043dbf2565151d60.table.json media/table/last_loss_33_3f90043dbf2565151d60.table.json
+2022-05-05 19:44:50,271 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_41_0c706424124f1ed0fdae.table.json media/table/last_loss_41_0c706424124f1ed0fdae.table.json
+2022-05-05 19:44:50,273 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_43_9efe812cc294480b0bad.table.json media/table/last_loss_43_9efe812cc294480b0bad.table.json
+2022-05-05 19:44:50,277 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_28_b58510c4d6b6df9e9899.table.json media/table/last_loss_28_b58510c4d6b6df9e9899.table.json
+2022-05-05 19:44:50,278 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_44_7364129e80f467f6c9bb.table.json media/table/last_win_44_7364129e80f467f6c9bb.table.json
+2022-05-05 19:44:50,280 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_11_09c65bd64fef2cc22d1e.table.json media/table/last_win_11_09c65bd64fef2cc22d1e.table.json
+2022-05-05 19:44:50,280 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_10_7dd4a3e9824da037c368.table.json media/table/last_win_10_7dd4a3e9824da037c368.table.json
+2022-05-05 19:44:50,280 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_47_4b403cda7fe566ff4017.table.json media/table/last_loss_47_4b403cda7fe566ff4017.table.json
+2022-05-05 19:44:50,281 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_41_ba3e5a2af25a3668f46c.table.json media/table/last_win_41_ba3e5a2af25a3668f46c.table.json
+2022-05-05 19:44:50,282 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_32_ff0d1bf29b62a4e9aa64.table.json media/table/last_win_32_ff0d1bf29b62a4e9aa64.table.json
+2022-05-05 19:44:50,283 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_19_76dfea5e17e8a2cc539e.table.json media/table/last_win_19_76dfea5e17e8a2cc539e.table.json
+2022-05-05 19:44:50,283 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_0_efe169b7590f1b3d1986.table.json media/table/last_loss_0_efe169b7590f1b3d1986.table.json
+2022-05-05 19:44:50,283 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_10_c015152ff049c445cc29.table.json media/table/last_loss_10_c015152ff049c445cc29.table.json
+2022-05-05 19:44:50,283 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_33_cd17e74dca9824e0be53.table.json media/table/last_win_33_cd17e74dca9824e0be53.table.json
+2022-05-05 19:44:50,290 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_25_ea8b067dbbb31a705baf.table.json media/table/last_loss_25_ea8b067dbbb31a705baf.table.json
+2022-05-05 19:44:50,292 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_36_19560551ab633d14d94f.table.json media/table/last_loss_36_19560551ab633d14d94f.table.json
+2022-05-05 19:44:50,294 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_34_dc5d20015bad52eaf378.table.json media/table/last_loss_34_dc5d20015bad52eaf378.table.json
+2022-05-05 19:44:50,294 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_35_40c121fe8ed21f203b60.table.json media/table/last_win_35_40c121fe8ed21f203b60.table.json
+2022-05-05 19:44:50,294 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_40_e5aa4a1f1832b133a0cf.table.json media/table/last_loss_40_e5aa4a1f1832b133a0cf.table.json
+2022-05-05 19:44:50,294 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_19_df53bc8ad3c297a32355.table.json media/table/last_loss_19_df53bc8ad3c297a32355.table.json
+2022-05-05 19:44:50,294 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_22_174a03bf27728c363282.table.json media/table/last_win_22_174a03bf27728c363282.table.json
+2022-05-05 19:44:50,294 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_16_b048e4d5d9038b3b6c4e.table.json media/table/last_loss_16_b048e4d5d9038b3b6c4e.table.json
+2022-05-05 19:44:50,294 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_1_480b4fcc9788e2ac4eb1.table.json media/table/last_loss_1_480b4fcc9788e2ac4eb1.table.json
+2022-05-05 19:44:50,294 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_28_f5b67431cc716cd546de.table.json media/table/last_win_28_f5b67431cc716cd546de.table.json
+2022-05-05 19:44:50,294 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_43_096e5160cac768cbc70f.table.json media/table/last_win_43_096e5160cac768cbc70f.table.json
+2022-05-05 19:44:50,294 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_15_02033a36af1c9b6f58b1.table.json media/table/last_loss_15_02033a36af1c9b6f58b1.table.json
+2022-05-05 19:44:50,294 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_20_b619f8808b2f57adce38.table.json media/table/last_win_20_b619f8808b2f57adce38.table.json
+2022-05-05 19:44:50,294 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_42_ff1b57cc33ed18938a11.table.json media/table/last_loss_42_ff1b57cc33ed18938a11.table.json
+2022-05-05 19:44:50,295 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_48_d24e248ba97c3f3c37c4.table.json media/table/last_win_48_d24e248ba97c3f3c37c4.table.json
+2022-05-05 19:44:50,297 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_29_e9a546b16f048dd0a8b5.table.json media/table/last_win_29_e9a546b16f048dd0a8b5.table.json
+2022-05-05 19:44:50,298 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_42_657cfae5853e40488014.table.json media/table/last_win_42_657cfae5853e40488014.table.json
+2022-05-05 19:44:50,299 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_3_12450d71b9f502ca219a.table.json media/table/last_win_3_12450d71b9f502ca219a.table.json
+2022-05-05 19:44:50,301 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_23_9518e5957537e8a10609.table.json media/table/last_win_23_9518e5957537e8a10609.table.json
+2022-05-05 19:44:50,301 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_38_73452f171d4fee87965f.table.json media/table/last_loss_38_73452f171d4fee87965f.table.json
+2022-05-05 19:44:50,306 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_32_a252d634f9d53275e3dc.table.json media/table/last_loss_32_a252d634f9d53275e3dc.table.json
+2022-05-05 19:44:50,312 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_48_f3163555ce3425e82a53.table.json media/table/last_loss_48_f3163555ce3425e82a53.table.json
+2022-05-05 19:44:50,314 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_40_b76183588e1154fc4762.table.json media/table/last_win_40_b76183588e1154fc4762.table.json
+2022-05-05 19:44:50,314 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_15_ded8e29c55452d95d3e2.table.json media/table/last_win_15_ded8e29c55452d95d3e2.table.json
+2022-05-05 19:44:50,315 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_21_a678fe3d707a27fec04c.table.json media/table/last_win_21_a678fe3d707a27fec04c.table.json
+2022-05-05 19:44:50,315 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_7_87a09e819e8f6a6d3f07.table.json media/table/last_win_7_87a09e819e8f6a6d3f07.table.json
+2022-05-05 19:44:50,315 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_21_375550f054618cab3162.table.json media/table/last_loss_21_375550f054618cab3162.table.json
+2022-05-05 19:44:50,315 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_27_87bcf8664a0e4b77f790.table.json media/table/last_loss_27_87bcf8664a0e4b77f790.table.json
+2022-05-05 19:44:50,319 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_12_ccc5569aaa8452510543.table.json media/table/last_win_12_ccc5569aaa8452510543.table.json
+2022-05-05 19:44:50,319 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_3_4efea344a5796061ba94.table.json media/table/last_loss_3_4efea344a5796061ba94.table.json
+2022-05-05 19:44:50,319 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_45_ec2c4ac4f037596a9b9f.table.json media/table/last_win_45_ec2c4ac4f037596a9b9f.table.json
+2022-05-05 19:44:50,320 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_12_d4f6cfb6aae16cb1fe1e.table.json media/table/last_loss_12_d4f6cfb6aae16cb1fe1e.table.json
+2022-05-05 19:44:50,323 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_46_6aec556583a045efc289.table.json media/table/last_win_46_6aec556583a045efc289.table.json
+2022-05-05 19:44:50,325 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_8_12c9d9653f5fe5ed866b.table.json media/table/last_loss_8_12c9d9653f5fe5ed866b.table.json
+2022-05-05 19:44:50,325 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_45_e252729a054fd27d8302.table.json media/table/last_loss_45_e252729a054fd27d8302.table.json
+2022-05-05 19:44:50,325 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_36_72d56e195418c93e7e51.table.json media/table/last_win_36_72d56e195418c93e7e51.table.json
+2022-05-05 19:44:50,328 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_17_705c380c79dd97e52af1.table.json media/table/last_loss_17_705c380c79dd97e52af1.table.json
+2022-05-05 19:44:50,328 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_23_b4091f7529ae54ac653d.table.json media/table/last_loss_23_b4091f7529ae54ac653d.table.json
+2022-05-05 19:44:50,328 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_8_c57c323cc001cd8db7aa.table.json media/table/last_win_8_c57c323cc001cd8db7aa.table.json
+2022-05-05 19:44:50,328 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_29_96188e2e2d07eccc43f7.table.json media/table/last_loss_29_96188e2e2d07eccc43f7.table.json
+2022-05-05 19:44:50,331 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_39_721aef38cbba7d2f21ae.table.json media/table/last_win_39_721aef38cbba7d2f21ae.table.json
+2022-05-05 19:44:50,332 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_18_72212e2e602f6eda25b8.table.json media/table/last_loss_18_72212e2e602f6eda25b8.table.json
+2022-05-05 19:44:50,332 INFO    SenderThread:72722 [dir_watcher.py:finish():323] scan save: /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_9_57bc2abf1bcb0ab0c950.table.json media/table/last_win_9_57bc2abf1bcb0ab0c950.table.json
+2022-05-05 19:44:50,332 INFO    SenderThread:72722 [file_pusher.py:finish():145] shutting down file pusher
+2022-05-05 19:44:50,332 INFO    SenderThread:72722 [file_pusher.py:join():150] waiting for file pusher
+2022-05-05 19:44:51,002 INFO    Thread-168:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/output.log
+2022-05-05 19:44:51,111 INFO    Thread-193:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_47_4b403cda7fe566ff4017.table.json
+2022-05-05 19:44:51,138 INFO    Thread-197:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_36_19560551ab633d14d94f.table.json
+2022-05-05 19:44:51,145 INFO    Thread-187:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_30_c9429a183a30ce72228a.table.json
+2022-05-05 19:44:51,148 INFO    Thread-186:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_39_bc445b991533e0ee64c6.table.json
+2022-05-05 19:44:51,149 INFO    Thread-203:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_42_ff1b57cc33ed18938a11.table.json
+2022-05-05 19:44:51,163 INFO    Thread-172:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_37_5fa913b13bed90702439.table.json
+2022-05-05 19:44:51,168 INFO    Thread-213:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_46_6aec556583a045efc289.table.json
+2022-05-05 19:44:51,169 INFO    Thread-199:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_35_40c121fe8ed21f203b60.table.json
+2022-05-05 19:44:51,173 INFO    Thread-208:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_32_a252d634f9d53275e3dc.table.json
+2022-05-05 19:44:51,186 INFO    Thread-196:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_33_cd17e74dca9824e0be53.table.json
+2022-05-05 19:44:51,194 INFO    Thread-169:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/config.yaml
+2022-05-05 19:44:51,204 INFO    Thread-182:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_35_684b753ef6608fab9dbd.table.json
+2022-05-05 19:44:51,227 INFO    Thread-194:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_41_ba3e5a2af25a3668f46c.table.json
+2022-05-05 19:44:51,235 INFO    Thread-192:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_44_7364129e80f467f6c9bb.table.json
+2022-05-05 19:44:51,266 INFO    Thread-183:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_31_5e5b0c1dec641d05741d.table.json
+2022-05-05 19:44:51,278 INFO    Thread-210:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_40_b76183588e1154fc4762.table.json
+2022-05-05 19:44:51,319 INFO    Thread-171:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/conda-environment.yaml
+2022-05-05 19:44:51,320 INFO    Thread-204:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_48_d24e248ba97c3f3c37c4.table.json
+2022-05-05 19:44:51,321 INFO    Thread-212:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_45_ec2c4ac4f037596a9b9f.table.json
+2022-05-05 19:44:51,323 INFO    Thread-189:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_41_0c706424124f1ed0fdae.table.json
+2022-05-05 19:44:51,325 INFO    Thread-198:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_34_dc5d20015bad52eaf378.table.json
+2022-05-05 19:44:51,328 INFO    Thread-214:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_45_e252729a054fd27d8302.table.json
+2022-05-05 19:44:51,331 INFO    Thread-176:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_26_6edef54a64e97b4b7a14.table.json
+2022-05-05 19:44:51,333 INFO    Thread-167:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/requirements.txt
+2022-05-05 19:44:51,335 INFO    Thread-191:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_28_b58510c4d6b6df9e9899.table.json
+2022-05-05 19:44:51,339 INFO    Thread-202:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_43_096e5160cac768cbc70f.table.json
+2022-05-05 19:44:51,342 INFO    Thread-173:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_46_5e0511828a914d1840ef.table.json
+2022-05-05 19:44:51,344 INFO    Thread-209:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_48_f3163555ce3425e82a53.table.json
+2022-05-05 19:44:51,344 INFO    Thread-178:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_34_790052920b0a8eae0e09.table.json
+2022-05-05 19:44:51,346 INFO    Thread-200:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_40_e5aa4a1f1832b133a0cf.table.json
+2022-05-05 19:44:51,349 INFO    Thread-184:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_26_4887f40eb49d5ea58ca6.table.json
+2022-05-05 19:44:51,350 INFO    Thread-207:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_38_73452f171d4fee87965f.table.json
+2022-05-05 19:44:51,351 INFO    Thread-217:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_39_721aef38cbba7d2f21ae.table.json
+2022-05-05 19:44:51,354 INFO    Thread-180:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_47_a7f71ae03a4d58e5b2df.table.json
+2022-05-05 19:44:51,355 INFO    Thread-206:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_42_657cfae5853e40488014.table.json
+2022-05-05 19:44:51,356 INFO    Thread-170:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/wandb-summary.json
+2022-05-05 19:44:51,358 INFO    Thread-216:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_29_96188e2e2d07eccc43f7.table.json
+2022-05-05 19:44:51,362 INFO    Thread-211:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_27_87bcf8664a0e4b77f790.table.json
+2022-05-05 19:44:51,365 INFO    Thread-174:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_44_51adc40b552926f0ca2c.table.json
+2022-05-05 19:44:51,365 INFO    Thread-190:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_43_9efe812cc294480b0bad.table.json
+2022-05-05 19:44:51,366 INFO    Thread-177:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_31_8c12c65af2ddb4cbb268.table.json
+2022-05-05 19:44:51,369 INFO    Thread-188:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_33_3f90043dbf2565151d60.table.json
+2022-05-05 19:44:51,370 INFO    Thread-179:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_38_31862677692c41c21ff3.table.json
+2022-05-05 19:44:51,372 INFO    Thread-201:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_28_f5b67431cc716cd546de.table.json
+2022-05-05 19:44:51,375 INFO    Thread-215:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_36_72d56e195418c93e7e51.table.json
+2022-05-05 19:44:51,378 INFO    Thread-175:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_27_89763000d2baeaf32c14.table.json
+2022-05-05 19:44:51,390 INFO    Thread-185:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_loss_30_e24c079816883e4a1463.table.json
+2022-05-05 19:44:51,391 INFO    Thread-195:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_32_ff0d1bf29b62a4e9aa64.table.json
+2022-05-05 19:44:51,392 INFO    Thread-205:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_29_e9a546b16f048dd0a8b5.table.json
+2022-05-05 19:44:51,397 INFO    Thread-181:72722 [upload_job.py:push():137] Uploaded file /Users/kellylu/CDS/WordRL/wordrl/wandb/run-20220505_194254-2wood8s4/files/media/table/last_win_37_fc7466cf17fab7e07b05.table.json
+2022-05-05 19:44:52,105 INFO    MainThread:72722 [internal.py:handle_exit():80] Internal process exited

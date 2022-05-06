@@ -1,0 +1,22 @@
+{
+    "os": "Darwin-21.2.0-x86_64-i386-64bit",
+    "python": "3.7.5",
+    "heartbeatAt": "2022-05-06T02:27:16.764242",
+    "startedAt": "2022-05-06T02:27:15.119222",
+    "docker": null,
+    "cpu_count": 8,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "a2c_train.py",
+    "codePath": "wordrl/a2c_train.py",
+    "git": {
+        "remote": "git@github.com:VictorButoi/WordRL.git",
+        "commit": "33c030c12464041bc3036070f50865c5871d5b5d"
+    },
+    "email": "ksl87@cornell.edu",
+    "root": "/Users/kellylu/CDS/WordRL",
+    "host": "dhcp-vl2042-9745.redrover.cornell.edu",
+    "username": "kellylu",
+    "executable": "/Users/kellylu/opt/anaconda3/envs/WordRL/bin/python3"
+}

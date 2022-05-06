@@ -18,6 +18,8 @@ import wordle.state
 from a2c.agent import ActorCriticAgent
 from a2c.experience import ExperienceSourceDataset, Experience
 
+from wordrl.envs.wordle_env_v2_visualized import WORDS
+
 
 class AdvantageActorCritic(LightningModule):
     """PyTorch Lightning implementation of `Advantage Actor Critic <https://arxiv.org/abs/1602.01783v2>`_.
@@ -28,7 +30,7 @@ class AdvantageActorCritic(LightningModule):
 
     def __init__(
             self,
-            env: str,
+            # env: str,
             network_name: str,
             gamma: float,
             lr: float,
@@ -39,9 +41,9 @@ class AdvantageActorCritic(LightningModule):
             entropy_beta: float,
             critic_beta: float,
             epoch_len: int,
-            prob_play_lost_word: float=0.,
-            prob_cheat: float=0.,
-            weight_decay: float=0.,
+            prob_play_lost_word: float = 0.,
+            prob_cheat: float = 0.,
+            weight_decay: float = 0.,
             **kwargs: Any,
     ) -> None:
         """
@@ -64,7 +66,7 @@ class AdvantageActorCritic(LightningModule):
         self.batches_per_epoch = batch_size * epoch_len
 
         # Model components
-        self.env = gym.make(env)
+        self.env = gym.make("Wordle-v2-10-visualized")
         self.net = a2c.construct(
             self.hparams.network_name,
             obs_size=self.env.observation_space.shape[0],
@@ -133,19 +135,24 @@ class AdvantageActorCritic(LightningModule):
 
                 next_state, reward, done, aux = self.env.step(action)
 
+                # TODO: check that this works lol
+                self.env.render()
+
                 batch_states.append(self.state)
                 batch_actions.append(action)
                 batch_rewards.append(reward)
                 batch_masks.append(done)
                 batch_targets.append(aux['goal_id'])
 
-                self._seq.append(Experience(self.state.copy(), action, reward, aux['goal_id']))
+                self._seq.append(Experience(self.state.copy(),
+                                 action, reward, aux['goal_id']))
                 self.state = next_state
                 self.episode_reward += reward
 
                 if done:
                     if action == self.env.goal_word:
-                        self._winning_steps += self.env.max_turns - wordle.state.remaining_steps(self.state)
+                        self._winning_steps += self.env.max_turns - \
+                            wordle.state.remaining_steps(self.state)
                         self._wins += 1
                         self._winning_rewards += self.episode_reward
                         self._last_win = self._seq
@@ -162,8 +169,10 @@ class AdvantageActorCritic(LightningModule):
                     self._cheat_word = None
                     if len(self._recent_losing_words) > 0:
                         if np.random.random() < self.hparams.prob_play_lost_word:
-                            lost_idx = int(np.random.random()*len(self._recent_losing_words))
-                            self.env.set_goal_id(self._recent_losing_words[lost_idx])
+                            lost_idx = int(np.random.random() *
+                                           len(self._recent_losing_words))
+                            self.env.set_goal_id(
+                                self._recent_losing_words[lost_idx])
                             if np.random.random() < self.hparams.prob_cheat:
                                 self._cheat_word = self._recent_losing_words[lost_idx]
 
@@ -171,7 +180,8 @@ class AdvantageActorCritic(LightningModule):
 
             _, last_value = self.forward(self.state)
 
-            returns = self.compute_returns(batch_rewards, batch_masks, last_value)
+            returns = self.compute_returns(
+                batch_rewards, batch_masks, last_value)
             for idx in range(self.hparams.batch_size):
                 yield batch_states[idx], batch_actions[idx], returns[idx], batch_targets[idx]
 
@@ -235,7 +245,8 @@ class AdvantageActorCritic(LightningModule):
         actor_loss = -(logprobs * advs).mean()
 
         # critic loss
-        critic_loss = self.hparams.critic_beta * torch.square(targets - values).mean()
+        critic_loss = self.hparams.critic_beta * \
+            torch.square(targets - values).mean()
 
         # total loss (weighted sum)
         total_loss = actor_loss + critic_loss - entropy
@@ -281,11 +292,15 @@ class AdvantageActorCritic(LightningModule):
                 return [goal, guesses]
 
             if len(self._last_win):
-                self.writer.add_text("last_win", get_game_string(self._last_win), global_step=self.global_step)
-                metrics["last_win"] = wandb.Table(data=[get_table_row(self._last_win)], columns=['goal', 'guesses'])
+                self.writer.add_text("last_win", get_game_string(
+                    self._last_win), global_step=self.global_step)
+                metrics["last_win"] = wandb.Table(
+                    data=[get_table_row(self._last_win)], columns=['goal', 'guesses'])
             if len(self._last_loss):
-                self.writer.add_text("last_loss", get_game_string(self._last_loss), global_step=self.global_step)
-                metrics["last_loss"] = wandb.Table(data=[get_table_row(self._last_loss)], columns=['goal', 'guesses'])
+                self.writer.add_text("last_loss", get_game_string(
+                    self._last_loss), global_step=self.global_step)
+                metrics["last_loss"] = wandb.Table(
+                    data=[get_table_row(self._last_loss)], columns=['goal', 'guesses'])
 
             wandb.log(metrics)
             # self.writer.add_scalar("train_loss", loss, global_step=self.global_step)
@@ -325,7 +340,8 @@ class AdvantageActorCritic(LightningModule):
     def _dataloader(self) -> DataLoader:
         """Initialize the Replay Buffer dataset used for retrieving experiences."""
         dataset = ExperienceSourceDataset(self.train_batch)
-        dataloader = DataLoader(dataset=dataset, batch_size=self.hparams.batch_size)
+        dataloader = DataLoader(
+            dataset=dataset, batch_size=self.hparams.batch_size)
         return dataloader
 
     def train_dataloader(self) -> DataLoader:
@@ -345,21 +361,36 @@ class AdvantageActorCritic(LightningModule):
             arg_parser with model specific cargs added
         """
 
-        arg_parser.add_argument("--entropy_beta", type=float, default=0.01, help="entropy coefficient")
-        arg_parser.add_argument("--critic_beta", type=float, default=0.5, help="critic loss coefficient")
-        arg_parser.add_argument("--batch_size", type=int, default=64, help="size of the batches")
-        arg_parser.add_argument("--epoch_len", type=int, default=10, help="Batches per epoch")
-        arg_parser.add_argument("--lr", type=float, default=1e-4, help="learning rate")
-        arg_parser.add_argument("--env", type=str, default="WordleEnv100-v0", help="gym environment tag")
-        arg_parser.add_argument("--network_name", type=str, default="SumChars", help="Network to use")
-        arg_parser.add_argument("--n_hidden", type=int, default="1", help="Number of hidden layers")
-        arg_parser.add_argument("--hidden_size", type=int, default="256", help="Width of hidden layers")
-        arg_parser.add_argument("--gamma", type=float, default=0.99, help="discount factor")
-        arg_parser.add_argument("--seed", type=int, default=123, help="seed for training run")
-        arg_parser.add_argument("--replay_size", type=int, default=1000, help="Size of replay buffer(s)")
-        arg_parser.add_argument("--prob_play_lost_word", type=float, default=0, help="Probabiilty of replaying a losing word")
-        arg_parser.add_argument("--prob_cheat", type=float, default=0, help="Probability of cheating when playing lost word")
-        arg_parser.add_argument("--weight_decay", type=float, default=0., help="Optimizer weight decay regularization.")
+        arg_parser.add_argument(
+            "--entropy_beta", type=float, default=0.01, help="entropy coefficient")
+        arg_parser.add_argument(
+            "--critic_beta", type=float, default=0.5, help="critic loss coefficient")
+        arg_parser.add_argument("--batch_size", type=int,
+                                default=64, help="size of the batches")
+        arg_parser.add_argument("--epoch_len", type=int,
+                                default=10, help="Batches per epoch")
+        arg_parser.add_argument(
+            "--lr", type=float, default=1e-4, help="learning rate")
+        arg_parser.add_argument(
+            "--env", type=str, default="WordleEnv100-v0", help="gym environment tag")
+        arg_parser.add_argument(
+            "--network_name", type=str, default="SumChars", help="Network to use")
+        arg_parser.add_argument("--n_hidden", type=int,
+                                default="1", help="Number of hidden layers")
+        arg_parser.add_argument("--hidden_size", type=int,
+                                default="256", help="Width of hidden layers")
+        arg_parser.add_argument("--gamma", type=float,
+                                default=0.99, help="discount factor")
+        arg_parser.add_argument(
+            "--seed", type=int, default=123, help="seed for training run")
+        arg_parser.add_argument("--replay_size", type=int,
+                                default=1000, help="Size of replay buffer(s)")
+        arg_parser.add_argument("--prob_play_lost_word", type=float,
+                                default=0, help="Probabiilty of replaying a losing word")
+        arg_parser.add_argument("--prob_cheat", type=float, default=0,
+                                help="Probability of cheating when playing lost word")
+        arg_parser.add_argument("--weight_decay", type=float,
+                                default=0., help="Optimizer weight decay regularization.")
 
         arg_parser.add_argument(
             "--avg_reward_len",

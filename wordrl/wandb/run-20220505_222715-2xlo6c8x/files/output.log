@@ -1,0 +1,36 @@
+Global seed set to 123
+/Users/kellylu/opt/anaconda3/envs/WordRL/lib/python3.7/site-packages/pytorch_lightning/loops/utilities.py:94: PossibleUserWarning: `max_epochs` was not set. Setting it to 1000 epochs. To train without an epoch limit, set `max_epochs=-1`.
+  category=PossibleUserWarning,
+GPU available: False, used: False
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+  | Name | Type     | Params
+----------------------------------
+0 | net  | SumChars | 223 K
+----------------------------------
+223 K     Trainable params
+0         Non-trainable params
+223 K     Total params
+0.893     Total estimated model params size (MB)
+/Users/kellylu/opt/anaconda3/envs/WordRL/lib/python3.7/site-packages/pytorch_lightning/trainer/connectors/data_connector.py:245: PossibleUserWarning: The dataloader, train_dataloader, does not have many workers which may be a bottleneck. Consider increasing the value of the `num_workers` argument` (try 8 which is the number of cpus on this machine) in the `DataLoader` init to improve performance.
+  category=PossibleUserWarning,
+/Users/kellylu/CDS/WordRL/wordrl/a2c/agent.py:21: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at  /Users/distiller/project/conda/conda-bld/pytorch_1646755897329/work/torch/csrc/utils/tensor_new.cpp:210.)
+  logprobs, _ = self.net(torch.tensor([states], device=device))
+Epoch 0: : 0it [00:00, ?it/s]['CLOTH']
+['CLOTH', 'SLATE']
+['CLOTH', 'SLATE', 'SLATE']
+['CLOTH', 'SLATE', 'SLATE', 'JOUST']
+['CLOTH', 'SLATE', 'SLATE', 'JOUST', 'SHARP']
+['CLOTH', 'SLATE', 'SLATE', 'JOUST', 'SHARP', 'OTHER']
+['CLOTH']
+['CLOTH', 'OTHER']
+['CLOTH', 'OTHER', 'CRANE']
+['CLOTH', 'OTHER', 'CRANE', 'CRANE']
+['CLOTH', 'OTHER', 'CRANE', 'CRANE', 'SHARP']
+['CLOTH', 'OTHER', 'CRANE', 'CRANE', 'SHARP', 'OTHER']
+['CRANE']
+['CRANE', 'SHARP']
+['CRANE', 'SHARP', 'CLOAK']
+['CRANE', 'SHARP', 'CLOAK', 'CLOAK']
+/Users/kellylu/opt/anaconda3/envs/WordRL/lib/python3.7/site-packages/pytorch_lightning/trainer/trainer.py:724: UserWarning: Detected KeyboardInterrupt, attempting graceful shutdown...

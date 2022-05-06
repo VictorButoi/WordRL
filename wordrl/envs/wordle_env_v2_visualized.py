@@ -63,6 +63,7 @@ class WordleEnv_v2_visualized(gym.Env):
     def __init__(self):
         super(WordleEnv_v2_visualized, self).__init__()
         self.words = WORDS
+        self.max_turns = GAME_LENGTH
         self.action_space = gym.spaces.Discrete(len(self.words))
         self.observation_space = gym.spaces.MultiDiscrete(
             [GAME_LENGTH] + [2] * len(WORDLE_CHARS) + [2] * 3 * WORD_LENGTH * len(WORDLE_CHARS))
@@ -70,7 +71,6 @@ class WordleEnv_v2_visualized(gym.Env):
         # for the visualizer
         self.guesses = []
         self.colors = []
-        self.max_turns = GAME_LENGTH
 
         self.done = True
         self.state: np.ndarray = None
@@ -129,6 +129,8 @@ class WordleEnv_v2_visualized(gym.Env):
         self.goal_word = random.choice(self.words)
         self.state = np.array([GAME_LENGTH] + [0] * len(WORDLE_CHARS) +
                               [0, 1, 0] * WORD_LENGTH * len(WORDLE_CHARS), dtype=np.int32)
+        self.guesses = []
+        self.colors = []
 
         #print("Goal word is : " + self.goal_word)
         return self.state.copy()
@@ -163,8 +165,6 @@ class WordleEnv_v2_visualized(gym.Env):
 
         # GRAPHICS SETUP
         board = [[" " for _ in range(NUM_COLUMNS)] for _ in range(NUM_ROWS)]
-
-        # TODO: remove idx
 
         def place_letter(x, y, x_idx, box_size, word):
             piece_text = huge_font.render(word[x_idx], True, white)
@@ -213,4 +213,5 @@ class WordleEnv_v2_visualized(gym.Env):
                 if event.type == pygame.TEXTINPUT and not game_over:
                     entry = event.__getattribute__('text')
 
+            # updates the screen
             pygame.display.flip()

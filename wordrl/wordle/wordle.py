@@ -7,14 +7,14 @@ import numpy as np
 
 import wordle.state
 from wordle.const import WORDLE_N, REWARD
+from wordrl.filepaths import FILE_PATHS
 
 CUR_PATH = os.environ.get('PYTHONPATH', '.')
-import os
 dirname = os.path.dirname(__file__)
-VALID_WORDS_PATH = "/home/vib9/src/WordRL/data/wordle-allowed-guesses.txt"
+VALID_WORDS_PATH = FILE_PATHS["ROOT_PATH"]+"/data/wordle-allowed-guesses.txt"
 
 
-def _load_words(limit: Optional[int]=None) -> List[str]:
+def _load_words(limit: Optional[int] = None) -> List[str]:
     with open(VALID_WORDS_PATH, 'r') as f:
         lines = [x.strip().upper() for x in f.readlines()]
         if not limit:
@@ -40,12 +40,14 @@ class WordleEnvBase(gym.Env):
         Random goal word
         Initial state with turn 0, all chars Unvisited + Maybe
     """
+
     def __init__(self, words: List[str],
                  max_turns: int,
                  allowable_words: Optional[int] = None,
-                 frequencies: Optional[List[float]]=None,
-                 mask_based_state_updates: bool=False):
-        assert all(len(w) == WORDLE_N for w in words), f'Not all words of length {WORDLE_N}, {words}'
+                 frequencies: Optional[List[float]] = None,
+                 mask_based_state_updates: bool = False):
+        assert all(
+            len(w) == WORDLE_N for w in words), f'Not all words of length {WORDLE_N}, {words}'
         self.words = words
         self.max_turns = max_turns
         self.allowable_words = allowable_words
@@ -55,11 +57,14 @@ class WordleEnvBase(gym.Env):
 
         self.frequencies = None
         if frequencies:
-            assert len(words) == len(frequencies), f'{len(words), len(frequencies)}'
-            self.frequencies = np.array(frequencies, dtype=np.float32) / sum(frequencies)
+            assert len(words) == len(
+                frequencies), f'{len(words), len(frequencies)}'
+            self.frequencies = np.array(
+                frequencies, dtype=np.float32) / sum(frequencies)
 
         self.action_space = spaces.Discrete(len(self.words))
-        self.observation_space = spaces.MultiDiscrete(wordle.state.get_nvec(self.max_turns))
+        self.observation_space = spaces.MultiDiscrete(
+            wordle.state.get_nvec(self.max_turns))
 
         self.done = True
         self.goal_word: int = -1
@@ -86,7 +91,7 @@ class WordleEnvBase(gym.Env):
             self.done = True
             #reward = REWARD
             if wordle.state.remaining_steps(self.state) == self.max_turns-1:
-                reward = 0#-10*REWARD  # No reward for guessing off the bat
+                reward = 0  # -10*REWARD  # No reward for guessing off the bat
             else:
                 #reward = REWARD*(self.state.remaining_steps() + 1) / self.max_turns
                 reward = REWARD

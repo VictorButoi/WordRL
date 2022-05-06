@@ -3,7 +3,7 @@ from . import envs
 from . import make_config
 from . import agent
 from . import losses
-from . import training
+#from . import training
 
 from gym.envs.registration import register
 
