@@ -35,8 +35,7 @@ class ReplayBuffer:
 
     def sample(self, batch_size: int) -> Tuple:
         indices = np.random.choice(len(self.buffer), batch_size, replace=False)
-        states, actions, rewards, dones, next_states, _ = zip(
-            *(self.buffer[idx] for idx in indices))
+        states, actions, rewards, dones, next_states, _ = zip(*(self.buffer[idx] for idx in indices))
 
         return (
             np.array(states),
@@ -54,11 +53,11 @@ class SequenceReplay:
         capacity: size of the buffer
     """
 
-    def __init__(self, dataset_config) -> None:
-        self.capacity = dataset_config["replay_size"]//2
-        self.buffer = deque(maxlen=dataset_config["replay_size"]//2)
+    def __init__(self, capacity: int, initialize_winning_replays: str=None) -> None:
+        self.capacity = capacity
+        self.buffer = deque(maxlen=capacity)
 
-        if dataset_config["init_winning_replays"]:
+        if initialize_winning_replays:
             with open(initialize_winning_replays, 'rb') as f:
                 init = pickle.load(f)
             self.buffer.extend(init)
@@ -81,8 +80,7 @@ class SequenceReplay:
     def sample(self, batch_size: int) -> List[Experience]:
         xps = []
         if len(self.buffer) > 0:
-            indices = np.random.choice(len(self.buffer), min(
-                batch_size, len(self.buffer)), replace=False)
+            indices = np.random.choice(len(self.buffer), min(batch_size, len(self.buffer)), replace=False)
             for i in indices:
                 xps.extend(self.buffer[i])
                 if len(xps) >= batch_size:
@@ -116,3 +114,5 @@ class RLDataset(IterableDataset):
 
         for i in range(len(dones)):
             yield states[i], actions[i], rewards[i], dones[i], new_states[i]
+
+
