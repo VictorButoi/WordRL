@@ -1,16 +1,8 @@
-from a2c.sumchars import SumChars
-from a2c.embeddingchars import EmbeddingChars
-
-_registry = {}
-
-
-def register(ctor, name):
-    _registry[name] = ctor
-
-
-def construct(name, **kwargs):
-    return _registry[name](**kwargs)
-
-
-register(SumChars, "SumChars")
-register(EmbeddingChars, "EmbeddingChars")
+from . import a2c_play
+from . import a2c_train
+from . import agent
+from . import embeddingchars.py
+from . import experience
+from . import module
+from . import play
+from . import sumchars
