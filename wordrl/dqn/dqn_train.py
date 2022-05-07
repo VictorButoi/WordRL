@@ -15,15 +15,30 @@ from pytorch_lightning import Trainer, LightningModule
 from pytorch_lightning.callbacks.model_checkpoint import ModelCheckpoint
 from pytorch_lightning.callbacks import Callback
 
-import dqn
-from dqn.agent import Agent
-from dqn.experience import SequenceReplay, RLDataset, Experience
-
-import wordle.state
+import wordrl as wdl
 
 import gym
 
 AVAIL_GPUS = min(1, torch.cuda.device_count())
+
+# Handle things that used to get handled in the import
+from .agent import Agent
+from .experience import SequenceReplay, RLDataset, Experience
+from .embeddingchars import EmbeddingChars
+from .mlp import MLP
+from .sumchars import SumChars
+
+_registry = {}
+
+def register(ctor, name):
+    _registry[name] = ctor
+
+def construct(name, **kwargs):
+    return _registry[name](**kwargs)
+
+register(MLP, "MLP")
+register(EmbeddingChars, "EmbeddingChars")
+register(SumChars, "SumChars")
 
 
 class DQNLightning(LightningModule):
@@ -36,7 +51,7 @@ class DQNLightning(LightningModule):
             batch_size: int = 1024,
             lr: float = 1e-2,
             weight_decay: float = 1.e-4,
-            env: str = "WordleEnv-v0",
+            env: str = "Wordle-v2-10-visualized",
             gamma: float = 0.9,
             sync_rate: int = 10,
             replay_size: int = 1000,
@@ -67,7 +82,6 @@ class DQNLightning(LightningModule):
         super().__init__()
         self.save_hyperparameters()
 
-        self.writer = SummaryWriter()
         self.env = gym.make(self.hparams.env)
         obs_size = self.env.observation_space.shape[0]
         n_actions = self.env.action_space.n
@@ -79,9 +93,9 @@ class DQNLightning(LightningModule):
 
         print("dqn:", self.env.spec.id, self.env.spec.max_episode_steps, n_actions, obs_size)
 
-        self.net = dqn.construct(
+        self.net = construct(
             self.hparams.deep_q_network, obs_size=obs_size, n_actions=n_actions, hidden_size=hidden_size, word_list=self.env.words)
-        self.target_net = dqn.construct(
+        self.target_net = construct(
             self.hparams.deep_q_network, obs_size=obs_size, n_actions=n_actions, hidden_size=hidden_size, word_list=self.env.words)
 
         self.dataset = RLDataset(
@@ -155,7 +169,7 @@ class DQNLightning(LightningModule):
             reward = exp.reward
             cur_seq.append(exp)
 
-        winning_steps = self.env.max_turns - wordle.state.remaining_steps(self.state)
+        winning_steps = self.env.max_turns - wdl.wordle.state.remaining_steps(self.state)
         if reward > 0:
             self.dataset.winners.append(cur_seq)
         else:
@@ -227,27 +241,15 @@ class DQNLightning(LightningModule):
         if self.global_step % 100 == 0:
             if len(self.dataset.winners) > 0:
                 winner = self.dataset.winners.buffer[-1]
-                game = f"goal: {self.env.words[winner[0].goal_id]}\n"
+                game = f"goal: {winner[0].goal_id}\n"
                 for i, xp in enumerate(winner):
                     game += f"{i}: {self.env.words[xp.action]}\n"
-                self.writer.add_text("game sample/winner", game, global_step=self.global_step)
             if len(self.dataset.losers) > 0:
                 loser = self.dataset.losers.buffer[-1]
-                game = f"goal: {self.env.words[loser[0].goal_id]}\n"
+                game = f"goal: {loser[0].goal_id}\n"
                 for i, xp in enumerate(loser):
                     game += f"{i}: {self.env.words[xp.action]}\n"
-                self.writer.add_text("game sample/loser", game, global_step=self.global_step)
-            self.writer.add_scalar("train_loss", loss, global_step=self.global_step)
-            self.writer.add_scalar("total_games_played", self.total_games_played, global_step=self.global_step)
-
-            self.writer.add_scalar("winner_buffer", len(self.dataset.winners), global_step=self.global_step)
-            self.writer.add_scalar("loser_buffer", len(self.dataset.losers), global_step=self.global_step)
-
-            self.writer.add_scalar("lose_ratio", self._losses/(self._wins+self._losses), global_step=self.global_step)
-            self.writer.add_scalar("wins", self._wins, global_step=self.global_step)
-            self.writer.add_scalar("reward_per_game", self._rewards / (self._wins+self._losses), global_step=self.global_step)
-            if self._wins > 0:
-                self.writer.add_scalar("avg_winning_turns", self._winning_steps/self._wins, global_step=self.global_step)
+         
             self._winning_steps = 0
             self._wins = 0
             self._losses = 0
@@ -281,7 +283,7 @@ class DQNLightning(LightningModule):
 def main(
         resume_from_checkpoint: str = None,
         initialize_winning_replays: str = None,
-        env: str = "WordleEnv100-v0",
+        env: str = "Wordle-v2-10-visualized",
         deep_q_network: str = 'SumChars',
         max_epochs: int = 5000,
         checkpoint_every_n_epochs: int = 1000,
@@ -337,5 +339,5 @@ def main(
     trainer.fit(model)
 
 
-if __name__ == '__main__':
+def train_func(config):    
     fire.Fire(main)

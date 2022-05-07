@@ -3,6 +3,8 @@ from typing import List
 import numpy as np
 import torch
 
+import wordrl as wdl
+
 
 class ActorCriticAgent:
     """Actor-Critic based agent that returns an action based on the networks policy."""

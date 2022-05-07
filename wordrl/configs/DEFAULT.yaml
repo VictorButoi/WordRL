@@ -6,7 +6,7 @@ dataset:
     sample_size: 10000
     eps_length: 512
 training:
-    algorithm: "a2c"
+    algorithm: "dqn"
     batch_size: 1
     lr: 0.001
     weight_decay: 0

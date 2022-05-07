@@ -6,8 +6,8 @@ from pytorch_lightning.callbacks import ModelCheckpoint
 
 import wandb
 
-from a2c.module import AdvantageActorCritic
-
+# wordrl imports
+import wordrl as wdl
 
 def cli_main() -> None:
     parser = ArgumentParser(add_help=False)
@@ -16,13 +16,13 @@ def cli_main() -> None:
     parser = Trainer.add_argparse_args(parser)
 
     # model args
-    parser = AdvantageActorCritic.add_model_specific_args(parser)
+    parser = wdl.a2c.module.AdvantageActorCritic.add_model_specific_args(parser)
     args = parser.parse_args()
 
     with wandb.init(project='wordle-solver'):
         wandb.config.update(args)
 
-        model = AdvantageActorCritic(**args.__dict__)
+        model = wdl.a2c.module.AdvantageActorCritic(**args.__dict__)
         # save checkpoints based on avg_reward
         checkpoint_callback = ModelCheckpoint(every_n_train_steps=100)
 
@@ -32,5 +32,5 @@ def cli_main() -> None:
         trainer.fit(model)
 
 
-if __name__ == '__main__':
+def train_func(config):
     cli_main()

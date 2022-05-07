@@ -1,3 +1,7 @@
+from . import const
+from . import state
+from . import wordle
+
 from gym.envs.registration import (
     registry,
     register,

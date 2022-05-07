@@ -1,10 +1,9 @@
+from . import wordle
+from . import a2c
+from . import dqn
 from . import filepaths
 from . import envs
 from . import make_config
-from . import agent
-from . import losses
-from . import a2c
-from . import dqn
 
 from gym.envs.registration import register
 

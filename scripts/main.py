@@ -28,9 +28,9 @@ if __name__ == "__main__":
         
     training_algo = config["training"]["algorithm"]
     if training_algo == "dqn":
-        wdl.dqn.dqn_train(args)
+        wdl.dqn.dqn_train.train_func(config)
     elif training_algo == "a2c":
-        wdl.a2c.a2c_train(args)
+        wdl.a2c.a2c_train.train_func(config)
     else:
         raise ValueError("Training algo not recognized!")
     

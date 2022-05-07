@@ -13,12 +13,8 @@ from torch.optim import Optimizer
 from torch.utils.data import DataLoader
 from torch.utils.tensorboard import SummaryWriter
 
-import a2c
-import wordle.state
-from a2c.agent import ActorCriticAgent
-from a2c.experience import ExperienceSourceDataset, Experience
-
-from wordrl.envs.wordle_env_v2_visualized import WORDS
+# wordrl imports
+import wordrl as wdl
 
 
 class AdvantageActorCritic(LightningModule):
@@ -67,13 +63,13 @@ class AdvantageActorCritic(LightningModule):
 
         # Model components
         self.env = gym.make("Wordle-v2-10-visualized")
-        self.net = a2c.construct(
+        self.net = wdl.a2c.construct(
             self.hparams.network_name,
             obs_size=self.env.observation_space.shape[0],
             n_hidden=self.hparams.n_hidden,
             hidden_size=self.hparams.hidden_size,
             word_list=self.env.words)
-        self.agent = ActorCriticAgent(self.net)
+        self.agent = wdl.a2c.agent.ActorCriticAgent(self.net)
 
         # Tracking metrics
         self.episode_reward = 0
@@ -102,12 +98,6 @@ class AdvantageActorCritic(LightningModule):
         Returns:
             action log probabilities, values
         """
-        # if not isinstance(x, list):
-        #     x = [x]
-        #
-        # if not isinstance(x, Tensor):
-        #     x = torch.tensor(x, device=self.device)
-        #
         logprobs, values = self.net(torch.tensor([x], device=self.device))
         return logprobs, values
 
@@ -130,7 +120,7 @@ class AdvantageActorCritic(LightningModule):
             batch_targets = []
             for _ in range(self.hparams.batch_size):
                 action = self.agent(self.state, self.device)[0]
-                if wordle.state.remaining_steps(self.state) == 1 and self._cheat_word:
+                if wdl.wordle.state.remaining_steps(self.state) == 1 and self._cheat_word:
                     action = self._cheat_word
 
                 next_state, reward, done, aux = self.env.step(action)
@@ -144,7 +134,7 @@ class AdvantageActorCritic(LightningModule):
                 batch_masks.append(done)
                 batch_targets.append(aux['goal_id'])
 
-                self._seq.append(Experience(self.state.copy(),
+                self._seq.append(a2c.experience.Experience(self.state.copy(),
                                  action, reward, aux['goal_id']))
                 self.state = next_state
                 self.episode_reward += reward
@@ -303,15 +293,6 @@ class AdvantageActorCritic(LightningModule):
                     data=[get_table_row(self._last_loss)], columns=['goal', 'guesses'])
 
             wandb.log(metrics)
-            # self.writer.add_scalar("train_loss", loss, global_step=self.global_step)
-            # self.writer.add_scalar("total_games_played", self.done_episodes, global_step=self.global_step)
-            #
-            # self.writer.add_scalar("lose_ratio", self._losses/(self._wins+self._losses), global_step=self.global_step)
-            # self.writer.add_scalar("wins", self._wins, global_step=self.global_step)
-            # self.writer.add_scalar("reward_per_game", self._total_rewards / (self._wins+self._losses), global_step=self.global_step)
-            # if self._wins > 0:
-            #     self.writer.add_scalar("reward_per_win", self._winning_rewards / self._wins, global_step=self.global_step)
-            #     self.writer.add_scalar("avg_winning_turns", self._winning_steps/self._wins, global_step=self.global_step)
 
             self._winning_steps = 0
             self._winning_rewards = 0
@@ -339,7 +320,7 @@ class AdvantageActorCritic(LightningModule):
 
     def _dataloader(self) -> DataLoader:
         """Initialize the Replay Buffer dataset used for retrieving experiences."""
-        dataset = ExperienceSourceDataset(self.train_batch)
+        dataset = wdl.a2c.experience.ExperienceSourceDataset(self.train_batch)
         dataloader = DataLoader(
             dataset=dataset, batch_size=self.hparams.batch_size)
         return dataloader

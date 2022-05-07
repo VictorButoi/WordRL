@@ -5,13 +5,14 @@ import gym
 from gym import spaces
 import numpy as np
 
-import wordle.state
-from wordle.const import WORDLE_N, REWARD
-from wordrl.filepaths import FILE_PATHS
+from .const import WORDLE_N, REWARD
+from . import state as wordle_state
+
+from wordrl import filepaths
 
 CUR_PATH = os.environ.get('PYTHONPATH', '.')
 dirname = os.path.dirname(__file__)
-VALID_WORDS_PATH = FILE_PATHS["ROOT_PATH"]+"/data/wordle-allowed-guesses.txt"
+VALID_WORDS_PATH = filepaths.FILE_PATHS["ROOT_PATH"]+"/data/wordle-allowed-guesses.txt"
 
 
 def _load_words(limit: Optional[int] = None) -> List[str]:

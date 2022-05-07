@@ -1,28 +1,29 @@
 from typing import Tuple, List
 
-import wordle.state
-from a2c.agent import GreedyActorCriticAgent
-from a2c.module import AdvantageActorCritic
-from wordle.wordle import WordleEnvBase
+# wordrl imports
+import wordrl as wdl
+
+from . import module
+from . import agent
 
 
 def load_from_checkpoint(
         checkpoint: str
-) -> Tuple[AdvantageActorCritic, GreedyActorCriticAgent, WordleEnvBase]:
+) -> Tuple[module.AdvantageActorCritic, agent.GreedyActorCriticAgent, wdl.wordle.wordle.WordleEnvBase]:
     """
     :param checkpoint:
     :return:
     """
-    model = AdvantageActorCritic.load_from_checkpoint(checkpoint)
-    agent = GreedyActorCriticAgent(model.net)
+    model = module.AdvantageActorCritic.load_from_checkpoint(checkpoint)
+    agent = agent.GreedyActorCriticAgent(model.net)
     env = model.env
 
     return model, agent, env
 
 
 def suggest(
-        agent: GreedyActorCriticAgent,
-        env: WordleEnvBase,
+        agent: agent.GreedyActorCriticAgent,
+        env: wdl.wordle.wordle.WordleEnvBase,
         sequence: List[Tuple[str, List[int]]],
 ) -> str:
     """
@@ -40,14 +41,14 @@ def suggest(
         assert all(i in (0, 1, 2) for i in mask)
         assert len(mask) == 5
 
-        state = wordle.state.update_from_mask(state, word, mask)
+        state = wdl.wordle.state.update_from_mask(state, word, mask)
 
     return env.words[agent(state, "cpu")[0]]
 
 
 def goal(
-        agent: GreedyActorCriticAgent,
-        env: WordleEnvBase,
+        agent: agent.GreedyActorCriticAgent,
+        env: wdl.wordle.wordle.WordleEnvBase,
         goal_word: str,
 ) -> Tuple[bool, List[Tuple[str, int]]]:
     state = env.reset()

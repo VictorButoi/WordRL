@@ -1,0 +1,24 @@
+{
+    "os": "Linux-5.4.0-105-generic-x86_64-with-debian-bullseye-sid",
+    "python": "3.7.5",
+    "heartbeatAt": "2022-05-07T15:50:46.002287",
+    "startedAt": "2022-05-07T15:50:43.884752",
+    "docker": null,
+    "gpu": "NVIDIA GeForce RTX 2080 Ti",
+    "gpu_count": 1,
+    "cpu_count": 24,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "main.py",
+    "codePath": "scripts/main.py",
+    "git": {
+        "remote": "git@github.com:VictorButoi/WordRL",
+        "commit": "a67399c488fbe14706c447b380793c3e51af1919"
+    },
+    "email": "vib9@cornell.edu",
+    "root": "/share/sablab/nfs02/users/vib9/WordRL",
+    "host": "sablab-gpu-08.ece.cornell.edu",
+    "username": "vib9",
+    "executable": "/home/vib9/anaconda3/envs/wordrl/bin/python"
+}

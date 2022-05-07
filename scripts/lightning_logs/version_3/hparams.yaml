@@ -1,0 +1,17 @@
+batch_size: 512
+deep_q_network: SumChars
+env: Wordle-v2-10-visualized
+episode_length: 512
+eps_end: 0.01
+eps_last_frame: 4000
+eps_start: 1.0
+gamma: 0.9
+hidden_size: 256
+initialize_winning_replays: null
+lr: 0.001
+num_workers: 0
+replay_size: 1000
+sync_rate: 100
+warm_start_size: 1000
+warm_start_steps: 1000
+weight_decay: 1.0e-05

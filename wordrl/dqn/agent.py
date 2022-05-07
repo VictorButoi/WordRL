@@ -5,9 +5,8 @@ import torch
 from torch import nn
 import gym
 
-from wordle import wordle
-from dqn.experience import SequenceReplay, Experience
-from wordle.state import WordleState
+import wordrl as wdl
+from .experience import SequenceReplay, Experience
 
 
 class Agent:
@@ -22,7 +21,7 @@ class Agent:
         self.net = net
         self.action_space = action_space
 
-    def get_action(self, state: WordleState, epsilon: float, device: str) -> int:
+    def get_action(self, state: wdl.wordle.state.WordleState, epsilon: float, device: str) -> int:
         """Using the given network, decide what action to carry out using an epsilon-greedy policy.
 
         Args:

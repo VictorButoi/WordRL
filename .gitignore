@@ -1,3 +1,5 @@
 #filepath
 wordrl/filepaths.py
-*/__pycache__/*
+wordrl/a2c/__pycache__/
+wordrl/wordle/__pycache__/
+
