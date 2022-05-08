@@ -302,6 +302,7 @@ def main(config):
         wandb.run.name = config["experiment"]["name"]
         
         model = DQNLightning(
+            words_file=config["dataset"]["word_file"],
             initialize_winning_replays=config["dataset"]["init_winning_replays"],
             deep_q_network=config["agent"]["network"],
             env=config["dataset"]["env"],

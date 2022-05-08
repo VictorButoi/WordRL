@@ -17,6 +17,7 @@ def main(config):
         wandb.run.name = config["experiment"]["name"]
 
         model = wdl.a2c.module.AdvantageActorCritic(
+            words_file=config["dataset"]["word_file"],
             network_name=config["agent"]["network"],
             gamma=config["training"]["gamma"],
             lr=config["training"]["lr"],
