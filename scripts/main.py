@@ -16,6 +16,7 @@ import sys
 
 if __name__ == "__main__":
     wordl_root = wdl.filepaths.FILE_PATHS["ROOT_PATH"]
+    
     config_root = os.path.join(wordl_root, "wordrl/configs/DEFAULT.yaml")
     with open(config_root, 'r') as stream:
         config = yaml.safe_load(stream)
@@ -24,7 +25,7 @@ if __name__ == "__main__":
             wordl_root, f"wordrl/configs/{sys.argv[1]}.yaml")
         with open(new_config, 'r') as stream:
             new_config = yaml.safe_load(stream)
-        config = wdl.setup.merge_dicts(config, new_config)
+        config = wdl.make_config.merge_dicts(config, new_config)
         
     training_algo = config["training"]["algorithm"]
     if training_algo == "dqn":

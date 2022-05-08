@@ -1,0 +1,26 @@
+---
+experiment:
+    name: "dqn_default"
+    resume_from_checkpoint: ""
+    sync_rate: 100
+    steps_per_update: 100
+    num_workers: 0
+dataset:
+    env: "Wordle-v2-10-visualized"
+    replay_size: 1000
+    init_winning_replays: ""
+    episode_length: 512
+training:
+    algorithm: "dqn"
+    batch_size: 512
+    last_frame_cutoff: 0.8
+    lr: 0.001
+    weight_decay: 0.00001
+    max_eps: 1.0
+    min_eps: 0.01
+    gamma: 0.9
+    epochs: 5000
+    checkpoint_every_n_epochs: 1000
+agent:
+    network: "SumChars"
+    hidden_size: 256 

@@ -1,0 +1,35 @@
+---
+experiment:
+    name: "a2c_default"
+    seed: 123
+    resume_from_checkpoint: ""
+    sync_rate: 100
+    steps_per_update: 100
+    num_workers: 0
+    do_render: False
+dataset:
+    env: "Wordle-v2-10-visualized"
+    replay_size: 1000
+    init_winning_replays: ""
+    episode_length: 512
+training:
+    algorithm: "a2c"
+    batch_size: 64
+    last_frame_cutoff: 0.8
+    lr: 0.0001
+    weight_decay: 0.
+    max_eps: 1.0
+    min_eps: 0.01
+    gamma: 0.99
+    prob_play_lost_word: 0.
+    prob_cheat: 0.
+    entropy_beta: 0.01
+    critic_beta: 0.5
+    avg_reward_len: 100
+    epochs: 5000
+    epoch_len: 10
+    checkpoint_every_n_epochs: 1000
+agent:
+    network: "SumChars"
+    hidden_size: 256 
+    n_hidden: 1

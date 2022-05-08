@@ -2,4 +2,7 @@
 wordrl/filepaths.py
 wordrl/a2c/__pycache__/
 wordrl/wordle/__pycache__/
-
+#mute scripts
+scripts/lightning_logs/
+scripts/wandb/
+scripts/runs/
