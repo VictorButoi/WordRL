@@ -159,7 +159,7 @@ class AdvantageActorCritic(LightningModule):
                 if done:
                     if self.env.words[action] == self.env.goal_word:
                         self._winning_steps += self.env.max_turns - \
-                            wordle.state.remaining_steps(self.state)
+                            wdl.wordle.state.remaining_steps(self.state)
                         self._wins += 1
                         self._winning_rewards += self.episode_reward
                         self._last_win = self._seq
