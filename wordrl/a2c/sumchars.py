@@ -29,7 +29,16 @@ Must be at least 1
 
 
 class SumChars(nn.Module):
-    def __init__(self, obs_size: int, word_list: List[str], n_hidden: int = 1, hidden_size: int = 256, embedding_matrix = "original", matrix_width = 26*5, num_actor_layers = 1, num_critic_layers = 1, glove_dataset = "common_crawl_840"):
+    def __init__(self, 
+                 obs_size: int, 
+                 word_list: List[str], 
+                 n_hidden: int = 1, 
+                 hidden_size: int = 256, 
+                 embedding_matrix = "original", 
+                 matrix_width = 26*5, 
+                 num_actor_layers = 1, 
+                 num_critic_layers = 1, 
+                 glove_dataset = "common_crawl_840"):
         """
         Args:
             obs_size: observation/state size of the environment
@@ -44,32 +53,24 @@ class SumChars(nn.Module):
 
         if embedding_matrix == "original":
             embedding_width = 26*5 #for each of 5 letters, 1-26
-
-
             #column vector = word
             word_array = np.zeros((embedding_width, len(word_list)))
             for i, word in enumerate(word_list):
                 for j, c in enumerate(word): #j = letter order in word
                     word_array[j*26 + (ord(c) - ord('A')), i] = 1
             self.words = torch.Tensor(word_array)
-
         elif embedding_matrix == "original_random":
             embedding_width = matrix_width
             self.words = torch.Tensor(np.random(embedding_width, len(word_list)))
-
         elif embedding_matrix == "glove":
             embedding_width = matrix_width
             g = GloveEmbedding(glove_dataset, d_emb = glove_demb)
             word_emb_array = np.array([g.emb(w) for w in word_list])
             self.words = torch.Tensor(word_emb_array)
-
         elif embedding_matrix == "spacy":
             nlp = spacy.load("en_core_web_md")
             self.words = np.concatenate([nlp(w) for w in word_list])
-            embedding_width = len(self.words[0]) # should be 300 
-
-            
-
+            embedding_width = len(self.words[0]) # should be 300
         else: 
             raise ValueError("Invalid embedding matrix ID")
 

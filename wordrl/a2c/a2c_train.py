@@ -30,7 +30,12 @@ def main(config):
             prob_play_lost_word=config["training"]["prob_play_lost_word"],
             prob_cheat=config["training"]["prob_cheat"],
             weight_decay=config["training"]["weight_decay"],
-            do_render=config["experiment"]["do_render"]
+            do_render=config["experiment"]["do_render"],
+            embedding_matrix=config["agent"]["embedding_matrix"], 
+            matrix_width=config["agent"]["matrix_width"], 
+            num_actor_layers=config["agent"]["num_actor_layers"], 
+            num_critic_layers=config["agent"]["num_critic_layers"], 
+            glove_dataset=config["agent"]["glove_dataset"]
         ) 
         # save checkpoints based on avg_reward
         seed_everything(config["experiment"]["seed"])

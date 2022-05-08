@@ -6,7 +6,7 @@ experiment:
     sync_rate: 100
     steps_per_update: 100
     num_workers: 0
-    do_render: True
+    do_render: False
 dataset:
     env: "Wordle-v2-10-visualized"
     replay_size: 1000
