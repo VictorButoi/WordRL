@@ -54,9 +54,6 @@ class WordleEnv_v2_visualized(gym.Env):
         WORDS_PATH = os.path.join(
             wdl.filepaths.FILE_PATHS["ROOT_PATH"], f"data/{word_file}")
         self.words = get_words(WORDS_PATH)
-        ANSWERS_PATH = os.path.join(
-            wdl.filepaths.FILE_PATHS["ROOT_PATH"], "data/legacy_data/wordle-answers.txt")
-        self.answers = get_words(ANSWERS_PATH)
         self.max_turns = GAME_LENGTH
         self.action_space = gym.spaces.Discrete(len(self.words))
         self.observation_space = gym.spaces.MultiDiscrete(
@@ -125,7 +122,7 @@ class WordleEnv_v2_visualized(gym.Env):
 
     def reset(self):
         self.done = False
-        self.goal_word = random.choice(self.answers)
+        self.goal_word = random.choice(self.words)
         self.state = np.array([GAME_LENGTH] + [0] * len(WORDLE_CHARS) +
                               [0, 1, 0] * WORD_LENGTH * len(WORDLE_CHARS), dtype=np.int32)
         self.guesses = []
