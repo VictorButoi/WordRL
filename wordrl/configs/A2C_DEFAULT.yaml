@@ -33,3 +33,8 @@ agent:
     network: "SumChars"
     hidden_size: 256 
     n_hidden: 1
+    embedding_matrix: "original_random"
+    matrix_width: 130
+    num_actor_layers: 1
+    num_critic_layers: 1
+    glove_dataset: "common_crawl_840"
