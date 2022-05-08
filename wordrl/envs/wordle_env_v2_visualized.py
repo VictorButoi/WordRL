@@ -60,8 +60,10 @@ class WordleEnv_v2_visualized(gym.Env):
 
     """
 
-    def __init__(self):
+    def __init__(self, word_file):
         super(WordleEnv_v2_visualized, self).__init__()
+        WORDS_PATH = os.path.join(wdl.filepaths.FILE_PATHS["ROOT_PATH"], f"data/{word_file}")
+        WORDS = get_words(WORDS_PATH)
         self.words = WORDS
         self.max_turns = GAME_LENGTH
         self.action_space = gym.spaces.Discrete(len(self.words))

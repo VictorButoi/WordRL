@@ -30,6 +30,7 @@ class AdvantageActorCritic(LightningModule):
     def __init__(
             self,
             # env: str,
+            words_file: str,
             network_name: str,
             gamma: float,
             lr: float,
@@ -71,7 +72,7 @@ class AdvantageActorCritic(LightningModule):
         self.batches_per_epoch = batch_size * epoch_len
 
         # Model components
-        self.env = gym.make("Wordle-v2-10-visualized")
+        self.env = gym.make("Wordle-v2-10-visualized", word_file=words_file)
         self.net = wdl.a2c.construct(
             self.hparams.network_name,
             obs_size=self.env.observation_space.shape[0],
