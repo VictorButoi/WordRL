@@ -211,18 +211,17 @@ class WordleEnv_v2_visualized(gym.Env):
         y_offset = (SCREEN_HEIGHT - (NUM_ROWS*BOX_SIZE +
                     (NUM_ROWS - 1)*BOX_SPACING))/2
 
-        running = True
-        while running:
-            timer.tick(fps)
-            screen.fill(black)
-            draw_board(board, sox=x_offset, soy=y_offset, box_size=BOX_SIZE,
-                       x_space=BOX_SPACING, y_space=BOX_SPACING)
-
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    running = False
-                if event.type == pygame.TEXTINPUT and not game_over:
-                    entry = event.__getattribute__('text')
-
+        timer.tick(fps)
+        screen.fill(black)
+        draw_board(board, sox=x_offset, soy=y_offset, box_size=BOX_SIZE,
+                   x_space=BOX_SPACING, y_space=BOX_SPACING)
             # updates the screen
-            pygame.display.flip()
+        pygame.display.flip()
+        
+    def close(self):
+        if self.screen is not None:
+            import pygame
+
+            pygame.display.quit()
+            pygame.quit()
+            self.isopen = False
