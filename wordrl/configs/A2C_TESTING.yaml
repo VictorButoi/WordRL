@@ -1,6 +1,6 @@
 ---
 experiment:
-    name: "a2c_default"
+    name: "a2c_testing"
     seed: 123
     resume_from_checkpoint: ""
     sync_rate: 100
@@ -8,7 +8,7 @@ experiment:
     num_workers: 0
     do_render: False
 dataset:
-    word_file: "small_wordle_words.txt"
+    word_file: "wordle_words.txt"
     env: "Wordle-v2-10-visualized"
     replay_size: 1000
     init_winning_replays: ""
@@ -27,15 +27,15 @@ training:
     entropy_beta: 0.01
     critic_beta: 0.5
     avg_reward_len: 100
-    epochs: 2000
+    epochs: 20000
     epoch_len: 10
     checkpoint_every_n_epochs: 1000
 agent:
     network: "SumChars"
     hidden_size: 256 
     n_hidden: 1
-    embedding_matrix: "original"
-    matrix_width: 130
+    embedding_matrix: "glove"
+    matrix_width: 3000
     num_actor_layers: 1
     num_critic_layers: 1
     glove_dataset: "common_crawl_840"

@@ -20,7 +20,7 @@ training:
     max_eps: 1.0
     min_eps: 0.01
     gamma: 0.9
-    epochs: 5000
+    epochs: 20000
     checkpoint_every_n_epochs: 1000
 agent:
     network: "SumChars"

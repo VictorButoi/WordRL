@@ -25,14 +25,6 @@ def get_words(filename, limit: Optional[int] = None):
         else:
             return words[:limit]
 
-
-# change to "data/5_words.txt for full word bank"
-WORDS_PATH = os.path.join(
-    wdl.filepaths.FILE_PATHS["ROOT_PATH"], "data/random_words.txt")
-
-WORDS = get_words(WORDS_PATH, 100)
-
-
 class WordleEnv_v2(gym.Env):
     """
     Bare Bones Wordle Environment
@@ -52,8 +44,10 @@ class WordleEnv_v2(gym.Env):
 
     """
 
-    def __init__(self):
+    def __init__(self, word_file):
         super(WordleEnv_v2, self).__init__()
+        WORDS_PATH = os.path.join(wdl.filepaths.FILE_PATHS["ROOT_PATH"], f"data/{word_file}")
+        WORDS = get_words(WORDS_PATH, 100)
         self.words = WORDS
         self.action_space = gym.spaces.Discrete(len(self.words))
         self.observation_space = gym.spaces.MultiDiscrete(

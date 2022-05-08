@@ -61,12 +61,14 @@ class SumChars(nn.Module):
             self.words = torch.Tensor(word_array)
         elif embedding_matrix == "original_random":
             embedding_width = matrix_width
-            self.words = torch.Tensor(np.random(embedding_width, len(word_list)))
+            self.words = torch.Tensor(np.random.rand(embedding_width, len(word_list)))
+        #these both require 300
         elif embedding_matrix == "glove":
             embedding_width = matrix_width
-            g = GloveEmbedding(glove_dataset, d_emb = glove_demb)
+            g = GloveEmbedding(glove_dataset, d_emb = 300)
             word_emb_array = np.array([g.emb(w) for w in word_list])
             self.words = torch.Tensor(word_emb_array)
+        #these both require 300
         elif embedding_matrix == "spacy":
             nlp = spacy.load("en_core_web_md")
             self.words = np.concatenate([nlp(w) for w in word_list])

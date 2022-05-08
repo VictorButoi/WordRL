@@ -1,3 +1,3 @@
 FILE_PATHS = {
-    "ROOT_PATH": "/Users/victo/Desktop/WordRL"
+    "ROOT_PATH": "/home/vib9/src/WordRL"
 }
