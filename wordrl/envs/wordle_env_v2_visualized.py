@@ -71,12 +71,12 @@ class WordleEnv_v2_visualized(gym.Env):
         # for the visualizer
         self.guesses = []
         self.colors = []
-        
-        #pygame stuff
+
+        # pygame stuff
         self.screen = None
         self.clock = None
         self.isopen = True
-        
+
         self.done = True
         self.state: np.ndarray = None
 
@@ -155,16 +155,17 @@ class WordleEnv_v2_visualized(gym.Env):
             (NUM_ROWS - 1)*BOX_SPACING + SCREEN_SPACING
         SCREEN_WIDTH = NUM_COLUMNS*BOX_SIZE + \
             (NUM_COLUMNS - 1)*BOX_SPACING + SCREEN_SPACING
-        
+
         if self.screen is None:
             pygame.init()
             pygame.display.init()
-            self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+            self.screen = pygame.display.set_mode(
+                (SCREEN_WIDTH, SCREEN_HEIGHT))
         if self.clock is None:
             self.clock = pygame.time.Clock()
 
         # PYGAME OVERHEAD
-        screen = pygame.display.set_mode([SCREEN_WIDTH, SCREEN_HEIGHT])
+        #screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
         pygame.display.set_caption("Wordle Knockoff")
         turn = 0
         fps = 5
@@ -181,7 +182,7 @@ class WordleEnv_v2_visualized(gym.Env):
             piece_text = huge_font.render(word[x_idx], True, white)
             x_offset = (box_size - font_x)/2
             y_offset = (box_size - font_y)/2
-            screen.blit(piece_text, (x + x_offset, y + y_offset))
+            self.screen.blit(piece_text, (x + x_offset, y + y_offset))
 
         def draw_board(board,
                        sox,
@@ -199,25 +200,25 @@ class WordleEnv_v2_visualized(gym.Env):
                     x = col*box_size + sox + col*x_space
                     y = row*box_size + soy + row*y_space
                     if row < len(self.guesses):
-                        pygame.draw.rect(screen, self.colors[row*5+col], [
+                        pygame.draw.rect(self.screen, self.colors[row*5+col], [
                             x, y, box_size, box_size], do_fill)
                         place_letter(x, y, col, box_size, self.guesses[row])
                     else:
-                        pygame.draw.rect(screen, grey, [
+                        pygame.draw.rect(self.screen, grey, [
                             x, y, box_size, box_size], do_fill)
 
         x_offset = (SCREEN_WIDTH - (NUM_COLUMNS*BOX_SIZE +
                     (NUM_COLUMNS - 1)*BOX_SPACING))/2
         y_offset = (SCREEN_HEIGHT - (NUM_ROWS*BOX_SIZE +
                     (NUM_ROWS - 1)*BOX_SPACING))/2
-
+        if self.state[0] == 0:
+            self.screen.fill(black)
         timer.tick(fps)
-        screen.fill(black)
         draw_board(board, sox=x_offset, soy=y_offset, box_size=BOX_SIZE,
                    x_space=BOX_SPACING, y_space=BOX_SPACING)
-            # updates the screen
+        # updates the screen
         pygame.display.flip()
-        
+
     def close(self):
         if self.screen is not None:
             import pygame

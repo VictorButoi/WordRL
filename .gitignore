@@ -9,3 +9,4 @@ wordrl/__pycache__/
 scripts/lightning_logs/
 scripts/wandb/
 scripts/runs/
+entropy/__pycache__
