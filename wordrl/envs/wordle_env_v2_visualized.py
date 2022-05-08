@@ -78,9 +78,9 @@ class WordleEnv_v2_visualized(gym.Env):
 
     def step(self, action):
         assert self.action_space.contains(action)
-        self.guesses.append(WORDS[action])
+        self.guesses.append(self.words[action])
 
-        action = WORDS[action]
+        action = self.words[action]
         if self.done:
             raise ValueError(
                 "The game is already done (the environment returned done = True). Call reset() before attempting to call step() again."
