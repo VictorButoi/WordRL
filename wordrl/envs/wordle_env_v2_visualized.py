@@ -71,7 +71,12 @@ class WordleEnv_v2_visualized(gym.Env):
         # for the visualizer
         self.guesses = []
         self.colors = []
-
+        
+        #pygame stuff
+        self.screen = None
+        self.clock = None
+        self.isopen = True
+        
         self.done = True
         self.state: np.ndarray = None
 
@@ -137,7 +142,6 @@ class WordleEnv_v2_visualized(gym.Env):
 
     def render(self, mode="human"):
         print(self.guesses)
-        pygame.init()
 
         # GAME SETTINGS
         NUM_ROWS = 6
@@ -151,12 +155,19 @@ class WordleEnv_v2_visualized(gym.Env):
             (NUM_ROWS - 1)*BOX_SPACING + SCREEN_SPACING
         SCREEN_WIDTH = NUM_COLUMNS*BOX_SIZE + \
             (NUM_COLUMNS - 1)*BOX_SPACING + SCREEN_SPACING
+        
+        if self.screen is None:
+            pygame.init()
+            pygame.display.init()
+            self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+        if self.clock is None:
+            self.clock = pygame.time.Clock()
 
         # PYGAME OVERHEAD
         screen = pygame.display.set_mode([SCREEN_WIDTH, SCREEN_HEIGHT])
         pygame.display.set_caption("Wordle Knockoff")
         turn = 0
-        fps = 60
+        fps = 5
         timer = pygame.time.Clock()
         huge_font = pygame.font.Font("freesansbold.ttf", 56)
         font_x = 40
@@ -200,18 +211,17 @@ class WordleEnv_v2_visualized(gym.Env):
         y_offset = (SCREEN_HEIGHT - (NUM_ROWS*BOX_SIZE +
                     (NUM_ROWS - 1)*BOX_SPACING))/2
 
-        running = True
-        while running:
-            timer.tick(fps)
-            screen.fill(black)
-            draw_board(board, sox=x_offset, soy=y_offset, box_size=BOX_SIZE,
-                       x_space=BOX_SPACING, y_space=BOX_SPACING)
-
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    running = False
-                if event.type == pygame.TEXTINPUT and not game_over:
-                    entry = event.__getattribute__('text')
-
+        timer.tick(fps)
+        screen.fill(black)
+        draw_board(board, sox=x_offset, soy=y_offset, box_size=BOX_SIZE,
+                   x_space=BOX_SPACING, y_space=BOX_SPACING)
             # updates the screen
-            pygame.display.flip()
+        pygame.display.flip()
+        
+    def close(self):
+        if self.screen is not None:
+            import pygame
+
+            pygame.display.quit()
+            pygame.quit()
+            self.isopen = False
