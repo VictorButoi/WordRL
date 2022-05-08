@@ -157,7 +157,7 @@ class AdvantageActorCritic(LightningModule):
                 self.episode_reward += reward
 
                 if done:
-                    if action == self.env.goal_word:
+                    if self.env.words[action] == self.env.goal_word:
                         self._winning_steps += self.env.max_turns - \
                             wordle.state.remaining_steps(self.state)
                         self._wins += 1
@@ -269,7 +269,7 @@ class AdvantageActorCritic(LightningModule):
         # Compute loss to backprop
         loss = self.loss(states, actions, returns)
 
-        if self.global_step % 50 == 0:
+        if self.global_step % 100 == 0:
             metrics = {
                 "train_loss": loss,
                 "total_games_played": self.done_episodes,

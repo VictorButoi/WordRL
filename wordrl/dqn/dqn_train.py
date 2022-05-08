@@ -220,6 +220,7 @@ class DQNLightning(LightningModule):
             self._winning_steps += winning_steps
         else:
             self._losses += 1
+        self.total_reward += reward
 
         self._rewards += reward
 
