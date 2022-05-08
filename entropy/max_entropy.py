@@ -42,6 +42,7 @@ def get_distribution(words, matchings):
     for word in words:
         unique, counts = np.unique(matchings, return_counts=True)
 
+    # TODO: make everything fit into a uniform matrix (right now the distributions are not the same length)
     matching_inds = np.argsort(unique)
     distributions = counts[matching_inds[:]]
 
@@ -54,11 +55,17 @@ def get_matchings(words, answers):
 
 def get_entropies(words, answers):
     distributions = get_distribution(words, get_matchings(words, answers))
-    return entropy(distributions)
+    return entropy(distributions, axis=1)
 
 
-def get_best_guess(guess):
-    best_guess =
+def get_best_guess(words, answers):
+    entropy = get_entropies(words, answers)
+    best_guess_index = np.amin(entropy, axis=0)
+
+    return words[best_guess_index]
+
+
+def play_game(words_list, answers_list, goal_word):
 
 
 if __name__ == "__main__":
