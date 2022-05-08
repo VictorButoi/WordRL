@@ -35,12 +35,6 @@ def get_words(filename, limit: Optional[int] = None):
             return words[:limit]
 
 
-# change to "data/5_words.txt for full word bank"
-WORDS_PATH = os.path.join(
-    wdl.filepaths.FILE_PATHS["ROOT_PATH"], "data/wordle_words.txt")
-WORDS = get_words(WORDS_PATH)
-
-
 class WordleEnv_v2_visualized(gym.Env):
     """
     Bare Bones Wordle Environment
@@ -60,8 +54,10 @@ class WordleEnv_v2_visualized(gym.Env):
 
     """
 
-    def __init__(self):
+    def __init__(self, word_file):
         super(WordleEnv_v2_visualized, self).__init__()
+        WORDS_PATH = os.path.join(wdl.filepaths.FILE_PATHS["ROOT_PATH"], f"data/{word_file}")
+        WORDS = get_words(WORDS_PATH)
         self.words = WORDS
         self.max_turns = GAME_LENGTH
         self.action_space = gym.spaces.Discrete(len(self.words))
@@ -82,9 +78,9 @@ class WordleEnv_v2_visualized(gym.Env):
 
     def step(self, action):
         assert self.action_space.contains(action)
-        self.guesses.append(WORDS[action])
+        self.guesses.append(self.words[action])
 
-        action = WORDS[action]
+        action = self.words[action]
         if self.done:
             raise ValueError(
                 "The game is already done (the environment returned done = True). Call reset() before attempting to call step() again."

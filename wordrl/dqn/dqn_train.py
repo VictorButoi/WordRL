@@ -47,6 +47,7 @@ class DQNLightning(LightningModule):
 
     def __init__(
             self,
+            words_file: str,
             initialize_winning_replays: str = None,
             deep_q_network: str = 'SumChars',
             batch_size: int = 1024,
@@ -83,7 +84,7 @@ class DQNLightning(LightningModule):
         super().__init__()
         self.save_hyperparameters()
 
-        self.env = gym.make(self.hparams.env)
+        self.env = gym.make(self.hparams.env, word_file=words_file)
         obs_size = self.env.observation_space.shape[0]
         n_actions = self.env.action_space.n
 
@@ -301,6 +302,7 @@ def main(config):
         wandb.run.name = config["experiment"]["name"]
         
         model = DQNLightning(
+            words_file=config["dataset"]["word_file"],
             initialize_winning_replays=config["dataset"]["init_winning_replays"],
             deep_q_network=config["agent"]["network"],
             env=config["dataset"]["env"],

@@ -1,3 +1,3 @@
 FILE_PATHS = {
-    "ROOT_PATH": "/Users/kellylu/CDS/WordRL"
+    "ROOT_PATH": "/Users/victo/Desktop/WordRL"
 }
