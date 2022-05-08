@@ -6,20 +6,31 @@ from os.path import exists
 #make a file for the user, if one doesn't already exist, and concat the word + the number of tries it took to solve it 
 #python has ways to access a username, use this to make file 
 
+
+class GameColor:
+  MISPLACED = "\033[1;33m"
+  CORRECT = "\033[0;32m"
+  INCORRECT = "\033[1;30m"
+  END = "\033[0m"
+
+#Replace all the interactions from the terminal into slack
+
 dir_addr = '../data/'
 
 #Check if file exists, if not, create
-user_filepath = os.getlogin() + ".json"
+user_filepath = "guesses.json"
 
 if not exists(dir_addr + user_filepath): 
   with open(dir_addr + user_filepath, 'w+'):
     pass
 
-with open(dir_addr + "wordle-answers.txt") as f:
+#CHANGE: Answers and guesses use the same file: 5_words.txt
+
+with open(dir_addr + "5_words.txt") as f:
   all_answers = f.read().splitlines() 
 
 
-with open(dir_addr + "wordle-allowed-guesses.txt") as f:
+with open(dir_addr + "5_words.txt") as f:
   all_guesses = f.read().splitlines()
 
 
@@ -33,11 +44,21 @@ def is_quit():
     else:
       ans = input("Invalid response. Quit game?[y/n]: ").casefold()
 
+
+def sample_game():
+  all_answers[np.random.randint(low=0, high=len(all_answers))]
+
+
+def print_colors(ans, guess): 
+  #MAKE 
+  pass
+  
+
 guess_count = 0 
 
 player_quit = False
 
-answer = all_answers[np.random.randint(low=0, high=len(all_answers))]
+answer = sample_game()
 
 while not player_quit: 
 
@@ -49,24 +70,29 @@ while not player_quit:
     usr_guess = input("Guess: ").casefold().replace(" ", "")
     if (usr_guess) in all_guesses: 
       valid_guess = True
+    else:
+      print("Retry, invalid guess")
 
   guess_count+= 1
 
   if usr_guess == answer:
     print("Game won!")
+    print_colors(answer, usr_guess)
     #print the word with colors in terminal
     #update the JSON file 
     player_quit = is_quit()
+    answer = sample_game()
 
   elif guess_count == 6:
-    print("Game lost :(")
+    print_colors(answer, usr_guess)
+    print("Game Lost :(")
+    print("Answer: " + answer)
     #Gameover, failed 
     #write failed into json (word, #guesses, time, failed?)
-    #restart option
     player_quit = is_quit()
 
   else: 
-    #print + continue
+    print_colors(answer, usr_guess)
     pass
 
 

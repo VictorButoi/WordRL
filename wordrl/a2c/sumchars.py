@@ -106,7 +106,7 @@ class SumChars(nn.Module):
         for i in range(num_critic_layers - 1):
             critic_layers.append(nn.Linear(embedding_width, embedding_width))
             critic_layers.append(nn.ReLU())
-        critic_layers.append(nn.Linear(embedding_width, e))
+        critic_layers.append(nn.Linear(embedding_width, 1))
 
         self.critic_head = nn.Sequential(*critic_layers)
 
