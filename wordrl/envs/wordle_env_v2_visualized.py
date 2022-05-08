@@ -165,7 +165,8 @@ class WordleEnv_v2_visualized(gym.Env):
         font_x = 40
         font_y = 48
         game_over = False
-        text_surface = huge_font.render(self.goal_word, False, (0, 0, 0))
+        text_surface = huge_font.render(
+            "GOAL WORD: "+self.goal_word, False, white)
 
         # GRAPHICS SETUP
         board = [[" " for _ in range(NUM_COLUMNS)] for _ in range(NUM_ROWS)]
@@ -203,9 +204,10 @@ class WordleEnv_v2_visualized(gym.Env):
                     (NUM_COLUMNS - 1)*BOX_SPACING))/2
         y_offset = (SCREEN_HEIGHT - (NUM_ROWS*BOX_SIZE +
                     (NUM_ROWS - 1)*BOX_SPACING))/2
-        if self.state[0] == 0:
+        if self.state[0] == 5:
             self.screen.fill(black)
             self.screen.blit(text_surface, (0, 0))
+
         timer.tick(fps)
         draw_board(board, sox=x_offset, soy=y_offset, box_size=BOX_SIZE,
                    x_space=BOX_SPACING, y_space=BOX_SPACING)
