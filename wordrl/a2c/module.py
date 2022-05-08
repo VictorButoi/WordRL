@@ -45,11 +45,11 @@ class AdvantageActorCritic(LightningModule):
             prob_cheat: float = 0.,
             weight_decay: float = 0.,
             do_render: bool = False,
-            embedding_matrix = "original", 
-            matrix_width = 26*5, 
-            num_actor_layers = 1, 
-            num_critic_layers = 1, 
-            glove_dataset = "common_crawl_840",
+            embedding_matrix="original",
+            matrix_width=26*5,
+            num_actor_layers=1,
+            num_critic_layers=1,
+            glove_dataset="common_crawl_840",
             **kwargs: Any,
     ) -> None:
         """
@@ -79,10 +79,10 @@ class AdvantageActorCritic(LightningModule):
             n_hidden=self.hparams.n_hidden,
             hidden_size=self.hparams.hidden_size,
             word_list=self.env.words,
-            embedding_matrix=self.hparams.embedding_matrix, 
-            matrix_width=self.hparams.matrix_width, 
-            num_actor_layers=self.hparams.num_actor_layers, 
-            num_critic_layers=self.hparams.num_critic_layers, 
+            embedding_matrix=self.hparams.embedding_matrix,
+            matrix_width=self.hparams.matrix_width,
+            num_actor_layers=self.hparams.num_actor_layers,
+            num_critic_layers=self.hparams.num_critic_layers,
             glove_dataset=self.hparams.glove_dataset)
         self.agent = agent.ActorCriticAgent(self.net)
 
@@ -141,7 +141,7 @@ class AdvantageActorCritic(LightningModule):
                 next_state, reward, done, aux = self.env.step(action)
 
                 # TODO: check that this works lol
-                
+
                 if self.do_render:
                     self.env.render()
 

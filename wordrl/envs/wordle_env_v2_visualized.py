@@ -23,7 +23,6 @@ yellow = (253, 203, 88)
 def get_words(filename, limit: Optional[int] = None):
     """
     Takes a .txt file of words spaced by newlines and loads the words into a list of strings
-
     Optional int argument limit: specify to take only the first words in the list up to limit
     """
 
@@ -38,9 +37,7 @@ def get_words(filename, limit: Optional[int] = None):
 class WordleEnv_v2_visualized(gym.Env):
     """
     Bare Bones Wordle Environment
-
     Action Space: A Discrete space with length corresponding to all the possible 5 letter word guesses in Wordle (number of words in file located at WORDS_PATH)
-
     Observation Space (i.e. State Space): A length 417 MultiDiscrete space representing a 1D int array where:
         index[0] = number of guesses remaining
         [1..27] = binary, whether each of the 26 letters has been guessed
@@ -49,16 +46,17 @@ class WordleEnv_v2_visualized(gym.Env):
             [1, 0, 0] -- char is definitely not in this spot
             [0, 1, 0] -- char may be in this spot
             [0, 0, 1] -- char is in this spot
-
     Reward: For now the reward will be a placeholder with simply a 10 for if the word was guessed correctly, -10 if the agent ran out of guesses, and 0 otherwise
-
     """
 
     def __init__(self, word_file):
         super(WordleEnv_v2_visualized, self).__init__()
-        WORDS_PATH = os.path.join(wdl.filepaths.FILE_PATHS["ROOT_PATH"], f"data/{word_file}")
-        WORDS = get_words(WORDS_PATH)
-        self.words = WORDS
+        WORDS_PATH = os.path.join(
+            wdl.filepaths.FILE_PATHS["ROOT_PATH"], f"data/{word_file}")
+        self.words = get_words(WORDS_PATH)
+        ANSWERS_PATH = os.path.join(
+            wdl.filepaths.FILE_PATHS["ROOT_PATH"], "data/legacy_data/wordle-answers.txt")
+        self.answers = get_words(ANSWERS_PATH)
         self.max_turns = GAME_LENGTH
         self.action_space = gym.spaces.Discrete(len(self.words))
         self.observation_space = gym.spaces.MultiDiscrete(
@@ -127,7 +125,7 @@ class WordleEnv_v2_visualized(gym.Env):
 
     def reset(self):
         self.done = False
-        self.goal_word = random.choice(self.words)
+        self.goal_word = random.choice(self.answers)
         self.state = np.array([GAME_LENGTH] + [0] * len(WORDLE_CHARS) +
                               [0, 1, 0] * WORD_LENGTH * len(WORDLE_CHARS), dtype=np.int32)
         self.guesses = []
@@ -137,7 +135,7 @@ class WordleEnv_v2_visualized(gym.Env):
         return self.state.copy()
 
     def render(self, mode="human"):
-        print(self.guesses)
+        # print(self.guesses)
 
         # GAME SETTINGS
         NUM_ROWS = 6

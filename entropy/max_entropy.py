@@ -1,16 +1,34 @@
 import itertools
-from re import L
 import numpy as np
-from scipy.stats import entropy
 import os
 import gym
 
-from wordrl.envs.wordle_env_v2_visualized import WordleEnv_v2_visualized
-from wordrl.envs.wordle_env_v2_visualized import WORDS
-#from wordrl.envs.wordle_env_v2_visualized import ANSWERS
-from wordrl.filepaths import FILE_PATHS
+from typing import Optional
+from re import L
+from scipy.stats import entropy
 
-MATCH_MATRIX = os.path.join(FILE_PATHS["ROOT_PATH"], "data/match_matrix.npy")
+import wordrl as wdl
+
+
+def get_words(filename, limit: Optional[int] = None):
+    """
+    Takes a .txt file of words spaced by newlines and loads the words into a list of strings
+    Optional int argument limit: specify to take only the first words in the list up to limit
+    """
+
+    with open(filename, "r") as f:
+        words = [line.strip().upper() for line in f.readlines()]
+        if not limit:
+            return words
+        else:
+            return words[:limit]
+
+
+MATCH_MATRIX = os.path.join(
+    wdl.filepaths.FILE_PATHS["ROOT_PATH"], "data/match_matrix.npy")
+WORDS_PATH = os.path.join(
+    wdl.filepaths.FILE_PATHS["ROOT_PATH"], f"data/big_wordle_words.txt")
+WORDS = get_words(WORDS_PATH)
 
 
 def correctness(guess, answer):
@@ -37,37 +55,43 @@ def generate_matchings_matrix():
     return matchings_matrix
 
 
-def get_distribution(words, matchings):
-    distributions = np.zeros((len(words), 243))
-    for word in words:
-        unique, counts = np.unique(matchings, return_counts=True)
+def get_matchings(words, answers):
 
-    # TODO: make everything fit into a uniform matrix (right now the distributions are not the same length)
-    matching_inds = np.argsort(unique)
-    distributions = counts[matching_inds[:]]
+    matchings = MATCH_MATRIX[][]
+
+
+def get_distributions(words, answers):
+    matchings = get_matchings(words, answers)
+    distributions = np.zeros((len(words), 243))
+    for i in range(len(words)):
+        unique, counts = np.unique(matchings[i], return_counts=True)
+        distributions[i][ternary_to_decimal(unique)] = counts
 
     return distributions
 
 
-def get_matchings(words, answers):
-    matchings = MATCH_MATRIX[][]
+def ternary_to_decimal(ternary):
+    decimal = 0
+    for i in range(len(ternary)):
+        decimal += (3**i)*ternary[i]
+    return decimal
 
 
 def get_entropies(words, answers):
-    distributions = get_distribution(words, get_matchings(words, answers))
-    return entropy(distributions, axis=1)
+    distributions = get_distributions(words, answers)
+    return entropy(distributions, axis=0)
 
 
 def get_best_guess(words, answers):
     entropy = get_entropies(words, answers)
-    best_guess_index = np.amin(entropy, axis=0)
+    best_guess_index = np.argmax(entropy, axis=0)
 
     return words[best_guess_index]
 
 
 def play_game(words_list, answers_list, goal_word):
+    pass
 
 
 if __name__ == "__main__":
-    first_guess = "salet"
     generate_matchings_matrix()
