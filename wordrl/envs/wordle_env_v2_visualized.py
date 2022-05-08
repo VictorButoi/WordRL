@@ -167,7 +167,7 @@ class WordleEnv_v2_visualized(gym.Env):
         screen = pygame.display.set_mode([SCREEN_WIDTH, SCREEN_HEIGHT])
         pygame.display.set_caption("Wordle Knockoff")
         turn = 0
-        fps = 60
+        fps = 5
         timer = pygame.time.Clock()
         huge_font = pygame.font.Font("freesansbold.ttf", 56)
         font_x = 40
