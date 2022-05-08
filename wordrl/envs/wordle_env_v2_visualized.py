@@ -35,12 +35,6 @@ def get_words(filename, limit: Optional[int] = None):
             return words[:limit]
 
 
-# change to "data/5_words.txt for full word bank"
-WORDS_PATH = os.path.join(
-    wdl.filepaths.FILE_PATHS["ROOT_PATH"], "data/wordle_words.txt")
-WORDS = get_words(WORDS_PATH)
-
-
 class WordleEnv_v2_visualized(gym.Env):
     """
     Bare Bones Wordle Environment
