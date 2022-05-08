@@ -37,7 +37,7 @@ def get_words(filename, limit: Optional[int] = None):
 
 # change to "data/5_words.txt for full word bank"
 WORDS_PATH = os.path.join(
-    wdl.filepaths.FILE_PATHS["ROOT_PATH"], "data/random_words.txt")
+    wdl.filepaths.FILE_PATHS["ROOT_PATH"], "data/wordle_words.txt")
 WORDS = get_words(WORDS_PATH)
 
 
