@@ -17,6 +17,7 @@ from pytorch_lightning.callbacks import Callback
 
 import wordrl as wdl
 
+import wandb
 import gym
 
 AVAIL_GPUS = min(1, torch.cuda.device_count())
@@ -233,17 +234,31 @@ class DQNLightning(LightningModule):
             "reward": torch.tensor(reward).to(device),
             "train_loss": loss.detach(),
         }
+               
         status = {
             "steps": torch.tensor(self.global_step).to(device),
             "total_reward": torch.tensor(self.total_reward).to(device),
         }
 
-        if self.global_step % 100 == 0:
+        if self.global_step % 50 == 0:
+            
+            metrics = {
+                "train_loss": loss.detach(),
+                "total_games_played": self.total_games_played,
+                "lose_ratio": self._losses/(self._wins+self._losses),
+                "wins": self._wins,
+                "reward_per_game": self.total_reward / (self._wins+self._losses),
+                "global_step": self.global_step,
+            }
+            
+            wandb.log(metrics)
+            
             if len(self.dataset.winners) > 0:
                 winner = self.dataset.winners.buffer[-1]
                 game = f"goal: {winner[0].goal_id}\n"
                 for i, xp in enumerate(winner):
                     game += f"{i}: {self.env.words[xp.action]}\n"
+                    
             if len(self.dataset.losers) > 0:
                 loser = self.dataset.losers.buffer[-1]
                 game = f"goal: {loser[0].goal_id}\n"
@@ -281,44 +296,48 @@ class DQNLightning(LightningModule):
 
 
 def main(config):
-    model = DQNLightning(
-        initialize_winning_replays=config["dataset"]["init_winning_replays"],
-        deep_q_network=config["agent"]["network"],
-        env=config["dataset"]["env"],
-        lr=config["training"]["lr"],
-        weight_decay=config["training"]["weight_decay"],
-        replay_size=config["dataset"]["replay_size"],
-        batch_size=config["training"]["batch_size"],
-        sync_rate=config["experiment"]["sync_rate"],
-        episode_length=config["dataset"]["episode_length"],
-        hidden_size=config["agent"]["hidden_size"],
-        num_workers=config["experiment"]["num_workers"],
-        eps_start=config["training"]["max_eps"],
-        eps_end=config["training"]["min_eps"],
-        eps_last_frame=int(config["training"]["epochs"]*config["training"]["last_frame_cutoff"]),
-    )
+    with wandb.init(project='wordle-solver'):
+        wandb.config.update(config)
+        wandb.run.name = config["experiment"]["name"]
+        
+        model = DQNLightning(
+            initialize_winning_replays=config["dataset"]["init_winning_replays"],
+            deep_q_network=config["agent"]["network"],
+            env=config["dataset"]["env"],
+            lr=config["training"]["lr"],
+            weight_decay=config["training"]["weight_decay"],
+            replay_size=config["dataset"]["replay_size"],
+            batch_size=config["training"]["batch_size"],
+            sync_rate=config["experiment"]["sync_rate"],
+            episode_length=config["dataset"]["episode_length"],
+            hidden_size=config["agent"]["hidden_size"],
+            num_workers=config["experiment"]["num_workers"],
+            eps_start=config["training"]["max_eps"],
+            eps_end=config["training"]["min_eps"],
+            eps_last_frame=int(config["training"]["epochs"]*config["training"]["last_frame_cutoff"]),
+        )
 
-    @dataclass
-    class SaveBufferCallback(Callback):
-        buffer: SequenceReplay
-        filename: str
+        @dataclass
+        class SaveBufferCallback(Callback):
+            buffer: SequenceReplay
+            filename: str
 
-        def on_train_end(self, trainer, pl_module):
-            path = f'{trainer.log_dir}/checkpoints'
-            fname = self.filename,
-            self.buffer.save(f'{path}/{fname}')
+            def on_train_end(self, trainer, pl_module):
+                path = f'{trainer.log_dir}/checkpoints'
+                fname = self.filename,
+                self.buffer.save(f'{path}/{fname}')
 
-    save_buffer_callback = SaveBufferCallback(buffer=model.dataset.winners, filename='sequence_buffer.pkl')
-    model_checkpoint = ModelCheckpoint(every_n_epochs=config["training"]["checkpoint_every_n_epochs"])
-    trainer = Trainer(
-        gpus=AVAIL_GPUS,
-        max_epochs=config["training"]["epochs"],
-        enable_checkpointing=True,
-        callbacks=[model_checkpoint, save_buffer_callback],
-        resume_from_checkpoint=None
-    )
+        save_buffer_callback = SaveBufferCallback(buffer=model.dataset.winners, filename='sequence_buffer.pkl')
+        model_checkpoint = ModelCheckpoint(every_n_epochs=config["training"]["checkpoint_every_n_epochs"])
+        trainer = Trainer(
+            gpus=AVAIL_GPUS,
+            max_epochs=config["training"]["epochs"],
+            enable_checkpointing=True,
+            callbacks=[model_checkpoint, save_buffer_callback],
+            resume_from_checkpoint=None
+        )
 
-    trainer.fit(model)
+        trainer.fit(model)
 
 
 def train_func(config):    
