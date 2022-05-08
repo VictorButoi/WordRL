@@ -9,7 +9,7 @@ import copy
 import os
 
 
-def run_submitit_job_array(config_dicts, timeout=720, mem=16, num_gpus=0):
+def run_submitit_job_array(config_dicts, timeout=60*3, mem=16, num_gpus=0):
     jobs = []
     executor = submitit.AutoExecutor(folder=os.path.join(wdl.filepaths.FILE_PATHS["ROOT_PATH"],"bash/submitit"))
     executor.update_parameters(timeout_min=timeout, mem_gb=mem, gpus_per_node=num_gpus, slurm_partition="sablab", slurm_wckey="")
