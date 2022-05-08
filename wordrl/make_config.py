@@ -49,7 +49,6 @@ def gen_training_name(run_dict, params):
             subkeys = params[key].keys()
             for sk in subkeys:
                 names.append(f"{key}-{sk}")
-    print(run_dict)
     return_name = f'{run_dict["training"]["algorithm"]}'
     for field in names:
         poi = field.split("-")
