@@ -71,7 +71,12 @@ class WordleEnv_v2_visualized(gym.Env):
         # for the visualizer
         self.guesses = []
         self.colors = []
-
+        
+        #pygame stuff
+        self.screen = None
+        self.clock = None
+        self.isopen = True
+        
         self.done = True
         self.state: np.ndarray = None
 
@@ -137,7 +142,6 @@ class WordleEnv_v2_visualized(gym.Env):
 
     def render(self, mode="human"):
         print(self.guesses)
-        pygame.init()
 
         # GAME SETTINGS
         NUM_ROWS = 6
@@ -151,6 +155,13 @@ class WordleEnv_v2_visualized(gym.Env):
             (NUM_ROWS - 1)*BOX_SPACING + SCREEN_SPACING
         SCREEN_WIDTH = NUM_COLUMNS*BOX_SIZE + \
             (NUM_COLUMNS - 1)*BOX_SPACING + SCREEN_SPACING
+        
+        if self.screen is None:
+            pygame.init()
+            pygame.display.init()
+            self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+        if self.clock is None:
+            self.clock = pygame.time.Clock()
 
         # PYGAME OVERHEAD
         screen = pygame.display.set_mode([SCREEN_WIDTH, SCREEN_HEIGHT])
