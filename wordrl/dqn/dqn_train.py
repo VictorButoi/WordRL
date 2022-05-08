@@ -280,40 +280,22 @@ class DQNLightning(LightningModule):
         return batch[0].device.index if self.on_gpu else "cpu"
 
 
-def main(
-        resume_from_checkpoint: str = None,
-        initialize_winning_replays: str = None,
-        env: str = "Wordle-v2-10-visualized",
-        deep_q_network: str = 'SumChars',
-        max_epochs: int = 5000,
-        checkpoint_every_n_epochs: int = 1000,
-        num_workers: int = 0,
-        replay_size: int = 1000,
-        hidden_size: int = 256,
-        sync_rate: int = 100,
-        lr: float = 1.e-3,
-        weight_decay: float = 1.e-5,
-        last_frame_cutoff: float=0.8,
-        max_eps: float=1.,
-        min_eps: float=0.01,
-        episode_length: int = 512,
-        batch_size: int = 512,
-):
+def main(config):
     model = DQNLightning(
-        initialize_winning_replays=initialize_winning_replays,
-        deep_q_network=deep_q_network,
-        env=env,
-        lr=lr,
-        weight_decay=weight_decay,
-        replay_size=replay_size,
-        batch_size=batch_size,
-        sync_rate=sync_rate,
-        episode_length=episode_length,
-        hidden_size=hidden_size,
-        num_workers=num_workers,
-        eps_start=max_eps,
-        eps_end=min_eps,
-        eps_last_frame=int(max_epochs*last_frame_cutoff),
+        initialize_winning_replays=config["dataset"]["init_winning_replays"],
+        deep_q_network=config["agent"]["network"],
+        env=config["dataset"]["env"],
+        lr=config["training"]["lr"],
+        weight_decay=config["training"]["weight_decay"],
+        replay_size=config["dataset"]["replay_size"],
+        batch_size=config["training"]["batch_size"],
+        sync_rate=config["experiment"]["sync_rate"],
+        episode_length=config["dataset"]["episode_length"],
+        hidden_size=config["agent"]["hidden_size"],
+        num_workers=config["experiment"]["num_workers"],
+        eps_start=config["training"]["max_eps"],
+        eps_end=config["training"]["min_eps"],
+        eps_last_frame=int(config["training"]["epochs"]*config["training"]["last_frame_cutoff"]),
     )
 
     @dataclass
@@ -327,17 +309,17 @@ def main(
             self.buffer.save(f'{path}/{fname}')
 
     save_buffer_callback = SaveBufferCallback(buffer=model.dataset.winners, filename='sequence_buffer.pkl')
-    model_checkpoint = ModelCheckpoint(every_n_epochs=checkpoint_every_n_epochs)
+    model_checkpoint = ModelCheckpoint(every_n_epochs=config["training"]["checkpoint_every_n_epochs"])
     trainer = Trainer(
         gpus=AVAIL_GPUS,
-        max_epochs=max_epochs,
+        max_epochs=config["training"]["epochs"],
         enable_checkpointing=True,
         callbacks=[model_checkpoint, save_buffer_callback],
-        resume_from_checkpoint=resume_from_checkpoint,
+        resume_from_checkpoint=None
     )
 
     trainer.fit(model)
 
 
 def train_func(config):    
-    fire.Fire(main)
+    main(config)

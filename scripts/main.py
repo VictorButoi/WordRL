@@ -16,7 +16,8 @@ import sys
 
 if __name__ == "__main__":
     wordl_root = wdl.filepaths.FILE_PATHS["ROOT_PATH"]
-    config_root = os.path.join(wordl_root, "wordrl/configs/DEFAULT.yaml")
+    
+    config_root = os.path.join(wordl_root, "wordrl/configs/DQN_DEFAULT.yaml")
     with open(config_root, 'r') as stream:
         config = yaml.safe_load(stream)
     if len(sys.argv) > 1:
