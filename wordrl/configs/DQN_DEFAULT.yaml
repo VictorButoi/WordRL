@@ -6,6 +6,7 @@ experiment:
     steps_per_update: 100
     num_workers: 0
 dataset:
+    word_file: "wordle_words.txt"
     env: "Wordle-v2-10-visualized"
     replay_size: 1000
     init_winning_replays: ""

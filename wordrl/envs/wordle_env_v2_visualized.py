@@ -35,12 +35,6 @@ def get_words(filename, limit: Optional[int] = None):
             return words[:limit]
 
 
-# change to "data/5_words.txt for full word bank"
-WORDS_PATH = os.path.join(
-    wdl.filepaths.FILE_PATHS["ROOT_PATH"], "data/random_words.txt")
-WORDS = get_words(WORDS_PATH)
-
-
 class WordleEnv_v2_visualized(gym.Env):
     """
     Bare Bones Wordle Environment
@@ -60,8 +54,10 @@ class WordleEnv_v2_visualized(gym.Env):
 
     """
 
-    def __init__(self):
+    def __init__(self, word_file):
         super(WordleEnv_v2_visualized, self).__init__()
+        WORDS_PATH = os.path.join(wdl.filepaths.FILE_PATHS["ROOT_PATH"], f"data/{word_file}")
+        WORDS = get_words(WORDS_PATH)
         self.words = WORDS
         self.max_turns = GAME_LENGTH
         self.action_space = gym.spaces.Discrete(len(self.words))
@@ -71,20 +67,20 @@ class WordleEnv_v2_visualized(gym.Env):
         # for the visualizer
         self.guesses = []
         self.colors = []
-        
-        #pygame stuff
+
+        # pygame stuff
         self.screen = None
         self.clock = None
         self.isopen = True
-        
+
         self.done = True
         self.state: np.ndarray = None
 
     def step(self, action):
         assert self.action_space.contains(action)
-        self.guesses.append(WORDS[action])
+        self.guesses.append(self.words[action])
 
-        action = WORDS[action]
+        action = self.words[action]
         if self.done:
             raise ValueError(
                 "The game is already done (the environment returned done = True). Call reset() before attempting to call step() again."
@@ -155,19 +151,20 @@ class WordleEnv_v2_visualized(gym.Env):
             (NUM_ROWS - 1)*BOX_SPACING + SCREEN_SPACING
         SCREEN_WIDTH = NUM_COLUMNS*BOX_SIZE + \
             (NUM_COLUMNS - 1)*BOX_SPACING + SCREEN_SPACING
-        
+
         if self.screen is None:
             pygame.init()
             pygame.display.init()
-            self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+            self.screen = pygame.display.set_mode(
+                (SCREEN_WIDTH, SCREEN_HEIGHT))
         if self.clock is None:
             self.clock = pygame.time.Clock()
 
         # PYGAME OVERHEAD
-        screen = pygame.display.set_mode([SCREEN_WIDTH, SCREEN_HEIGHT])
+        #screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
         pygame.display.set_caption("Wordle Knockoff")
         turn = 0
-        fps = 60
+        fps = 5
         timer = pygame.time.Clock()
         huge_font = pygame.font.Font("freesansbold.ttf", 56)
         font_x = 40
@@ -181,7 +178,7 @@ class WordleEnv_v2_visualized(gym.Env):
             piece_text = huge_font.render(word[x_idx], True, white)
             x_offset = (box_size - font_x)/2
             y_offset = (box_size - font_y)/2
-            screen.blit(piece_text, (x + x_offset, y + y_offset))
+            self.screen.blit(piece_text, (x + x_offset, y + y_offset))
 
         def draw_board(board,
                        sox,
@@ -199,30 +196,29 @@ class WordleEnv_v2_visualized(gym.Env):
                     x = col*box_size + sox + col*x_space
                     y = row*box_size + soy + row*y_space
                     if row < len(self.guesses):
-                        pygame.draw.rect(screen, self.colors[row*5+col], [
+                        pygame.draw.rect(self.screen, self.colors[row*5+col], [
                             x, y, box_size, box_size], do_fill)
                         place_letter(x, y, col, box_size, self.guesses[row])
                     else:
-                        pygame.draw.rect(screen, grey, [
+                        pygame.draw.rect(self.screen, grey, [
                             x, y, box_size, box_size], do_fill)
 
         x_offset = (SCREEN_WIDTH - (NUM_COLUMNS*BOX_SIZE +
                     (NUM_COLUMNS - 1)*BOX_SPACING))/2
         y_offset = (SCREEN_HEIGHT - (NUM_ROWS*BOX_SIZE +
                     (NUM_ROWS - 1)*BOX_SPACING))/2
+        if self.state[0] == 0:
+            self.screen.fill(black)
+        timer.tick(fps)
+        draw_board(board, sox=x_offset, soy=y_offset, box_size=BOX_SIZE,
+                   x_space=BOX_SPACING, y_space=BOX_SPACING)
+        # updates the screen
+        pygame.display.flip()
 
-        running = True
-        while running:
-            timer.tick(fps)
-            screen.fill(black)
-            draw_board(board, sox=x_offset, soy=y_offset, box_size=BOX_SIZE,
-                       x_space=BOX_SPACING, y_space=BOX_SPACING)
+    def close(self):
+        if self.screen is not None:
+            import pygame
 
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    running = False
-                if event.type == pygame.TEXTINPUT and not game_over:
-                    entry = event.__getattribute__('text')
-
-            # updates the screen
-            pygame.display.flip()
+            pygame.display.quit()
+            pygame.quit()
+            self.isopen = False
