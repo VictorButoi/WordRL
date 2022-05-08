@@ -42,7 +42,7 @@ class SumChars(nn.Module):
 
         self.words = None #word representation matrix 
 
-        if embedding_matrix = "original":
+        if embedding_matrix == "original":
             embedding_width = 26*5 #for each of 5 letters, 1-26
 
 
@@ -53,17 +53,17 @@ class SumChars(nn.Module):
                     word_array[j*26 + (ord(c) - ord('A')), i] = 1
             self.words = torch.Tensor(word_array)
 
-        elif embedding_matrix = "original_random":
+        elif embedding_matrix == "original_random":
             embedding_width = matrix_width
             self.words = torch.Tensor(np.random(embedding_width, len(word_list)))
 
-        elif embedding_matrix = "glove":
+        elif embedding_matrix == "glove":
             embedding_width = matrix_width
             g = GloveEmbedding(glove_dataset, d_emb = glove_demb)
             word_emb_array = np.array([g.emb(w) for w in word_list])
             self.words = torch.Tensor(word_emb_array)
 
-        elif embedding_matrix = "spacy":
+        elif embedding_matrix == "spacy":
             nlp = spacy.load("en_core_web_md")
             self.words = np.concatenate([nlp(w) for w in word_list])
             embedding_width = len(self.words[0]) # should be 300 
@@ -106,7 +106,7 @@ class SumChars(nn.Module):
         for i in range(num_critic_layers - 1):
             critic_layers.append(nn.Linear(embedding_width, embedding_width))
             critic_layers.append(nn.ReLU())
-        critic_layers.append(nn.Linear(embedding_width, e))
+        critic_layers.append(nn.Linear(embedding_width, 1))
 
         self.critic_head = nn.Sequential(*critic_layers)
 
